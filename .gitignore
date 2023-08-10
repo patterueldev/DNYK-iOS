@@ -1,0 +1,45 @@
+# Xcode
+.DS_Store
+xcuserdata/
+
+# Swift Package Manager
+.build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+DerivedData/
+
+# Carthage
+Carthage/Build/
+
+# Sensitive or environment-specific information
+*.xcconfig
+
+# Generated files
+*.xcodeproj/*.pbxproj
+*.xcodeproj/*.xcworkspace
+*.xcodeproj/xcuserdata/
+
+# Build products
+*.build/
+
+# Various build and configuration files
+build/
+fastlane/report.xml
+fastlane/Preview.html
+
+# Swift Package Manager
+.package.resolved
+
+# SwiftPM Beta
+Package.resolved
+
+# Tuist
+Tuist/*.xcodeproj
+
+# SwiftPM Build
+.build/
+
+# SPM generated
+spm_modules/
