@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftDate
 
 typealias OptionsLoader = () async -> [String]
 
@@ -21,6 +22,8 @@ struct AddTransactionView: View {
                     amountField()
                     payeeField()
                     categoryField()
+                    accountField()
+                    dateField()
                 }.padding(10)
             }
             .overlay(content: floatingButtonContainer)
@@ -59,52 +62,53 @@ struct AddTransactionView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
     
-    private func payeeField() -> some View {
-        HStack {
-            VStack(alignment: .leading){
-                Text(viewModel.payeePlaceholder)
-                    .foregroundStyle(.gray)
-                    .font(.system(size: 18))
-                if (viewModel.payee != nil) {
-                    Text(viewModel.payee!)
+    private func dropdownField(
+        action: @escaping () -> Void,
+        placeholder: String,
+        value: String?,
+        displaysChevron: Bool
+    ) -> some View {
+        Button(action: action) {
+            HStack {
+                VStack(alignment: .leading){
+                    Text(placeholder)
+                        .foregroundStyle(.gray)
+                        .font(.system(size: 18))
+                    if (value != nil) {
+                        Text(value!)
+                            .foregroundStyle(.black)
+                    }
+                }
+                Spacer()
+                if (displaysChevron) {
+                    Image(systemName: "chevron.right") // for test
+                        .foregroundColor(.gray)
                 }
             }
-            Spacer()
-            Image(systemName: "chevron.right")
-                .foregroundColor(.gray)
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .frame(maxWidth: .infinity, minHeight: 69, alignment: .center)
+            .background(Color.white.opacity(0.7))
+            .clipShape(RoundedRectangle(cornerRadius: 8))
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity, minHeight: 69, alignment: .center)
-        .background(Color.white.opacity(0.7))
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+    
+    private func payeeField() -> some View {
+        self.dropdownField(action: {}, placeholder: viewModel.payeePlaceholder, value: viewModel.payee, displaysChevron: true)
     }
     
     private func categoryField() -> some View {
-        // just a selection field that displays the text
-        // check if category is nil, if not nil, display value and placeholder (tiny)
-        HStack {
-            VStack(alignment: .leading){
-                Text(viewModel.categoryPlaceholder)
-                    .foregroundStyle(.gray)
-                    .font(.system(size: 18))
-                if (viewModel.category != nil) {
-                    Text(viewModel.category!)
-                }
-            }
-            Spacer()
-            if (viewModel.requiredToSelectCategory) {
-                Image(systemName: "chevron.right")
-                    .foregroundColor(.gray)
-            }
-        }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
-        .frame(maxWidth: .infinity, minHeight: 69, alignment: .center)
-        .background(Color.white.opacity(0.7))
-        .clipShape(RoundedRectangle(cornerRadius: 8))
+        self.dropdownField(action: {}, placeholder: viewModel.categoryPlaceholder, value: viewModel.category, displaysChevron: viewModel.requiredToSelectCategory)
     }
     
+    private func accountField() -> some View {
+        self.dropdownField(action: {}, placeholder: viewModel.accountPlaceholder, value: viewModel.account, displaysChevron: true)
+    }
+    
+    private func dateField() -> some View {
+        let transactionDate = viewModel.transactionDate.toString(.custom("MMMM dd, yyyy"))
+        return self.dropdownField(action: {}, placeholder: "Date", value: transactionDate, displaysChevron: false)
+    }
     
     func floatingButtonContainer() -> some View {
         VStack {
