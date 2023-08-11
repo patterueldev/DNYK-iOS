@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		430BB5832A86D7BA008DC2A7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 430BB5822A86D7BA008DC2A7 /* SwiftDate */; };
+		430BB5862A86D941008DC2A7 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 430BB5852A86D941008DC2A7 /* SFSafeSymbols */; };
+		434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */; };
+		434B59E82A8478D900DD79D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59E72A8478D900DD79D2 /* Assets.xcassets */; };
+		434B59EB2A8478D900DD79D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59EA2A8478D900DD79D2 /* Preview Assets.xcassets */; };
+		434B59F52A8478D900DD79D2 /* DNYK_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B59F42A8478D900DD79D2 /* DNYK_iOSTests.swift */; };
+		434B59FF2A8478D900DD79D2 /* DNYK_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B59FE2A8478D900DD79D2 /* DNYK_iOSUITests.swift */; };
+		434B5A012A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */; };
+		434B5A102A847A7E00DD79D2 /* DNYKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */; };
+		434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */; };
+		434B5A142A847B7800DD79D2 /* DNYKServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A132A847B7800DD79D2 /* DNYKServiceImpl.swift */; };
+		434B5A162A847CEA00DD79D2 /* AddTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A152A847CEA00DD79D2 /* AddTransactionDataSource.swift */; };
+		434B5A182A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A172A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift */; };
+		434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A192A84ADF700DD79D2 /* LandingView.swift */; };
+		434B5A1C2A84B6C600DD79D2 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */; };
+		434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */; };
+		437581112A85820A00E59FB5 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581102A85820A00E59FB5 /* BudgetView.swift */; };
+		43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43899D0C2A85E54400E8B72A /* ColorExtension.swift */; };
+		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		434B59F12A8478D900DD79D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 434B59D82A8478D600DD79D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 434B59DF2A8478D600DD79D2;
+			remoteInfo = "DNYK-iOS";
+		};
+		434B59FB2A8478D900DD79D2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 434B59D82A8478D600DD79D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 434B59DF2A8478D600DD79D2;
+			remoteInfo = "DNYK-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		434B59E02A8478D600DD79D2 /* DNYK-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DNYK-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSApp.swift; sourceTree = "<group>"; };
+		434B59E72A8478D900DD79D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		434B59EA2A8478D900DD79D2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		434B59F02A8478D900DD79D2 /* DNYK-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNYK-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		434B59F42A8478D900DD79D2 /* DNYK_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSTests.swift; sourceTree = "<group>"; };
+		434B59FA2A8478D900DD79D2 /* DNYK-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DNYK-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		434B59FE2A8478D900DD79D2 /* DNYK_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSUITests.swift; sourceTree = "<group>"; };
+		434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYKService.swift; sourceTree = "<group>"; };
+		434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionUseCase.swift; sourceTree = "<group>"; };
+		434B5A132A847B7800DD79D2 /* DNYKServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYKServiceImpl.swift; sourceTree = "<group>"; };
+		434B5A152A847CEA00DD79D2 /* AddTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDataSource.swift; sourceTree = "<group>"; };
+		434B5A172A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDataSourceImpl.swift; sourceTree = "<group>"; };
+		434B5A192A84ADF700DD79D2 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
+		434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		437581102A85820A00E59FB5 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
+		43899D0C2A85E54400E8B72A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		434B59DD2A8478D600DD79D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				430BB5862A86D941008DC2A7 /* SFSafeSymbols in Frameworks */,
+				430BB5832A86D7BA008DC2A7 /* SwiftDate in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434B59ED2A8478D900DD79D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434B59F72A8478D900DD79D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		434B59D72A8478D600DD79D2 = {
+			isa = PBXGroup;
+			children = (
+				434B59E22A8478D600DD79D2 /* DNYK-iOS */,
+				434B59F32A8478D900DD79D2 /* DNYK-iOSTests */,
+				434B59FD2A8478D900DD79D2 /* DNYK-iOSUITests */,
+				434B59E12A8478D600DD79D2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		434B59E12A8478D600DD79D2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				434B59E02A8478D600DD79D2 /* DNYK-iOS.app */,
+				434B59F02A8478D900DD79D2 /* DNYK-iOSTests.xctest */,
+				434B59FA2A8478D900DD79D2 /* DNYK-iOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		434B59E22A8478D600DD79D2 /* DNYK-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				43899D0B2A85E53900E8B72A /* Extensions */,
+				437581122A85822500E59FB5 /* Custom Views */,
+				434B5A0E2A847A6D00DD79D2 /* Service */,
+				434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */,
+				437581102A85820A00E59FB5 /* BudgetView.swift */,
+				434B5A192A84ADF700DD79D2 /* LandingView.swift */,
+				434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */,
+				43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */,
+				434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */,
+				434B59E72A8478D900DD79D2 /* Assets.xcassets */,
+				434B59E92A8478D900DD79D2 /* Preview Content */,
+			);
+			path = "DNYK-iOS";
+			sourceTree = "<group>";
+		};
+		434B59E92A8478D900DD79D2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				434B59EA2A8478D900DD79D2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		434B59F32A8478D900DD79D2 /* DNYK-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				434B59F42A8478D900DD79D2 /* DNYK_iOSTests.swift */,
+			);
+			path = "DNYK-iOSTests";
+			sourceTree = "<group>";
+		};
+		434B59FD2A8478D900DD79D2 /* DNYK-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				434B59FE2A8478D900DD79D2 /* DNYK_iOSUITests.swift */,
+				434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */,
+			);
+			path = "DNYK-iOSUITests";
+			sourceTree = "<group>";
+		};
+		434B5A0D2A847A6000DD79D2 /* Use Cases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Use Cases";
+			sourceTree = "<group>";
+		};
+		434B5A0E2A847A6D00DD79D2 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				434B5A0D2A847A6000DD79D2 /* Use Cases */,
+				434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */,
+				434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */,
+				434B5A152A847CEA00DD79D2 /* AddTransactionDataSource.swift */,
+				434B5A172A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift */,
+				434B5A132A847B7800DD79D2 /* DNYKServiceImpl.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		437581122A85822500E59FB5 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		43899D0B2A85E53900E8B72A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				43899D0C2A85E54400E8B72A /* ColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		434B59DF2A8478D600DD79D2 /* DNYK-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 434B5A042A8478D900DD79D2 /* Build configuration list for PBXNativeTarget "DNYK-iOS" */;
+			buildPhases = (
+				434B59DC2A8478D600DD79D2 /* Sources */,
+				434B59DD2A8478D600DD79D2 /* Frameworks */,
+				434B59DE2A8478D600DD79D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DNYK-iOS";
+			packageProductDependencies = (
+				430BB5822A86D7BA008DC2A7 /* SwiftDate */,
+				430BB5852A86D941008DC2A7 /* SFSafeSymbols */,
+			);
+			productName = "DNYK-iOS";
+			productReference = 434B59E02A8478D600DD79D2 /* DNYK-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		434B59EF2A8478D900DD79D2 /* DNYK-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 434B5A072A8478D900DD79D2 /* Build configuration list for PBXNativeTarget "DNYK-iOSTests" */;
+			buildPhases = (
+				434B59EC2A8478D900DD79D2 /* Sources */,
+				434B59ED2A8478D900DD79D2 /* Frameworks */,
+				434B59EE2A8478D900DD79D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				434B59F22A8478D900DD79D2 /* PBXTargetDependency */,
+			);
+			name = "DNYK-iOSTests";
+			productName = "DNYK-iOSTests";
+			productReference = 434B59F02A8478D900DD79D2 /* DNYK-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		434B59F92A8478D900DD79D2 /* DNYK-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 434B5A0A2A8478D900DD79D2 /* Build configuration list for PBXNativeTarget "DNYK-iOSUITests" */;
+			buildPhases = (
+				434B59F62A8478D900DD79D2 /* Sources */,
+				434B59F72A8478D900DD79D2 /* Frameworks */,
+				434B59F82A8478D900DD79D2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				434B59FC2A8478D900DD79D2 /* PBXTargetDependency */,
+			);
+			name = "DNYK-iOSUITests";
+			productName = "DNYK-iOSUITests";
+			productReference = 434B59FA2A8478D900DD79D2 /* DNYK-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		434B59D82A8478D600DD79D2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					434B59DF2A8478D600DD79D2 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+					434B59EF2A8478D900DD79D2 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 434B59DF2A8478D600DD79D2;
+					};
+					434B59F92A8478D900DD79D2 = {
+						CreatedOnToolsVersion = 15.0;
+						TestTargetID = 434B59DF2A8478D600DD79D2;
+					};
+				};
+			};
+			buildConfigurationList = 434B59DB2A8478D600DD79D2 /* Build configuration list for PBXProject "DNYK-iOS" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 434B59D72A8478D600DD79D2;
+			packageReferences = (
+				430BB5812A86D7BA008DC2A7 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				430BB5842A86D941008DC2A7 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+			);
+			productRefGroup = 434B59E12A8478D600DD79D2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				434B59DF2A8478D600DD79D2 /* DNYK-iOS */,
+				434B59EF2A8478D900DD79D2 /* DNYK-iOSTests */,
+				434B59F92A8478D900DD79D2 /* DNYK-iOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		434B59DE2A8478D600DD79D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434B59EB2A8478D900DD79D2 /* Preview Assets.xcassets in Resources */,
+				434B59E82A8478D900DD79D2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434B59EE2A8478D900DD79D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434B59F82A8478D900DD79D2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		434B59DC2A8478D600DD79D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434B5A142A847B7800DD79D2 /* DNYKServiceImpl.swift in Sources */,
+				434B5A182A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift in Sources */,
+				434B5A102A847A7E00DD79D2 /* DNYKService.swift in Sources */,
+				434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */,
+				43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */,
+				434B5A162A847CEA00DD79D2 /* AddTransactionDataSource.swift in Sources */,
+				434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */,
+				434B5A1C2A84B6C600DD79D2 /* LandingViewModel.swift in Sources */,
+				43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */,
+				434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */,
+				434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */,
+				437581112A85820A00E59FB5 /* BudgetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434B59EC2A8478D900DD79D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434B59F52A8478D900DD79D2 /* DNYK_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		434B59F62A8478D900DD79D2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				434B5A012A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift in Sources */,
+				434B59FF2A8478D900DD79D2 /* DNYK_iOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		434B59F22A8478D900DD79D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 434B59DF2A8478D600DD79D2 /* DNYK-iOS */;
+			targetProxy = 434B59F12A8478D900DD79D2 /* PBXContainerItemProxy */;
+		};
+		434B59FC2A8478D900DD79D2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 434B59DF2A8478D600DD79D2 /* DNYK-iOS */;
+			targetProxy = 434B59FB2A8478D900DD79D2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		434B5A022A8478D900DD79D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		434B5A032A8478D900DD79D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		434B5A052A8478D900DD79D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DNYK-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 2ZL598ZSDC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pat.DNYK-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		434B5A062A8478D900DD79D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"DNYK-iOS/Preview Content\"";
+				DEVELOPMENT_TEAM = 2ZL598ZSDC;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pat.DNYK-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		434B5A082A8478D900DD79D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZL598ZSDC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pat.DNYK-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNYK-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DNYK-iOS";
+			};
+			name = Debug;
+		};
+		434B5A092A8478D900DD79D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZL598ZSDC;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pat.DNYK-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DNYK-iOS.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/DNYK-iOS";
+			};
+			name = Release;
+		};
+		434B5A0B2A8478D900DD79D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZL598ZSDC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pat.DNYK-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DNYK-iOS";
+			};
+			name = Debug;
+		};
+		434B5A0C2A8478D900DD79D2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2ZL598ZSDC;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pat.DNYK-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "DNYK-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		434B59DB2A8478D600DD79D2 /* Build configuration list for PBXProject "DNYK-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434B5A022A8478D900DD79D2 /* Debug */,
+				434B5A032A8478D900DD79D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		434B5A042A8478D900DD79D2 /* Build configuration list for PBXNativeTarget "DNYK-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434B5A052A8478D900DD79D2 /* Debug */,
+				434B5A062A8478D900DD79D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		434B5A072A8478D900DD79D2 /* Build configuration list for PBXNativeTarget "DNYK-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434B5A082A8478D900DD79D2 /* Debug */,
+				434B5A092A8478D900DD79D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		434B5A0A2A8478D900DD79D2 /* Build configuration list for PBXNativeTarget "DNYK-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				434B5A0B2A8478D900DD79D2 /* Debug */,
+				434B5A0C2A8478D900DD79D2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		430BB5812A86D7BA008DC2A7 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		430BB5842A86D941008DC2A7 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		430BB5822A86D7BA008DC2A7 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 430BB5812A86D7BA008DC2A7 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		430BB5852A86D941008DC2A7 /* SFSafeSymbols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 430BB5842A86D941008DC2A7 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			productName = SFSafeSymbols;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 434B59D82A8478D600DD79D2 /* Project object */;
+}
