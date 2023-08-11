@@ -14,8 +14,19 @@ class AddTransactionViewModel: ObservableObject {
         let prefix = payee == nil ? "Choose " : ""
         return prefix + transactionType.payeePlaceholder
     }
+    var categoryPlaceholder: String {
+        if !requiredToSelectCategory {
+            return "Category not Needed"
+        }
+        let prefix = category == nil ? "Choose " : ""
+        return prefix + "Category"
+    }
+    
+    @Published var requiredToSelectCategory: Bool = false // this will base on the account or payee selected (?)
+    
     @Published var amount: String = "0.00"
     @Published var payee: String?
+    @Published var category: String?
 }
 
 enum TransactionType: String, CaseIterable {

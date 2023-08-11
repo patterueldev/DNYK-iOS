@@ -9,35 +9,18 @@ import SwiftUI
 
 typealias OptionsLoader = () async -> [String]
 
-private enum Field {
-    case transactionTypeField
-    case amountField
-    case payeeField
-}
 struct AddTransactionView: View {
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: AddTransactionViewModel
-    
-    @State private var fields: [Field] = [
-        .transactionTypeField,
-        .amountField,
-        .payeeField
-    ]
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack(alignment: .leading) {
-                    ForEach(fields, id: \.self) { field in
-                        switch field {
-                        case .transactionTypeField:
-                            transactionTypeSegment()
-                        case .amountField:
-                            amountField()
-                        case .payeeField:
-                            payeeField()
-                        }
-                    }
+                    transactionTypeSegment()
+                    amountField()
+                    payeeField()
+                    categoryField()
                 }.padding(10)
             }
             .overlay(content: floatingButtonContainer)
@@ -77,8 +60,6 @@ struct AddTransactionView: View {
     }
     
     private func payeeField() -> some View {
-        // just a selection field that displays the text
-        // check if payee is nil, if not nil, display value and placeholder (tiny)
         HStack {
             VStack(alignment: .leading){
                 Text(viewModel.payeePlaceholder)
@@ -98,6 +79,32 @@ struct AddTransactionView: View {
         .background(Color.white.opacity(0.7))
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }
+    
+    private func categoryField() -> some View {
+        // just a selection field that displays the text
+        // check if category is nil, if not nil, display value and placeholder (tiny)
+        HStack {
+            VStack(alignment: .leading){
+                Text(viewModel.categoryPlaceholder)
+                    .foregroundStyle(.gray)
+                    .font(.system(size: 18))
+                if (viewModel.category != nil) {
+                    Text(viewModel.category!)
+                }
+            }
+            Spacer()
+            if (viewModel.requiredToSelectCategory) {
+                Image(systemName: "chevron.right")
+                    .foregroundColor(.gray)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity, minHeight: 69, alignment: .center)
+        .background(Color.white.opacity(0.7))
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+    
     
     func floatingButtonContainer() -> some View {
         VStack {
@@ -124,16 +131,6 @@ struct AddTransactionView: View {
         }
     }
 }
-
-//private enum Field {
-//    case segment(options: OptionsLoader, selectedIndex: Int)
-//    case amount(currency: String, amount: Double)
-//    case dropdown(label: String, options: OptionsLoader, selectedIndex: Int?)
-//    case date(label: String, date: Date?)
-//    
-//    case toggle(label: String)
-//    case text(label: String)
-//}
 
 private struct ModalPreview : View {
     @State var showsAddTransaction = true
