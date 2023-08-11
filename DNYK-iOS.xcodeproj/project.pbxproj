@@ -95,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		430BB5872A86FB18008DC2A7 /* Add Transaction */ = {
+			isa = PBXGroup;
+			children = (
+				434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */,
+				43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */,
+			);
+			path = "Add Transaction";
+			sourceTree = "<group>";
+		};
+		430BB5882A86FB20008DC2A7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				430BB5872A86FB18008DC2A7 /* Add Transaction */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		434B59D72A8478D600DD79D2 = {
 			isa = PBXGroup;
 			children = (
@@ -118,14 +135,13 @@
 		434B59E22A8478D600DD79D2 /* DNYK-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				430BB5882A86FB20008DC2A7 /* Scenes */,
 				43899D0B2A85E53900E8B72A /* Extensions */,
 				437581122A85822500E59FB5 /* Custom Views */,
 				434B5A0E2A847A6D00DD79D2 /* Service */,
 				434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */,
 				437581102A85820A00E59FB5 /* BudgetView.swift */,
 				434B5A192A84ADF700DD79D2 /* LandingView.swift */,
-				434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */,
-				43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */,
 				434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */,
 				434B59E72A8478D900DD79D2 /* Assets.xcassets */,
 				434B59E92A8478D900DD79D2 /* Preview Content */,
