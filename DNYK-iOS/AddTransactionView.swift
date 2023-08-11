@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SwiftDate
+import SFSafeSymbols
 
 typealias OptionsLoader = () async -> [String]
 
@@ -24,6 +25,12 @@ struct AddTransactionView: View {
                     categoryField()
                     accountField()
                     dateField()
+                    clearedField()
+                    flagField()
+                    memoField()
+                    repeatField()
+                    // add a fixed space to push the content up
+                    Spacer(minLength: 69)
                 }.padding(10)
             }
             .overlay(content: floatingButtonContainer)
@@ -64,12 +71,16 @@ struct AddTransactionView: View {
     
     private func dropdownField(
         action: @escaping () -> Void,
+        iconSymbol: SFSymbol,
         placeholder: String,
         value: String?,
         displaysChevron: Bool
     ) -> some View {
         Button(action: action) {
             HStack {
+                Image(systemSymbol: iconSymbol)
+                    .foregroundStyle(value != nil ? .blue : .gray)
+                    .padding(.trailing, 10)
                 VStack(alignment: .leading){
                     Text(placeholder)
                         .foregroundStyle(.gray)
@@ -81,7 +92,7 @@ struct AddTransactionView: View {
                 }
                 Spacer()
                 if (displaysChevron) {
-                    Image(systemName: "chevron.right") // for test
+                    Image(systemSymbol: .chevronDown) // for test
                         .foregroundColor(.gray)
                 }
             }
@@ -94,20 +105,102 @@ struct AddTransactionView: View {
     }
     
     private func payeeField() -> some View {
-        self.dropdownField(action: {}, placeholder: viewModel.payeePlaceholder, value: viewModel.payee, displaysChevron: true)
+        self.dropdownField(
+            action: {},
+            iconSymbol: .personFill,
+            placeholder: viewModel.payeePlaceholder,
+            value: viewModel.payee,
+            displaysChevron: true
+        )
     }
     
     private func categoryField() -> some View {
-        self.dropdownField(action: {}, placeholder: viewModel.categoryPlaceholder, value: viewModel.category, displaysChevron: viewModel.requiredToSelectCategory)
+        self.dropdownField(
+            action: {},
+            iconSymbol: .squareGrid2x2,
+            placeholder: viewModel.categoryPlaceholder,
+            value: viewModel.category,
+            displaysChevron: viewModel.requiredToSelectCategory)
     }
     
     private func accountField() -> some View {
-        self.dropdownField(action: {}, placeholder: viewModel.accountPlaceholder, value: viewModel.account, displaysChevron: true)
+        self.dropdownField(
+            action: {},
+            iconSymbol: .creditcardFill,
+            placeholder: viewModel.accountPlaceholder,
+            value: viewModel.account,
+            displaysChevron: true
+        )
     }
     
     private func dateField() -> some View {
         let transactionDate = viewModel.transactionDate.toString(.custom("MMMM dd, yyyy"))
-        return self.dropdownField(action: {}, placeholder: "Date", value: transactionDate, displaysChevron: false)
+        return self.dropdownField(
+            action: {},
+            iconSymbol: .calendar,
+            placeholder: "Date",
+            value: transactionDate,
+            displaysChevron: false
+        )
+    }
+    
+    private func clearedField() -> some View {
+        HStack {
+            Image(systemSymbol: .clearFill)
+                .foregroundStyle(viewModel.cleared ? .green : .gray)
+                .padding(.trailing, 10)
+            VStack(alignment: .leading){
+                Text("Cleared")
+                    .foregroundStyle(.gray)
+                    .font(.system(size: 18))
+            }
+            Spacer()
+            // UISwitch SwiftUI counterpart
+            Toggle("", isOn: $viewModel.cleared)
+                .labelsHidden()
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity, minHeight: 69, alignment: .center)
+        .background(Color.white.opacity(0.7))
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+    
+    private func flagField() -> some View {
+        self.dropdownField(
+            action: {},
+            iconSymbol: .flagFill,
+            placeholder: "Flag",
+            value: viewModel.flag,
+            displaysChevron: false
+        )
+    }
+    
+    private func memoField() -> some View {
+        HStack {
+            Image(systemSymbol: .note)
+                .foregroundStyle(viewModel.memo != "" ? .blue : .gray)
+                .padding(.trailing, 10)
+            VStack(alignment: .leading){
+                TextField("Enter a memo...", text: $viewModel.memo)
+                    .font(.system(size: 18))
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .frame(maxWidth: .infinity, minHeight: 69, alignment: .center)
+        .background(Color.white.opacity(0.7))
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+    }
+    
+    private func repeatField() -> some View {
+        self.dropdownField(
+            action: {},
+            iconSymbol: .repeat,
+            placeholder: "Repeat",
+            value: viewModel.repeatFrequency,
+            displaysChevron: true
+        )
     }
     
     func floatingButtonContainer() -> some View {
@@ -119,7 +212,7 @@ struct AddTransactionView: View {
                     self.presentationMode.wrappedValue.dismiss()
                 }, label: {
                     HStack {
-                        Image(systemName: "checkmark.circle.fill")
+                        Image(systemSymbol: .checkmarkCircleFill)
                             .resizable()
                             .frame(width: 20, height: 20)
                         Text("Save")

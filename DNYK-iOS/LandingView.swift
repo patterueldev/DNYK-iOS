@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct LandingView: View {
     var body: some View {
@@ -13,7 +14,7 @@ struct LandingView: View {
             // First Tab
             BudgetView()
                 .tabItem {
-                    Image(systemName: "dollarsign.square")
+                    Image(systemSymbol: .dollarsignSquareFill)
                     Text("Budget")
                 }
             

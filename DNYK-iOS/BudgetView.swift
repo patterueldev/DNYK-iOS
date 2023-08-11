@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SFSafeSymbols
 
 struct BudgetView: View {
     @State var showsAddTransaction = false
@@ -23,7 +24,7 @@ struct BudgetView: View {
                     Button(action: {
                         showsAddTransaction = true
                     }, label: {
-                        Image(systemName: "plus.circle.fill")
+                        Image(systemSymbol: .plusCircleFill)
                             .resizable()
                             .frame(width: 50, height: 50)
                             .foregroundColor(.blue)

@@ -16,6 +16,10 @@ class AddTransactionViewModel: ObservableObject {
     @Published var category: String?
     @Published var account: String?
     @Published var transactionDate: Date = Date()
+    @Published var cleared: Bool = true
+    @Published var flag: String = "None"
+    @Published var memo: String = ""
+    @Published var repeatFrequency: String = "Never"
     
     var payeePlaceholder: String {
         let prefix = payee == nil ? "Choose " : ""

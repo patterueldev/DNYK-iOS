@@ -24,7 +24,6 @@
 		434B5A1C2A84B6C600DD79D2 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */; };
 		434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */; };
 		437581112A85820A00E59FB5 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581102A85820A00E59FB5 /* BudgetView.swift */; };
-		437581142A85823500E59FB5 /* FloatingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581132A85823500E59FB5 /* FloatingButtonView.swift */; };
 		43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43899D0C2A85E54400E8B72A /* ColorExtension.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		437581102A85820A00E59FB5 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
-		437581132A85823500E59FB5 /* FloatingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButtonView.swift; sourceTree = "<group>"; };
 		43899D0C2A85E54400E8B72A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -183,7 +181,6 @@
 		437581122A85822500E59FB5 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				437581132A85823500E59FB5 /* FloatingButtonView.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -340,7 +337,6 @@
 				434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */,
 				43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */,
 				434B5A162A847CEA00DD79D2 /* AddTransactionDataSource.swift in Sources */,
-				437581142A85823500E59FB5 /* FloatingButtonView.swift in Sources */,
 				434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */,
 				434B5A1C2A84B6C600DD79D2 /* LandingViewModel.swift in Sources */,
 				43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */,
