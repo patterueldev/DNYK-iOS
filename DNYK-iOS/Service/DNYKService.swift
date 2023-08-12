@@ -8,9 +8,6 @@
 import Foundation
 
 protocol DNYKService {
-    func addTransaction(_ transaction: TransactionObject) async
-}
-
-protocol TransactionObject {
-    
+    func addTransaction(_ transaction: TransactionModel) async throws
+    func getCategories() async throws -> [CategoryModel]
 }

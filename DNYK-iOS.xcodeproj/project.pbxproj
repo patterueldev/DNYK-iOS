@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		430BB5832A86D7BA008DC2A7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 430BB5822A86D7BA008DC2A7 /* SwiftDate */; };
 		430BB5862A86D941008DC2A7 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 430BB5852A86D941008DC2A7 /* SFSafeSymbols */; };
+		430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58A2A86FB69008DC2A7 /* SelectCategoryView.swift */; };
+		430BB58E2A86FC9F008DC2A7 /* ModalPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */; };
+		430BB5902A870A3F008DC2A7 /* SelectCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58F2A870A3F008DC2A7 /* SelectCategoryViewModel.swift */; };
+		430BB5932A8731D6008DC2A7 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5922A8731D6008DC2A7 /* CategoryModel.swift */; };
+		430BB5952A873283008DC2A7 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5942A873283008DC2A7 /* TransactionModel.swift */; };
+		430BB5992A87343A008DC2A7 /* GetCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5982A87343A008DC2A7 /* GetCategoriesUseCase.swift */; };
+		430BB59F2A873AAC008DC2A7 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB59E2A873AAC008DC2A7 /* CategoryRepository.swift */; };
+		430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */; };
+		430BB5A62A873ECD008DC2A7 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */; };
+		430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */; };
 		434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */; };
 		434B59E82A8478D900DD79D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59E72A8478D900DD79D2 /* Assets.xcassets */; };
 		434B59EB2A8478D900DD79D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59EA2A8478D900DD79D2 /* Preview Assets.xcassets */; };
@@ -17,9 +27,7 @@
 		434B5A012A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */; };
 		434B5A102A847A7E00DD79D2 /* DNYKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */; };
 		434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */; };
-		434B5A142A847B7800DD79D2 /* DNYKServiceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A132A847B7800DD79D2 /* DNYKServiceImpl.swift */; };
-		434B5A162A847CEA00DD79D2 /* AddTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A152A847CEA00DD79D2 /* AddTransactionDataSource.swift */; };
-		434B5A182A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A172A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift */; };
+		434B5A142A847B7800DD79D2 /* DefaultDNYKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A132A847B7800DD79D2 /* DefaultDNYKService.swift */; };
 		434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A192A84ADF700DD79D2 /* LandingView.swift */; };
 		434B5A1C2A84B6C600DD79D2 /* LandingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */; };
 		434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */; };
@@ -46,6 +54,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		430BB58A2A86FB69008DC2A7 /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
+		430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPreview.swift; sourceTree = "<group>"; };
+		430BB58F2A870A3F008DC2A7 /* SelectCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewModel.swift; sourceTree = "<group>"; };
+		430BB5922A8731D6008DC2A7 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		430BB5942A873283008DC2A7 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		430BB5982A87343A008DC2A7 /* GetCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesUseCase.swift; sourceTree = "<group>"; };
+		430BB59E2A873AAC008DC2A7 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
+		430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCategoryDataSource.swift; sourceTree = "<group>"; };
+		430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
+		430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTransactionDataSource.swift; sourceTree = "<group>"; };
 		434B59E02A8478D600DD79D2 /* DNYK-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DNYK-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSApp.swift; sourceTree = "<group>"; };
 		434B59E72A8478D900DD79D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,9 +75,7 @@
 		434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYKService.swift; sourceTree = "<group>"; };
 		434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionUseCase.swift; sourceTree = "<group>"; };
-		434B5A132A847B7800DD79D2 /* DNYKServiceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYKServiceImpl.swift; sourceTree = "<group>"; };
-		434B5A152A847CEA00DD79D2 /* AddTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDataSource.swift; sourceTree = "<group>"; };
-		434B5A172A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionDataSourceImpl.swift; sourceTree = "<group>"; };
+		434B5A132A847B7800DD79D2 /* DefaultDNYKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultDNYKService.swift; sourceTree = "<group>"; };
 		434B5A192A84ADF700DD79D2 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		434B5A1B2A84B6C600DD79D2 /* LandingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewModel.swift; sourceTree = "<group>"; };
 		434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
@@ -107,9 +123,79 @@
 		430BB5882A86FB20008DC2A7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				430BB5892A86FB54008DC2A7 /* Select Category */,
 				430BB5872A86FB18008DC2A7 /* Add Transaction */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		430BB5892A86FB54008DC2A7 /* Select Category */ = {
+			isa = PBXGroup;
+			children = (
+				430BB58A2A86FB69008DC2A7 /* SelectCategoryView.swift */,
+				430BB58F2A870A3F008DC2A7 /* SelectCategoryViewModel.swift */,
+			);
+			path = "Select Category";
+			sourceTree = "<group>";
+		};
+		430BB58C2A86FC8E008DC2A7 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		430BB59A2A8736D1008DC2A7 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				430BB59D2A873A9F008DC2A7 /* Repositories */,
+				430BB59C2A873A82008DC2A7 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		430BB59B2A873844008DC2A7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				430BB5A02A873ADA008DC2A7 /* Data Sources */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		430BB59C2A873A82008DC2A7 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				430BB5922A8731D6008DC2A7 /* CategoryModel.swift */,
+				430BB5942A873283008DC2A7 /* TransactionModel.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		430BB59D2A873A9F008DC2A7 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				430BB59E2A873AAC008DC2A7 /* CategoryRepository.swift */,
+				430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		430BB5A02A873ADA008DC2A7 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+				430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */,
+				430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */,
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		430BB5A32A873BAB008DC2A7 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				434B5A0D2A847A6000DD79D2 /* Use Cases */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		434B59D72A8478D600DD79D2 = {
@@ -135,6 +221,7 @@
 		434B59E22A8478D600DD79D2 /* DNYK-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				430BB58C2A86FC8E008DC2A7 /* Core */,
 				430BB5882A86FB20008DC2A7 /* Scenes */,
 				43899D0B2A85E53900E8B72A /* Extensions */,
 				437581122A85822500E59FB5 /* Custom Views */,
@@ -177,6 +264,8 @@
 		434B5A0D2A847A6000DD79D2 /* Use Cases */ = {
 			isa = PBXGroup;
 			children = (
+				430BB5982A87343A008DC2A7 /* GetCategoriesUseCase.swift */,
+				434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */,
 			);
 			path = "Use Cases";
 			sourceTree = "<group>";
@@ -184,12 +273,11 @@
 		434B5A0E2A847A6D00DD79D2 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				434B5A0D2A847A6000DD79D2 /* Use Cases */,
+				430BB5A32A873BAB008DC2A7 /* Application */,
+				430BB59B2A873844008DC2A7 /* Data */,
+				430BB59A2A8736D1008DC2A7 /* Domain */,
 				434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */,
-				434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */,
-				434B5A152A847CEA00DD79D2 /* AddTransactionDataSource.swift */,
-				434B5A172A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift */,
-				434B5A132A847B7800DD79D2 /* DNYKServiceImpl.swift */,
+				434B5A132A847B7800DD79D2 /* DefaultDNYKService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -347,18 +435,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				434B5A142A847B7800DD79D2 /* DNYKServiceImpl.swift in Sources */,
-				434B5A182A847FE700DD79D2 /* AddTransactionDataSourceImpl.swift in Sources */,
+				434B5A142A847B7800DD79D2 /* DefaultDNYKService.swift in Sources */,
+				430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */,
+				430BB59F2A873AAC008DC2A7 /* CategoryRepository.swift in Sources */,
 				434B5A102A847A7E00DD79D2 /* DNYKService.swift in Sources */,
+				430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */,
 				434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */,
+				430BB5992A87343A008DC2A7 /* GetCategoriesUseCase.swift in Sources */,
 				43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */,
-				434B5A162A847CEA00DD79D2 /* AddTransactionDataSource.swift in Sources */,
+				430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */,
+				430BB5932A8731D6008DC2A7 /* CategoryModel.swift in Sources */,
 				434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */,
+				430BB58E2A86FC9F008DC2A7 /* ModalPreview.swift in Sources */,
 				434B5A1C2A84B6C600DD79D2 /* LandingViewModel.swift in Sources */,
 				43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */,
 				434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */,
 				434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */,
+				430BB5A62A873ECD008DC2A7 /* TransactionRepository.swift in Sources */,
 				437581112A85820A00E59FB5 /* BudgetView.swift in Sources */,
+				430BB5952A873283008DC2A7 /* TransactionModel.swift in Sources */,
+				430BB5902A870A3F008DC2A7 /* SelectCategoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
