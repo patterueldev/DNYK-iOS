@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SelectCategoryView: View {
-    @ObservedObject var viewModel: SelectCategoryViewModel = SelectCategoryViewModel()
+    @ObservedObject var viewModel = SelectCategoryViewModel()
     
     var body: some View {
         NavigationStack {
@@ -21,7 +21,25 @@ struct SelectCategoryView: View {
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
                 ScrollView {
-                    
+                    List(viewModel.categories) { category in
+                        Button(action: {
+                            viewModel.selectedCategories.append(category.category)
+                        }) {
+                            HStack {
+                                Text(category.category.name)
+                                Spacer()
+                                if category.isSelected {
+                                    Image(systemSymbol: .checkmarkCircleFill)
+                                        .foregroundColor(.green)
+                                } else {
+                                    Image(systemSymbol: .circle)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                        }
+                    }
+                
+                
                 }
                 
             }
@@ -32,8 +50,12 @@ struct SelectCategoryView: View {
 }
 
 #Preview {
-    ModalPreview {
-        SelectCategoryView()
+    // in this preview, there must be a customized service to provide dummy data
+    let viewModel = SelectCategoryViewModel(categories: [
+        SDCategoryModel(id: "0", name: "Inflow")
+    ])
+    return ModalPreview {
+        SelectCategoryView(viewModel: viewModel)
         .interactiveDismissDisabled()
     }
 }

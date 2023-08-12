@@ -8,11 +8,15 @@
 import Foundation
 
 class DefaultDNYKService: DNYKService {
+    static var shared = DefaultDNYKService()
+    
     lazy var addTransactionDataSource = SDTransactionDataSource()
     lazy var addTransaction = DefaultAddTransactionUseCase(repository: addTransactionDataSource)
     
     lazy var getCategoriesDataSource = SDCategoryDataSource()
     lazy var getCategories = DefaultGetCategoriesUseCase(repository: getCategoriesDataSource)
+    
+    private init() {}
     
     func addTransaction(_ transaction: TransactionModel) async throws{
         try await self.addTransaction.execute(transaction)

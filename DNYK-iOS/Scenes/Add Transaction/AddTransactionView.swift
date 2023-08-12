@@ -13,7 +13,8 @@ typealias OptionsLoader = () async -> [String]
 
 struct AddTransactionView: View {
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel: AddTransactionViewModel
+    @ObservedObject var viewModel = AddTransactionViewModel()
+    
     
     var body: some View {
         NavigationStack {

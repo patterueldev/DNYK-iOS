@@ -224,7 +224,6 @@
 				430BB58C2A86FC8E008DC2A7 /* Core */,
 				430BB5882A86FB20008DC2A7 /* Scenes */,
 				43899D0B2A85E53900E8B72A /* Extensions */,
-				437581122A85822500E59FB5 /* Custom Views */,
 				434B5A0E2A847A6D00DD79D2 /* Service */,
 				434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */,
 				437581102A85820A00E59FB5 /* BudgetView.swift */,
@@ -280,13 +279,6 @@
 				434B5A132A847B7800DD79D2 /* DefaultDNYKService.swift */,
 			);
 			path = Service;
-			sourceTree = "<group>";
-		};
-		437581122A85822500E59FB5 /* Custom Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 		43899D0B2A85E53900E8B72A /* Extensions */ = {
