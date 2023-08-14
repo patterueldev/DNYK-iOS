@@ -12,6 +12,9 @@ struct SDCategoryDataSource: CategoryRepository {
     func getCategories() async throws -> [CategoryModel] {
         // TODO: Implement Fetching of Categories
 //        throw NSError(domain: "Not Implemented", code: 0, userInfo: nil)
+        let seconds: Double = 0.5
+        let nanoseconds = UInt64(seconds * 1_000_000_000)
+        try await Task.sleep(nanoseconds: nanoseconds)
         return [SDCategoryModel(id: "0", name: "Ready to Assign")]
     }
 }

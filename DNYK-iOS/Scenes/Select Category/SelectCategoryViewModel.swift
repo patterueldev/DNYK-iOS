@@ -20,18 +20,23 @@ class SelectCategoryViewModel: ObservableObject {
         }
     }
     
-    let service: DNYKService = DefaultDNYKService.shared
+    let service: DNYKService
     
     @Published var isLoading: Bool = false
     @Published var errorMessages: [ErrorMessage] = []
-    @Published var categories: [CategoryWrapper] = []
+    @Published var categories: [CategoryWrapper] = [] {
+        didSet {
+            print(categories)
+        
+        }
+    }
     @Published var searchText: String = ""
     @Published var isSearchPresented: Bool = true
     
     @Published var selectedCategories: [CategoryModel] = []
     
-    init(categories: [CategoryModel] = []){
-        self.categories = categories.map({ CategoryWrapper(category: $0, isSelected: false) })
+    init(service: DNYKService = DefaultDNYKService.shared) {
+        self.service = service
         fetchCategories()
     }
     
@@ -42,6 +47,7 @@ class SelectCategoryViewModel: ObservableObject {
                 self.categories = try await service.getCategories().map({
                     CategoryWrapper(category: $0, isSelected: selectedCategories.contains(where: { $0.id == $0.id }))
                 })
+                print("Loaded: \(self.categories)")
             } catch {
                 let identifier = UUID().uuidString
                 let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)
