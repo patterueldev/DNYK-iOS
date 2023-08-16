@@ -8,6 +8,7 @@
 import Foundation
 
 protocol CategoryModel {
-    var id: String { get }
+    var identifier: String { get }
     var name: String { get }
+    var groupId: String { get }
 }

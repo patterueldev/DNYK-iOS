@@ -33,6 +33,8 @@
 		434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */; };
 		437581112A85820A00E59FB5 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581102A85820A00E59FB5 /* BudgetView.swift */; };
 		43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43899D0C2A85E54400E8B72A /* ColorExtension.swift */; };
+		439F48052A8C74390080EECD /* CategoryGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F48042A8C74390080EECD /* CategoryGroupModel.swift */; };
+		439F48072A8C772A0080EECD /* GroupedCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F48062A8C772A0080EECD /* GroupedCategoriesModel.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +83,8 @@
 		434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		437581102A85820A00E59FB5 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		43899D0C2A85E54400E8B72A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		439F48042A8C74390080EECD /* CategoryGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGroupModel.swift; sourceTree = "<group>"; };
+		439F48062A8C772A0080EECD /* GroupedCategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedCategoriesModel.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,7 +153,7 @@
 		430BB59A2A8736D1008DC2A7 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				430BB59D2A873A9F008DC2A7 /* Repositories */,
+				434B5A0D2A847A6000DD79D2 /* Use Cases */,
 				430BB59C2A873A82008DC2A7 /* Entities */,
 			);
 			path = Domain;
@@ -158,6 +162,7 @@
 		430BB59B2A873844008DC2A7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				430BB59D2A873A9F008DC2A7 /* Repositories */,
 				430BB5A02A873ADA008DC2A7 /* Data Sources */,
 			);
 			path = Data;
@@ -167,7 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				430BB5922A8731D6008DC2A7 /* CategoryModel.swift */,
+				439F48042A8C74390080EECD /* CategoryGroupModel.swift */,
 				430BB5942A873283008DC2A7 /* TransactionModel.swift */,
+				439F48062A8C772A0080EECD /* GroupedCategoriesModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -193,7 +200,6 @@
 		430BB5A32A873BAB008DC2A7 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				434B5A0D2A847A6000DD79D2 /* Use Cases */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -431,10 +437,12 @@
 				430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */,
 				430BB59F2A873AAC008DC2A7 /* CategoryRepository.swift in Sources */,
 				434B5A102A847A7E00DD79D2 /* DNYKService.swift in Sources */,
+				439F48072A8C772A0080EECD /* GroupedCategoriesModel.swift in Sources */,
 				430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */,
 				434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */,
 				430BB5992A87343A008DC2A7 /* GetCategoriesUseCase.swift in Sources */,
 				43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */,
+				439F48052A8C74390080EECD /* CategoryGroupModel.swift in Sources */,
 				430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */,
 				430BB5932A8731D6008DC2A7 /* CategoryModel.swift in Sources */,
 				434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */,

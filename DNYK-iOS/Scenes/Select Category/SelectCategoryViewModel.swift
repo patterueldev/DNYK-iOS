@@ -8,13 +8,29 @@
 import SwiftUI
 
 class SelectCategoryViewModel: ObservableObject {
-    struct CategoryWrapper: Identifiable {
+    struct GroupedCategoriesWrapper: Identifiable {
         let id: String
+        let group: GroupedCategoriesModel
+        let categories: [CategoryWrapper]
+        let isOpened: Bool
+        
+        init(group: GroupedCategoriesModel, isOpened: Bool) {
+            self.id = group.identifier
+            self.group = group
+            self.categories = group.categories.map { category in
+                CategoryWrapper(category: category, isSelected: false)
+            }
+            self.isOpened = isOpened
+        }
+    }
+    
+    struct CategoryWrapper: Identifiable {
+        var id: String
         let category: any CategoryModel
         let isSelected: Bool
         
         init(category: CategoryModel, isSelected: Bool) {
-            self.id = category.id
+            self.id = category.identifier
             self.category = category
             self.isSelected = isSelected
         }
@@ -24,9 +40,9 @@ class SelectCategoryViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
     @Published var errorMessages: [ErrorMessage] = []
-    @Published var categories: [CategoryWrapper] = [] {
+    @Published var categoryGroups: [GroupedCategoriesWrapper] = [] {
         didSet {
-            print(categories)
+            print(categoryGroups)
         
         }
     }
@@ -44,10 +60,10 @@ class SelectCategoryViewModel: ObservableObject {
         Task {
             self.isLoading = true
             do {
-                self.categories = try await service.getCategories().map({
-                    CategoryWrapper(category: $0, isSelected: selectedCategories.contains(where: { $0.id == $0.id }))
+                self.categoryGroups = try await service.getCategories().map({
+                    GroupedCategoriesWrapper(group: $0, isOpened: true)
                 })
-                print("Loaded: \(self.categories)")
+                print("Loaded: \(self.categoryGroups)")
             } catch {
                 let identifier = UUID().uuidString
                 let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)

@@ -9,4 +9,5 @@ import Foundation
 
 protocol CategoryRepository {
     func getCategories() async throws -> [CategoryModel]
+    func getCategoryGroups() async throws -> [CategoryGroupModel]
 }

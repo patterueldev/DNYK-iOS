@@ -21,24 +21,42 @@ struct SelectCategoryView: View {
                         .cornerRadius(8)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
-                    List(viewModel.categories) { category in
-                        Button(action: {
-                            viewModel.selectedCategories.append(category.category)
-                        }) {
+                    List(viewModel.categoryGroups) { categoryGroup in
+                        Section {
                             HStack {
-                                Text(category.category.name)
-                                    .foregroundColor(.black)
+                                Text(categoryGroup.group.name)
+                                    .font(.headline)
+                                    .padding(.vertical, 8)
                                 Spacer()
-                                if category.isSelected {
-                                    Image(systemSymbol: .checkmarkCircleFill)
-                                        .foregroundColor(.green)
+                                if categoryGroup.isOpened {
+                                    Image(systemSymbol: .chevronDown)
+                                        .foregroundColor(.black)
                                 } else {
-                                    Image(systemSymbol: .circle)
-                                        .foregroundColor(.gray)
+                                    Image(systemSymbol: .chevronUp)
+                                        .foregroundColor(.black)
+                                }
+                            }
+                            ForEach(categoryGroup.categories) { category in
+                                Button(action: {
+                                    viewModel.selectedCategories.append(category.category)
+                                }) {
+                                    HStack {
+                                        Text(category.category.name)
+                                            .foregroundColor(.black)
+                                            .padding(.vertical, 6)
+                                        Spacer()
+                                        if category.isSelected {
+                                            Image(systemSymbol: .checkmarkCircleFill)
+                                                .foregroundColor(.green)
+                                        } else {
+                                            Image(systemSymbol: .circle)
+                                                .foregroundColor(.gray)
+                                        }
+                                    }
                                 }
                             }
                         }
-                    }
+                    }.background(Color.clear)
                 }
                 .navigationBarTitle("Category", displayMode: .inline)
                 .background(.white)
