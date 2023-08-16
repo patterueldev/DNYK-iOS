@@ -14,8 +14,6 @@ struct SDCategoryDataSource: CategoryRepository {
         let nanoseconds = UInt64(seconds * 1_000_000_000)
         try await Task.sleep(nanoseconds: nanoseconds)
         return [
-            SDCategoryModel(identifier: "0", name: "Ready to Assign", groupId: "inflow"),
-            
             SDCategoryModel(identifier: "1", name: "Bills", groupId: "bills"),
             SDCategoryModel(identifier: "2", name: "Car", groupId: "bills"),
             SDCategoryModel(identifier: "3", name: "Clothing", groupId: "bills"),
@@ -39,6 +37,8 @@ struct SDCategoryModel: CategoryModel {
     var identifier: String
     var name: String
     var groupId: String
+    
+    static let readyToAssign = SDCategoryModel(identifier: "ready-to-assign", name: "Ready to Assign", groupId: "inflow")
 }
 
 struct SDCategoryGroupModel: CategoryGroupModel {
