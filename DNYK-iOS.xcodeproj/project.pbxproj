@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		430BB5832A86D7BA008DC2A7 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 430BB5822A86D7BA008DC2A7 /* SwiftDate */; };
-		430BB5862A86D941008DC2A7 /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 430BB5852A86D941008DC2A7 /* SFSafeSymbols */; };
 		430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58A2A86FB69008DC2A7 /* SelectCategoryView.swift */; };
 		430BB58E2A86FC9F008DC2A7 /* ModalPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */; };
 		430BB5902A870A3F008DC2A7 /* SelectCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58F2A870A3F008DC2A7 /* SelectCategoryViewModel.swift */; };
-		430BB5932A8731D6008DC2A7 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5922A8731D6008DC2A7 /* CategoryModel.swift */; };
-		430BB5952A873283008DC2A7 /* TransactionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5942A873283008DC2A7 /* TransactionModel.swift */; };
+		430BB5932A8731D6008DC2A7 /* ICategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5922A8731D6008DC2A7 /* ICategory.swift */; };
+		430BB5952A873283008DC2A7 /* ITransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5942A873283008DC2A7 /* ITransaction.swift */; };
 		430BB5992A87343A008DC2A7 /* GetCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5982A87343A008DC2A7 /* GetCategoriesUseCase.swift */; };
 		430BB59F2A873AAC008DC2A7 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB59E2A873AAC008DC2A7 /* CategoryRepository.swift */; };
 		430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */; };
@@ -40,9 +38,13 @@
 		434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */; };
 		437581112A85820A00E59FB5 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581102A85820A00E59FB5 /* BudgetView.swift */; };
 		43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43899D0C2A85E54400E8B72A /* ColorExtension.swift */; };
-		439F48052A8C74390080EECD /* CategoryGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F48042A8C74390080EECD /* CategoryGroupModel.swift */; };
-		439F48072A8C772A0080EECD /* GroupedCategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F48062A8C772A0080EECD /* GroupedCategoriesModel.swift */; };
+		439F48052A8C74390080EECD /* ICategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F48042A8C74390080EECD /* ICategoryGroup.swift */; };
+		439F48072A8C772A0080EECD /* IGroupedCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439F48062A8C772A0080EECD /* IGroupedCategories.swift */; };
+		43AA9CC22A8DE7F800A23FBF /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC12A8DE7F800A23FBF /* SwiftDate */; };
+		43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */; };
+		43AA9CC72A8DEC4700A23FBF /* ICategoryGroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CC62A8DEC4700A23FBF /* ICategoryGroupTest.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
+		43B426172A8DC47E00C0FBB6 /* ICategoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +68,8 @@
 		430BB58A2A86FB69008DC2A7 /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
 		430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPreview.swift; sourceTree = "<group>"; };
 		430BB58F2A870A3F008DC2A7 /* SelectCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewModel.swift; sourceTree = "<group>"; };
-		430BB5922A8731D6008DC2A7 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
-		430BB5942A873283008DC2A7 /* TransactionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionModel.swift; sourceTree = "<group>"; };
+		430BB5922A8731D6008DC2A7 /* ICategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategory.swift; sourceTree = "<group>"; };
+		430BB5942A873283008DC2A7 /* ITransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITransaction.swift; sourceTree = "<group>"; };
 		430BB5982A87343A008DC2A7 /* GetCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoriesUseCase.swift; sourceTree = "<group>"; };
 		430BB59E2A873AAC008DC2A7 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCategoryDataSource.swift; sourceTree = "<group>"; };
@@ -97,9 +99,11 @@
 		434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		437581102A85820A00E59FB5 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		43899D0C2A85E54400E8B72A /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
-		439F48042A8C74390080EECD /* CategoryGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryGroupModel.swift; sourceTree = "<group>"; };
-		439F48062A8C772A0080EECD /* GroupedCategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedCategoriesModel.swift; sourceTree = "<group>"; };
+		439F48042A8C74390080EECD /* ICategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryGroup.swift; sourceTree = "<group>"; };
+		439F48062A8C772A0080EECD /* IGroupedCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGroupedCategories.swift; sourceTree = "<group>"; };
+		43AA9CC62A8DEC4700A23FBF /* ICategoryGroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryGroupTest.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
+		43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +111,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				430BB5862A86D941008DC2A7 /* SFSafeSymbols in Frameworks */,
-				430BB5832A86D7BA008DC2A7 /* SwiftDate in Frameworks */,
+				43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */,
+				43AA9CC22A8DE7F800A23FBF /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,10 +192,10 @@
 			children = (
 				431804012A8DA11F0012C64C /* PreviewEntities */,
 				431803FC2A8D95310012C64C /* SwiftDataEntities */,
-				430BB5922A8731D6008DC2A7 /* CategoryModel.swift */,
-				439F48042A8C74390080EECD /* CategoryGroupModel.swift */,
-				430BB5942A873283008DC2A7 /* TransactionModel.swift */,
-				439F48062A8C772A0080EECD /* GroupedCategoriesModel.swift */,
+				430BB5922A8731D6008DC2A7 /* ICategory.swift */,
+				439F48042A8C74390080EECD /* ICategoryGroup.swift */,
+				430BB5942A873283008DC2A7 /* ITransaction.swift */,
+				439F48062A8C772A0080EECD /* IGroupedCategories.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -296,6 +300,7 @@
 		434B59F32A8478D900DD79D2 /* DNYK-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				43B426132A8DC39D00C0FBB6 /* Service */,
 				434B59F42A8478D900DD79D2 /* DNYK_iOSTests.swift */,
 			);
 			path = "DNYK-iOSTests";
@@ -340,6 +345,31 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		43B426132A8DC39D00C0FBB6 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				43B426142A8DC3A500C0FBB6 /* Domain */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		43B426142A8DC3A500C0FBB6 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				43B426152A8DC3AF00C0FBB6 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		43B426152A8DC3AF00C0FBB6 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */,
+				43AA9CC62A8DEC4700A23FBF /* ICategoryGroupTest.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,8 +387,8 @@
 			);
 			name = "DNYK-iOS";
 			packageProductDependencies = (
-				430BB5822A86D7BA008DC2A7 /* SwiftDate */,
-				430BB5852A86D941008DC2A7 /* SFSafeSymbols */,
+				43AA9CC12A8DE7F800A23FBF /* SwiftDate */,
+				43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */,
 			);
 			productName = "DNYK-iOS";
 			productReference = 434B59E02A8478D600DD79D2 /* DNYK-iOS.app */;
@@ -378,6 +408,8 @@
 				434B59F22A8478D900DD79D2 /* PBXTargetDependency */,
 			);
 			name = "DNYK-iOSTests";
+			packageProductDependencies = (
+			);
 			productName = "DNYK-iOSTests";
 			productReference = 434B59F02A8478D900DD79D2 /* DNYK-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -433,8 +465,8 @@
 			);
 			mainGroup = 434B59D72A8478D600DD79D2;
 			packageReferences = (
-				430BB5812A86D7BA008DC2A7 /* XCRemoteSwiftPackageReference "SwiftDate" */,
-				430BB5842A86D941008DC2A7 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
+				43AA9CC02A8DE7F800A23FBF /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				43AA9CC32A8DE81900A23FBF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 			);
 			productRefGroup = 434B59E12A8478D600DD79D2 /* Products */;
 			projectDirPath = "";
@@ -483,17 +515,17 @@
 				430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */,
 				430BB59F2A873AAC008DC2A7 /* CategoryRepository.swift in Sources */,
 				434B5A102A847A7E00DD79D2 /* DNYKService.swift in Sources */,
-				439F48072A8C772A0080EECD /* GroupedCategoriesModel.swift in Sources */,
+				439F48072A8C772A0080EECD /* IGroupedCategories.swift in Sources */,
 				430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */,
 				434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */,
 				431804092A8DA2600012C64C /* PreviewDNYKService.swift in Sources */,
 				4318040C2A8DBD680012C64C /* NewCategoryView.swift in Sources */,
 				430BB5992A87343A008DC2A7 /* GetCategoriesUseCase.swift in Sources */,
 				43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */,
-				439F48052A8C74390080EECD /* CategoryGroupModel.swift in Sources */,
+				439F48052A8C74390080EECD /* ICategoryGroup.swift in Sources */,
 				431803FE2A8D953D0012C64C /* SDCategoryModel.swift in Sources */,
 				430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */,
-				430BB5932A8731D6008DC2A7 /* CategoryModel.swift in Sources */,
+				430BB5932A8731D6008DC2A7 /* ICategory.swift in Sources */,
 				431804072A8DA20E0012C64C /* PreviewCategoryDataSource.swift in Sources */,
 				434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */,
 				430BB58E2A86FC9F008DC2A7 /* ModalPreview.swift in Sources */,
@@ -505,7 +537,7 @@
 				431804032A8DA1310012C64C /* PreviewCategoryObject.swift in Sources */,
 				430BB5A62A873ECD008DC2A7 /* TransactionRepository.swift in Sources */,
 				437581112A85820A00E59FB5 /* BudgetView.swift in Sources */,
-				430BB5952A873283008DC2A7 /* TransactionModel.swift in Sources */,
+				430BB5952A873283008DC2A7 /* ITransaction.swift in Sources */,
 				430BB5902A870A3F008DC2A7 /* SelectCategoryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +547,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				434B59F52A8478D900DD79D2 /* DNYK_iOSTests.swift in Sources */,
+				43B426172A8DC47E00C0FBB6 /* ICategoryTest.swift in Sources */,
+				43AA9CC72A8DEC4700A23FBF /* ICategoryGroupTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,12 +701,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DNYK-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 2ZL598ZSDC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -696,12 +732,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DNYK-iOS/Preview Content\"";
 				DEVELOPMENT_TEAM = 2ZL598ZSDC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -838,7 +876,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		430BB5812A86D7BA008DC2A7 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+		43AA9CC02A8DE7F800A23FBF /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftDate";
 			requirement = {
@@ -846,7 +884,7 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		430BB5842A86D941008DC2A7 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
+		43AA9CC32A8DE81900A23FBF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
 			requirement = {
@@ -857,14 +895,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		430BB5822A86D7BA008DC2A7 /* SwiftDate */ = {
+		43AA9CC12A8DE7F800A23FBF /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 430BB5812A86D7BA008DC2A7 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			package = 43AA9CC02A8DE7F800A23FBF /* XCRemoteSwiftPackageReference "SwiftDate" */;
 			productName = SwiftDate;
 		};
-		430BB5852A86D941008DC2A7 /* SFSafeSymbols */ = {
+		43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 430BB5842A86D941008DC2A7 /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
+			package = 43AA9CC32A8DE81900A23FBF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
 			productName = SFSafeSymbols;
 		};
 /* End XCSwiftPackageProductDependency section */

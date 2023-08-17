@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol TransactionModel {
-    var category: CategoryModel { get }
+protocol ITransaction {
+    var category: ICategory { get }
 }

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol TransactionRepository {
-    func addTransaction(_ transaction: TransactionModel) async throws
+    func addTransaction(_ transaction: ITransaction) async throws
 }

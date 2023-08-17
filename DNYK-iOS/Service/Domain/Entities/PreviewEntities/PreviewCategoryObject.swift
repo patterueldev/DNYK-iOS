@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PreviewCategoryObject: CategoryModel {
+struct PreviewCategoryObject: ICategory {
     var identifier: String
     var name: String
     var groupId: String

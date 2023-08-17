@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AddTransactionUseCase {
-    func execute(_ parameters: TransactionModel) async throws
+    func execute(_ parameters: ITransaction) async throws
 }
 
 struct DefaultAddTransactionUseCase {
@@ -18,7 +18,7 @@ struct DefaultAddTransactionUseCase {
         self.repository = repository
     }
     
-    func execute(_ parameters: TransactionModel) async throws {
+    func execute(_ parameters: ITransaction) async throws {
         try await repository.addTransaction(parameters)
     }
 }

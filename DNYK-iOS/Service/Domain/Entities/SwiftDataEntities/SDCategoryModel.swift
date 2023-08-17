@@ -9,7 +9,7 @@ import Foundation
 import SwiftData
 
 @Model
-class SDCategoryModel: CategoryModel {
+class SDCategoryModel: ICategory {
     @Attribute(.unique) var identifier: String
     var name: String
     var groupId: String

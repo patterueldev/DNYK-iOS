@@ -8,6 +8,6 @@
 import Foundation
 
 protocol CategoryRepository {
-    func getCategories() async throws -> [CategoryModel]
-    func getCategoryGroups() async throws -> [CategoryGroupModel]
+    func getCategories() async throws -> [ICategory]
+    func getCategoryGroups() async throws -> [ICategoryGroup]
 }

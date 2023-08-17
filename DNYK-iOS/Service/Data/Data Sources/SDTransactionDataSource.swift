@@ -8,7 +8,7 @@
 import Foundation
 
 class SDTransactionDataSource: TransactionRepository {
-    func addTransaction(_ transaction: TransactionModel) async throws {
+    func addTransaction(_ transaction: ITransaction) async throws {
         // TODO:
         throw NSError(domain: "SDTransactionDataSource", code: 1, userInfo: nil)
     }

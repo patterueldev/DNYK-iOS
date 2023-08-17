@@ -24,11 +24,11 @@ class PreviewDNYKService: DNYKService {
         
     }
     
-    func addTransaction(_ transaction: TransactionModel) async throws{
+    func addTransaction(_ transaction: ITransaction) async throws{
         try await self.addTransaction.execute(transaction)
     }
     
-    func getCategories() async throws -> [GroupedCategoriesModel] {
+    func getCategories() async throws -> [IGroupedCategories] {
         try await getCategories.execute()
     }
 

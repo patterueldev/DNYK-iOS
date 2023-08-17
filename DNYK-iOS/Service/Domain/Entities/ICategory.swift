@@ -7,13 +7,13 @@
 
 import Foundation
 
-protocol CategoryModel {
+protocol ICategory {
     var identifier: String { get }
     var name: String { get }
     var groupId: String { get }
 }
 
-struct CategoryObject: CategoryModel {
+struct CategoryObject: ICategory {
     let identifier: String
     let name: String
     let groupId: String

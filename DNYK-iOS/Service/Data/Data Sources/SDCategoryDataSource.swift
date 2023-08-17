@@ -17,7 +17,7 @@ struct SDCategoryDataSource: CategoryRepository {
         self.context = ModelContext(container)
     }
     
-    func getCategories() async throws -> [CategoryModel] {
+    func getCategories() async throws -> [ICategory] {
         let fetchDescriptor = FetchDescriptor<SDCategoryModel>(predicate: .true)
         var categories = try context.fetch(fetchDescriptor)
         
@@ -32,7 +32,7 @@ struct SDCategoryDataSource: CategoryRepository {
         return categories
     }
     
-    func getCategoryGroups() async throws -> [CategoryGroupModel] {
+    func getCategoryGroups() async throws -> [ICategoryGroup] {
         return [
             SDCategoryGroupModel(identifier: "bills", name: "Bills"),
             SDCategoryGroupModel(identifier: "leasure", name: "Leasure"),

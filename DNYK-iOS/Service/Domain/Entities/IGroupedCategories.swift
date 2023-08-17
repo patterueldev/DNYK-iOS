@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct GroupedCategoriesModel {
-    let group: CategoryGroupModel
-    let categories: [CategoryModel]
+struct IGroupedCategories {
+    let group: ICategoryGroup
+    let categories: [ICategory]
 }
 
-extension GroupedCategoriesModel {
+extension IGroupedCategories {
     var identifier: String {
         return group.identifier
     }

@@ -69,11 +69,11 @@ class SelectCategoryViewModel: ObservableObject {
     
     struct GroupedCategoriesWrapper: Identifiable {
         let id: String
-        let group: GroupedCategoriesModel
+        let group: IGroupedCategories
         let categories: [CategoryWrapper]
         var isOpened: Bool
         
-        init(group: GroupedCategoriesModel, isOpened: Bool) {
+        init(group: IGroupedCategories, isOpened: Bool) {
             self.id = group.identifier
             self.group = group
             self.categories = group.categories.map { category in
@@ -85,10 +85,10 @@ class SelectCategoryViewModel: ObservableObject {
     
     struct CategoryWrapper: Identifiable {
         let id: String
-        let category: any CategoryModel
+        let category: any ICategory
         var isSelected: Bool
         
-        init(category: CategoryModel, isSelected: Bool) {
+        init(category: ICategory, isSelected: Bool) {
             self.id = category.identifier
             self.category = category
             self.isSelected = isSelected
