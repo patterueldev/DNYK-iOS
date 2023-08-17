@@ -84,8 +84,8 @@ struct AddTransactionView: View {
                 Text(placeholder)
                     .foregroundStyle(.gray)
                     .font(.system(size: 18))
-                if (value != nil) {
-                    Text(value!)
+                if let value {
+                    Text(value)
                         .foregroundStyle(.black)
                 }
             }

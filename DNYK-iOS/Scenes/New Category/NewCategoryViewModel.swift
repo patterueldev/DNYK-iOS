@@ -12,14 +12,16 @@ class NewCategoryViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
     @Published var errorMessages: [ErrorMessage] = []
-    @Published var categoryGroups: [CategoryGroupWrapper] = []
+    @Published var categoryGroups: [CategoryGroupWrapper] = [.unselected(), .createNew()]
     
     @Published var name: String = ""
-    @Published var group: CategoryGroupWrapper?
+    @Published var selectedGroup: CategoryGroupWrapper = .unselected()
+    @Published var groupName: String = ""
     
     @State var fields: [NewCategoryField] = [
-        .init(id: 0, type: .textField, property: .name, placeholder: "Enter a Category Name..."),
-        .init(id: 1, type: .dropdown, property: .group, placeholder: "Choose Category Group..."),
+        .init(property: .name, placeholder: "Enter a Category Name..."),
+        .init(property: .group, placeholder: "Choose Category Group..."),
+        .init(property: .groupName, placeholder: "Enter a Category Group Name...")
     ]
     
     init(service: DNYKService = defaultDNYKService) {
@@ -32,8 +34,8 @@ class NewCategoryViewModel: ObservableObject {
             self.isLoading = true
             print("Fetching category groups...")
             do {
-                self.categoryGroups = try await service.getCategoryGroups().map {
-                    CategoryGroupWrapper(group: $0)
+                self.categoryGroups = try await [.unselected(), .createNew()] + service.getCategoryGroups().map {
+                    .init(group: $0)
                 }
                 print("Loaded: \(self.categoryGroups)")
             } catch {
@@ -49,12 +51,37 @@ class NewCategoryViewModel: ObservableObject {
         
         let id: String
         let name: String
-        let group: ICategoryGroup
+        let isUnselected: Bool
+        let isCreateNew: Bool
+        let group: ICategoryGroup?
+        
+        init(_ selectionType: GroupSelectionType) {
+            self.isUnselected = selectionType.isUnselected()
+            self.isCreateNew = selectionType.isCreateNew()
+            self.group = selectionType.group()
+            switch selectionType {
+            case .unselected:
+                self.id = "unselected"
+                self.name = "Select a Group..."
+            case .create:
+                self.id = "createnew"
+                self.name = "Create new group"
+            case .group(let group):
+                self.id = group.identifier
+                self.name = group.name
+            }
+        }
+        
+        static func unselected() -> CategoryGroupWrapper {
+            return CategoryGroupWrapper(.unselected)
+        }
+        
+        static func createNew() -> CategoryGroupWrapper {
+            return CategoryGroupWrapper(.create)
+        }
         
         init(group: ICategoryGroup) {
-            self.id = group.identifier
-            self.name = group.name
-            self.group = group
+            self.init(.group(group))
         }
         
         static func == (lhs: NewCategoryViewModel.CategoryGroupWrapper, rhs: NewCategoryViewModel.CategoryGroupWrapper) -> Bool {
@@ -65,28 +92,53 @@ class NewCategoryViewModel: ObservableObject {
             hasher.combine(id)
         }
     }
+    
+    enum GroupSelectionType {
+        case unselected, create, group(ICategoryGroup)
+        
+        func isUnselected() -> Bool {
+            switch self {
+            case .unselected:
+                return true
+            default:
+                return false
+            }
+        }
+        
+        func isCreateNew() -> Bool {
+            switch self {
+            case .create:
+                return true
+            default:
+                return false
+            }
+        }
+        
+        func group() -> ICategoryGroup? {
+            switch self {
+            case .group(let group):
+                return group
+            default:
+                return nil
+            }
+        }
+    }
 }
 
 struct NewCategoryField: Identifiable {
     let id: Int // this will be the index of the array
-    let type: NewCategoryFieldType
     let property: NewCategoryProperty
     let placeholder: String
     
-    init(id: Int, type: NewCategoryFieldType, property: NewCategoryProperty, placeholder: String) {
-        self.id = id
-        self.type = type
+    init(property: NewCategoryProperty, placeholder: String) {
+        self.id = property.rawValue
         self.property = property
         self.placeholder = placeholder
     }
 }
 
-enum NewCategoryFieldType {
-    case textField
-    case dropdown
-}
-
-enum NewCategoryProperty {
+enum NewCategoryProperty: Int {
     case name
     case group
+    case groupName
 }

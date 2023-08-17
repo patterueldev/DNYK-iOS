@@ -89,7 +89,6 @@ class SelectCategoryViewModel: ObservableObject {
             self.isSelected = isSelected
         }
     }
-    
 }
 
 struct ErrorMessage {

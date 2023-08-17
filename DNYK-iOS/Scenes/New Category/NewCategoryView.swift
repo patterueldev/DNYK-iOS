@@ -12,24 +12,19 @@ struct NewCategoryView: View {
     
     @ObservedObject var viewModel = NewCategoryViewModel()
     
-    @State var groupPickerVisible: Bool = false
-    @State var selectedGroup: String = ""
- 
-//    @State var name: String = ""
-//    @State var description: String = ""
-    
     var body: some View {
         NavigationStack {
             List(viewModel.fields) { field in
-                switch field.type {
-                case .textField:
+                switch field.property {
+                case .name:
                     TextField(field.placeholder, text: $viewModel.name)
                         .font(.system(size: 18))
                         .padding(.vertical, 8)
-                case .dropdown:
-                    Picker(field.placeholder, selection: $viewModel.group, content: {
+                case .group:
+                    Picker(field.placeholder, selection: $viewModel.selectedGroup, content: {
                         ForEach(viewModel.categoryGroups) { group in
                             Text(group.name)
+                                .tag(group)
                         }
                     })
                     .frame(maxWidth: .infinity)
@@ -38,13 +33,24 @@ struct NewCategoryView: View {
                     .tint(Color.white)
                     .overlay {
                         HStack {
-                            Text(field.placeholder)
-                                .foregroundStyle(Color.black)
+                            let group = viewModel.selectedGroup
+                            let unselected = group.isUnselected
+                            let text = unselected ? field.placeholder : group.name
+                            let color = unselected ? Color.gray.opacity(0.5) : Color.black
+                            
+                            Text(text)
+                                .foregroundStyle(color)
                                 .font(.system(size: 18))
                             Spacer()
                             Image(systemSymbol: .chevronRight)
                                 .foregroundStyle(.gray.opacity(0.5))
                         }.backgroundStyle(Color.white)
+                    }
+                case .groupName:
+                    if(viewModel.selectedGroup.isCreateNew) {
+                        TextField(field.placeholder, text: $viewModel.groupName)
+                            .font(.system(size: 18))
+                            .padding(.vertical, 8)
                     }
                 }
             }
