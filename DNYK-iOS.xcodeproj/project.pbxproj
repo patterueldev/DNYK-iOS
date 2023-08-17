@@ -19,6 +19,12 @@
 		430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */; };
 		430BB5A62A873ECD008DC2A7 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */; };
 		430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */; };
+		431803FE2A8D953D0012C64C /* SDCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431803FD2A8D953D0012C64C /* SDCategoryModel.swift */; };
+		431804002A8D9E1F0012C64C /* SDCategoryGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431803FF2A8D9E1F0012C64C /* SDCategoryGroupModel.swift */; };
+		431804032A8DA1310012C64C /* PreviewCategoryObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431804022A8DA1310012C64C /* PreviewCategoryObject.swift */; };
+		431804052A8DA1C70012C64C /* PreviewCategoryGroupObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431804042A8DA1C70012C64C /* PreviewCategoryGroupObject.swift */; };
+		431804072A8DA20E0012C64C /* PreviewCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431804062A8DA20E0012C64C /* PreviewCategoryDataSource.swift */; };
+		431804092A8DA2600012C64C /* PreviewDNYKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431804082A8DA2600012C64C /* PreviewDNYKService.swift */; };
 		434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */; };
 		434B59E82A8478D900DD79D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59E72A8478D900DD79D2 /* Assets.xcassets */; };
 		434B59EB2A8478D900DD79D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59EA2A8478D900DD79D2 /* Preview Assets.xcassets */; };
@@ -66,6 +72,12 @@
 		430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCategoryDataSource.swift; sourceTree = "<group>"; };
 		430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTransactionDataSource.swift; sourceTree = "<group>"; };
+		431803FD2A8D953D0012C64C /* SDCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCategoryModel.swift; sourceTree = "<group>"; };
+		431803FF2A8D9E1F0012C64C /* SDCategoryGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCategoryGroupModel.swift; sourceTree = "<group>"; };
+		431804022A8DA1310012C64C /* PreviewCategoryObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCategoryObject.swift; sourceTree = "<group>"; };
+		431804042A8DA1C70012C64C /* PreviewCategoryGroupObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCategoryGroupObject.swift; sourceTree = "<group>"; };
+		431804062A8DA20E0012C64C /* PreviewCategoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCategoryDataSource.swift; sourceTree = "<group>"; };
+		431804082A8DA2600012C64C /* PreviewDNYKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDNYKService.swift; sourceTree = "<group>"; };
 		434B59E02A8478D600DD79D2 /* DNYK-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DNYK-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSApp.swift; sourceTree = "<group>"; };
 		434B59E72A8478D900DD79D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -171,6 +183,8 @@
 		430BB59C2A873A82008DC2A7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				431804012A8DA11F0012C64C /* PreviewEntities */,
+				431803FC2A8D95310012C64C /* SwiftDataEntities */,
 				430BB5922A8731D6008DC2A7 /* CategoryModel.swift */,
 				439F48042A8C74390080EECD /* CategoryGroupModel.swift */,
 				430BB5942A873283008DC2A7 /* TransactionModel.swift */,
@@ -192,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */,
+				431804062A8DA20E0012C64C /* PreviewCategoryDataSource.swift */,
 				430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */,
 			);
 			path = "Data Sources";
@@ -202,6 +217,24 @@
 			children = (
 			);
 			path = Application;
+			sourceTree = "<group>";
+		};
+		431803FC2A8D95310012C64C /* SwiftDataEntities */ = {
+			isa = PBXGroup;
+			children = (
+				431803FD2A8D953D0012C64C /* SDCategoryModel.swift */,
+				431803FF2A8D9E1F0012C64C /* SDCategoryGroupModel.swift */,
+			);
+			path = SwiftDataEntities;
+			sourceTree = "<group>";
+		};
+		431804012A8DA11F0012C64C /* PreviewEntities */ = {
+			isa = PBXGroup;
+			children = (
+				431804022A8DA1310012C64C /* PreviewCategoryObject.swift */,
+				431804042A8DA1C70012C64C /* PreviewCategoryGroupObject.swift */,
+			);
+			path = PreviewEntities;
 			sourceTree = "<group>";
 		};
 		434B59D72A8478D600DD79D2 = {
@@ -283,6 +316,7 @@
 				430BB59A2A8736D1008DC2A7 /* Domain */,
 				434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */,
 				434B5A132A847B7800DD79D2 /* DefaultDNYKService.swift */,
+				431804082A8DA2600012C64C /* PreviewDNYKService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -433,6 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				431804052A8DA1C70012C64C /* PreviewCategoryGroupObject.swift in Sources */,
 				434B5A142A847B7800DD79D2 /* DefaultDNYKService.swift in Sources */,
 				430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */,
 				430BB59F2A873AAC008DC2A7 /* CategoryRepository.swift in Sources */,
@@ -440,17 +475,22 @@
 				439F48072A8C772A0080EECD /* GroupedCategoriesModel.swift in Sources */,
 				430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */,
 				434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */,
+				431804092A8DA2600012C64C /* PreviewDNYKService.swift in Sources */,
 				430BB5992A87343A008DC2A7 /* GetCategoriesUseCase.swift in Sources */,
 				43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */,
 				439F48052A8C74390080EECD /* CategoryGroupModel.swift in Sources */,
+				431803FE2A8D953D0012C64C /* SDCategoryModel.swift in Sources */,
 				430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */,
 				430BB5932A8731D6008DC2A7 /* CategoryModel.swift in Sources */,
+				431804072A8DA20E0012C64C /* PreviewCategoryDataSource.swift in Sources */,
 				434B5A122A847B1700DD79D2 /* AddTransactionUseCase.swift in Sources */,
 				430BB58E2A86FC9F008DC2A7 /* ModalPreview.swift in Sources */,
 				434B5A1C2A84B6C600DD79D2 /* LandingViewModel.swift in Sources */,
+				431804002A8D9E1F0012C64C /* SDCategoryGroupModel.swift in Sources */,
 				43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */,
 				434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */,
 				434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */,
+				431804032A8DA1310012C64C /* PreviewCategoryObject.swift in Sources */,
 				430BB5A62A873ECD008DC2A7 /* TransactionRepository.swift in Sources */,
 				437581112A85820A00E59FB5 /* BudgetView.swift in Sources */,
 				430BB5952A873283008DC2A7 /* TransactionModel.swift in Sources */,

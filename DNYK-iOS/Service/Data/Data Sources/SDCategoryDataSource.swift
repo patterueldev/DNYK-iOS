@@ -33,17 +33,3 @@ struct SDCategoryDataSource: CategoryRepository {
     }
 }
 
-struct SDCategoryModel: CategoryModel {
-    var identifier: String
-    var name: String
-    var groupId: String
-    
-    static let readyToAssign = SDCategoryModel(identifier: "ready-to-assign", name: "Ready to Assign", groupId: "inflow")
-}
-
-struct SDCategoryGroupModel: CategoryGroupModel {
-    var identifier: String
-    var name: String
-    
-    static let inflow = SDCategoryGroupModel(identifier: "inflow", name: "Inflow")
-}

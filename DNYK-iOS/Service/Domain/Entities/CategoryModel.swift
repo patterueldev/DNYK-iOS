@@ -12,3 +12,11 @@ protocol CategoryModel {
     var name: String { get }
     var groupId: String { get }
 }
+
+struct CategoryObject: CategoryModel {
+    let identifier: String
+    let name: String
+    let groupId: String
+}
+
+let readyToAssign = CategoryObject(identifier: "ready-to-assign", name: "Ready to Assign", groupId: "inflow")

@@ -19,8 +19,8 @@ struct DefaultGetCategoriesUseCase: GetCategoriesUseCase {
     }
     
     func execute() async throws -> [GroupedCategoriesModel] {
-        let categories = try await [SDCategoryModel.readyToAssign] + repository.getCategories()
-        let categoryGroups: [CategoryGroupModel] = try await [SDCategoryGroupModel.inflow] + repository.getCategoryGroups()
+        let categories = try await [readyToAssign] + repository.getCategories()
+        let categoryGroups: [CategoryGroupModel] = try await [inflow] + repository.getCategoryGroups()
         
         var groupedCategories: [String: [CategoryModel]] = [:]
         

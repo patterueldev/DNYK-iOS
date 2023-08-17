@@ -11,3 +11,10 @@ protocol CategoryGroupModel {
     var identifier: String { get }
     var name: String { get }
 }
+
+struct CategoryGroupObject: CategoryGroupModel {
+    let identifier: String
+    let name: String
+}
+
+let inflow = CategoryGroupObject(identifier: "inflow", name: "Inflow")

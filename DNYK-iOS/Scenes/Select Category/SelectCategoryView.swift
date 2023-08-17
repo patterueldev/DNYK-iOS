@@ -83,7 +83,9 @@ struct SelectCategoryView: View {
 
 #Preview {
     // in this preview, there must be a customized service to provide dummy data
-    let viewModel = SelectCategoryViewModel()
+    let viewModel = SelectCategoryViewModel(
+        service: PreviewDNYKService.shared
+    )
     return ModalPreview {
         SelectCategoryView(viewModel: viewModel)
         .interactiveDismissDisabled()
