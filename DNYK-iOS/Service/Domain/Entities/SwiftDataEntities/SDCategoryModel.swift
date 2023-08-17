@@ -6,9 +6,20 @@
 //
 
 import Foundation
+import SwiftData
 
-struct SDCategoryModel: CategoryModel {
-    var identifier: String
+@Model
+class SDCategoryModel: CategoryModel {
+    @Attribute(.unique) var identifier: String
     var name: String
     var groupId: String
+    
+    var remoteId: String?
+    
+    init(name: String, groupId: String) {
+        self.identifier = UUID().uuidString
+        self.name = name
+        self.groupId = groupId
+        self.remoteId = nil
+    }
 }

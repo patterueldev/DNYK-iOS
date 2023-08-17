@@ -6,17 +6,26 @@
 //
 
 import Foundation
+import SwiftData
 
 class DefaultDNYKService: DNYKService {
     static var shared = DefaultDNYKService()
     
-    lazy var addTransactionDataSource = SDTransactionDataSource()
-    lazy var addTransaction = DefaultAddTransactionUseCase(repository: addTransactionDataSource)
+    private var modelContainer: ModelContainer
     
-    lazy var getCategoriesDataSource = SDCategoryDataSource()
-    lazy var getCategories = DefaultGetCategoriesUseCase(repository: getCategoriesDataSource)
+    private lazy var addTransactionDataSource = SDTransactionDataSource()
+    private lazy var addTransaction = DefaultAddTransactionUseCase(repository: addTransactionDataSource)
     
-    private init() {}
+    private lazy var getCategoriesDataSource = SDCategoryDataSource(container: modelContainer)
+    private lazy var getCategories = DefaultGetCategoriesUseCase(repository: getCategoriesDataSource)
+    
+    private init() {
+        do {
+            modelContainer = try ModelContainer(for: [SDCategoryModel.self])
+        } catch {
+            fatalError("Failed to initialize model container")
+        }
+    }
     
     func addTransaction(_ transaction: TransactionModel) async throws{
         try await self.addTransaction.execute(transaction)

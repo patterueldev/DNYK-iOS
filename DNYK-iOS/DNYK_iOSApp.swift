@@ -15,3 +15,6 @@ struct DNYK_iOSApp: App {
         }
     }
 }
+
+// Can be replaced with other implementations
+let defaultDNYKService = DefaultDNYKService.shared

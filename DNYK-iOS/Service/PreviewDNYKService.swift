@@ -20,6 +20,10 @@ class PreviewDNYKService: DNYKService {
     
     private init() {}
     
+    func setup() throws {
+        
+    }
+    
     func addTransaction(_ transaction: TransactionModel) async throws{
         try await self.addTransaction.execute(transaction)
     }

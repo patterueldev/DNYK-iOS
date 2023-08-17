@@ -21,6 +21,18 @@ struct SelectCategoryView: View {
                         .cornerRadius(8)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
+                    Section {
+                        NavigationLink(destination: AddTransactionView()) {
+                            HStack {
+                                Image(systemSymbol: .plusCircleFill)
+                                    .foregroundColor(.blue)
+                                Text("New Category")
+                                    .font(.headline)
+                                    .foregroundColor(.blue)
+                                Spacer()
+                            }.padding(.horizontal, 16)
+                        }
+                    }
                     List(viewModel.categoryGroups) { categoryGroup in
                         Section {
                             HStack {
@@ -41,7 +53,7 @@ struct SelectCategoryView: View {
                             if categoryGroup.isOpened {
                                 ForEach(categoryGroup.categories) { category in
                                     Button(action: {
-                                        viewModel.selectedCategories.append(category.category)
+//                                        viewModel.selectedCategories.append(category.category)
                                     }) {
                                         HStack {
                                             Text(category.category.name)

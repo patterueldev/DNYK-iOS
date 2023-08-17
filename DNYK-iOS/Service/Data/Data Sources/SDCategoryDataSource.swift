@@ -5,30 +5,37 @@
 //  Created by John Patrick Teruel on 8/12/23.
 //
 
-import Foundation
+import SwiftData
 
 // This data source will be using SwiftData as its data source
 struct SDCategoryDataSource: CategoryRepository {
+    private let container: ModelContainer
+    private let context: ModelContext
+    
+    init(container: ModelContainer) {
+        self.container = container
+        self.context = ModelContext(container)
+    }
+    
     func getCategories() async throws -> [CategoryModel] {
-        let seconds: Double = 0.5
-        let nanoseconds = UInt64(seconds * 1_000_000_000)
-        try await Task.sleep(nanoseconds: nanoseconds)
-        return [
-            SDCategoryModel(identifier: "1", name: "Bills", groupId: "bills"),
-            SDCategoryModel(identifier: "2", name: "Car", groupId: "bills"),
-            SDCategoryModel(identifier: "3", name: "Clothing", groupId: "bills"),
-            
-            SDCategoryModel(identifier: "4", name: "Food", groupId: "leasure"),
-            SDCategoryModel(identifier: "5", name: "Travel", groupId: "leasure"),
-            SDCategoryModel(identifier: "6", name: "Hobbies", groupId: "leasure"),
-        ]
+        let fetchDescriptor = FetchDescriptor<SDCategoryModel>(predicate: .true)
+        var categories = try context.fetch(fetchDescriptor)
+        
+        // if categories are empty, for testing purposes, we will create some
+        if categories.isEmpty {
+            let sample = SDCategoryModel(name: "Electricity", groupId: "bills")
+            context.insert(sample)
+            try context.save()
+            categories = try context.fetch(fetchDescriptor)
+        }
+        print("Categories: \(categories.count)")
+        return categories
     }
     
     func getCategoryGroups() async throws -> [CategoryGroupModel] {
         return [
             SDCategoryGroupModel(identifier: "bills", name: "Bills"),
             SDCategoryGroupModel(identifier: "leasure", name: "Leasure"),
-            
         ]
     }
 }

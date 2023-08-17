@@ -8,6 +8,65 @@
 import SwiftUI
 
 class SelectCategoryViewModel: ObservableObject {
+    let service: DNYKService
+    
+    @Published var isLoading: Bool = false
+    @Published var errorMessages: [ErrorMessage] = []
+    @Published var categoryGroups: [GroupedCategoriesWrapper] = [] {
+        didSet {
+            print(categoryGroups)
+        
+        }
+    }
+    @Published var searchText: String = ""
+    @Published var isSearchPresented: Bool = true
+    
+    @Published var isMultipleSelection: Bool = false
+    @Published var selectedCategories: [CategoryWrapper] = []
+    
+    init(service: DNYKService = defaultDNYKService) {
+        self.service = service
+        fetchCategories()
+    }
+    
+    func fetchCategories() {
+        Task {
+            self.isLoading = true
+            print("Fetching categories...")
+            do {
+                self.categoryGroups = try await service.getCategories().map({
+                    GroupedCategoriesWrapper(group: $0, isOpened: true)
+                })
+                print("Loaded: \(self.categoryGroups)")
+            } catch {
+                let identifier = UUID().uuidString
+                let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)
+                self.errorMessages.append(errorMessage)
+                print("Error occured while fetching categories...")
+                print(error.localizedDescription)
+                
+                print(error)
+            }
+            self.isLoading = false
+        }
+    }
+    
+    func searchCategories() {
+    }
+    
+    func toggleGroup(_ group: GroupedCategoriesWrapper) {
+        guard let index = categoryGroups.firstIndex(where: { $0.id == group.id }) else {
+            return
+        }
+        categoryGroups[index].isOpened.toggle()
+    }
+    
+    func dismissError(with identifier: String) {
+        self.errorMessages.removeAll(where: { $0.identifier == identifier })
+    }
+    
+    // MARK: - Wrappers
+    
     struct GroupedCategoriesWrapper: Identifiable {
         let id: String
         let group: GroupedCategoriesModel
@@ -25,7 +84,7 @@ class SelectCategoryViewModel: ObservableObject {
     }
     
     struct CategoryWrapper: Identifiable {
-        var id: String
+        let id: String
         let category: any CategoryModel
         var isSelected: Bool
         
@@ -36,57 +95,6 @@ class SelectCategoryViewModel: ObservableObject {
         }
     }
     
-    let service: DNYKService
-    
-    @Published var isLoading: Bool = false
-    @Published var errorMessages: [ErrorMessage] = []
-    @Published var categoryGroups: [GroupedCategoriesWrapper] = [] {
-        didSet {
-            print(categoryGroups)
-        
-        }
-    }
-    @Published var searchText: String = ""
-    @Published var isSearchPresented: Bool = true
-    
-    @Published var selectedCategories: [CategoryModel] = []
-    
-    init(service: DNYKService = DefaultDNYKService.shared) {
-        self.service = service
-        fetchCategories()
-    }
-    
-    func fetchCategories() {
-        Task {
-            self.isLoading = true
-            do {
-                self.categoryGroups = try await service.getCategories().map({
-                    GroupedCategoriesWrapper(group: $0, isOpened: true)
-                })
-                print("Loaded: \(self.categoryGroups)")
-            } catch {
-                let identifier = UUID().uuidString
-                let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)
-                self.errorMessages.append(errorMessage)
-            }
-            self.isLoading = false
-        }
-    }
-    
-    func searchCategories() {
-        
-    }
-    
-    func toggleGroup(_ group: GroupedCategoriesWrapper) {
-        guard let index = categoryGroups.firstIndex(where: { $0.id == group.id }) else {
-            return
-        }
-        categoryGroups[index].isOpened.toggle()
-    }
-    
-    func dismissError(with identifier: String) {
-        self.errorMessages.removeAll(where: { $0.identifier == identifier })
-    }
 }
 
 struct ErrorMessage {
