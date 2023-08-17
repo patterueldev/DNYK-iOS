@@ -28,29 +28,33 @@ struct SelectCategoryView: View {
                                     .font(.headline)
                                     .padding(.vertical, 8)
                                 Spacer()
-                                if categoryGroup.isOpened {
-                                    Image(systemSymbol: .chevronDown)
-                                        .foregroundColor(.black)
-                                } else {
-                                    Image(systemSymbol: .chevronUp)
+                                
+                                let image = categoryGroup.isOpened ? Image(systemSymbol: .chevronDown) : Image(systemSymbol: .chevronUp)
+                                Button(action: {
+                                    viewModel.toggleGroup(categoryGroup)
+                                }) {
+                                    image
                                         .foregroundColor(.black)
                                 }
                             }
-                            ForEach(categoryGroup.categories) { category in
-                                Button(action: {
-                                    viewModel.selectedCategories.append(category.category)
-                                }) {
-                                    HStack {
-                                        Text(category.category.name)
-                                            .foregroundColor(.black)
-                                            .padding(.vertical, 6)
-                                        Spacer()
-                                        if category.isSelected {
-                                            Image(systemSymbol: .checkmarkCircleFill)
-                                                .foregroundColor(.green)
-                                        } else {
-                                            Image(systemSymbol: .circle)
-                                                .foregroundColor(.gray)
+                            
+                            if categoryGroup.isOpened {
+                                ForEach(categoryGroup.categories) { category in
+                                    Button(action: {
+                                        viewModel.selectedCategories.append(category.category)
+                                    }) {
+                                        HStack {
+                                            Text(category.category.name)
+                                                .foregroundColor(.black)
+                                                .padding(.vertical, 6)
+                                            Spacer()
+                                            if category.isSelected {
+                                                Image(systemSymbol: .checkmarkCircleFill)
+                                                    .foregroundColor(.green)
+                                            } else {
+                                                Image(systemSymbol: .circle)
+                                                    .foregroundColor(.gray)
+                                            }
                                         }
                                     }
                                 }

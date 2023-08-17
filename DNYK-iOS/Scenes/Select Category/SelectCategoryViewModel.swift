@@ -12,7 +12,7 @@ class SelectCategoryViewModel: ObservableObject {
         let id: String
         let group: GroupedCategoriesModel
         let categories: [CategoryWrapper]
-        let isOpened: Bool
+        var isOpened: Bool
         
         init(group: GroupedCategoriesModel, isOpened: Bool) {
             self.id = group.identifier
@@ -27,7 +27,7 @@ class SelectCategoryViewModel: ObservableObject {
     struct CategoryWrapper: Identifiable {
         var id: String
         let category: any CategoryModel
-        let isSelected: Bool
+        var isSelected: Bool
         
         init(category: CategoryModel, isSelected: Bool) {
             self.id = category.identifier
@@ -75,6 +75,13 @@ class SelectCategoryViewModel: ObservableObject {
     
     func searchCategories() {
         
+    }
+    
+    func toggleGroup(_ group: GroupedCategoriesWrapper) {
+        guard let index = categoryGroups.firstIndex(where: { $0.id == group.id }) else {
+            return
+        }
+        categoryGroups[index].isOpened.toggle()
     }
     
     func dismissError(with identifier: String) {
