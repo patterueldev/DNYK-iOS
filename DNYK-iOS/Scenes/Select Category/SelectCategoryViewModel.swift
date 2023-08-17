@@ -12,12 +12,7 @@ class SelectCategoryViewModel: ObservableObject {
     
     @Published var isLoading: Bool = false
     @Published var errorMessages: [ErrorMessage] = []
-    @Published var categoryGroups: [GroupedCategoriesWrapper] = [] {
-        didSet {
-            print(categoryGroups)
-        
-        }
-    }
+    @Published var categoryGroups: [GroupedCategoriesWrapper] = []
     @Published var searchText: String = ""
     @Published var isSearchPresented: Bool = true
     

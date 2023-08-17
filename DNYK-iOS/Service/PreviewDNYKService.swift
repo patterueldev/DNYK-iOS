@@ -33,7 +33,7 @@ class PreviewDNYKService: DNYKService {
         try await getCategories.execute()
     }
 
-    func getGroups() async throws -> [ILocalCategoryGroup] {
+    func getCategoryGroups() async throws -> [ILocalCategoryGroup] {
         try await getGroups.execute()
     }
 }

@@ -49,6 +49,7 @@
 		43AA9CCF2A8DFB6100A23FBF /* IRemoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CCE2A8DFB6100A23FBF /* IRemoteCategory.swift */; };
 		43AA9CD12A8DFB7600A23FBF /* IRemoteCategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD02A8DFB7600A23FBF /* IRemoteCategoryGroup.swift */; };
 		43AA9CD32A8E002400A23FBF /* GetCategoryGroupsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD22A8E002400A23FBF /* GetCategoryGroupsUseCase.swift */; };
+		43AA9CD52A8E0AAC00A23FBF /* NewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
 		43B426172A8DC47E00C0FBB6 /* ICategoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */; };
 /* End PBXBuildFile section */
@@ -114,6 +115,7 @@
 		43AA9CCE2A8DFB6100A23FBF /* IRemoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteCategory.swift; sourceTree = "<group>"; };
 		43AA9CD02A8DFB7600A23FBF /* IRemoteCategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteCategoryGroup.swift; sourceTree = "<group>"; };
 		43AA9CD22A8E002400A23FBF /* GetCategoryGroupsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryGroupsUseCase.swift; sourceTree = "<group>"; };
+		43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewModel.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
 		43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				4318040B2A8DBD680012C64C /* NewCategoryView.swift */,
+				43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */,
 			);
 			path = "New Category";
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				431804002A8D9E1F0012C64C /* SDCategoryGroupModel.swift in Sources */,
 				43AA9CCF2A8DFB6100A23FBF /* IRemoteCategory.swift in Sources */,
 				43AA9CC92A8DF1CD00A23FBF /* RemoteCategoryRepository.swift in Sources */,
+				43AA9CD52A8E0AAC00A23FBF /* NewCategoryViewModel.swift in Sources */,
 				43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */,
 				434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */,
 				434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */,

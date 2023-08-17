@@ -7,9 +7,7 @@
 
 import Foundation
 
-protocol ILocalCategoryGroup {
-    var identifier: String { get }
-    var name: String { get }
+protocol ILocalCategoryGroup: ICategoryGroup {
 }
 
 struct LocalCategoryGroupObject: ILocalCategoryGroup {

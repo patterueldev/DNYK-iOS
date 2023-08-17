@@ -10,37 +10,42 @@ import SwiftUI
 struct NewCategoryView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    @State var fields: [NewCategoryField] = [
-        .init(type: .textField, property: .name, placeholder: "Enter a Category Name...", value: ""),
-        .init(type: .dropdown, property: .group, placeholder: "Choose Category Group...", value: ""),
-    ]
+    @ObservedObject var viewModel = NewCategoryViewModel()
     
     @State var groupPickerVisible: Bool = false
+    @State var selectedGroup: String = ""
+ 
 //    @State var name: String = ""
 //    @State var description: String = ""
     
     var body: some View {
         NavigationStack {
-            List(fields) { field in
+            List(viewModel.fields) { field in
                 switch field.type {
                 case .textField:
-                    TextField(field.placeholder, text: $fields[0].value)
+                    TextField(field.placeholder, text: $viewModel.name)
                         .font(.system(size: 18))
                         .padding(.vertical, 8)
                 case .dropdown:
-                    Button(action: {
-                        switch field.property {
-                        case .group:
-                            self.groupPickerVisible.toggle()
-                        default:
-                            break
+                    Picker(field.placeholder, selection: $viewModel.group, content: {
+                        ForEach(viewModel.categoryGroups) { group in
+                            Text(group.name)
                         }
-                    }, label: {
-                        Text(field.printed())
-                            .foregroundStyle(field.foregroundColor())
-                            .font(.system(size: 18))
-                            .padding(.vertical, 8)
                     })
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 2)
+                    .foregroundStyle(Color.white, Color.white, Color.white)
+                    .tint(Color.white)
+                    .overlay {
+                        HStack {
+                            Text(field.placeholder)
+                                .foregroundStyle(Color.black)
+                                .font(.system(size: 18))
+                            Spacer()
+                            Image(systemSymbol: .chevronRight)
+                                .foregroundStyle(.gray.opacity(0.5))
+                        }.backgroundStyle(Color.white)
+                    }
                 }
             }
             .navigationBarTitle("New Category", displayMode: .inline)
@@ -59,40 +64,6 @@ struct NewCategoryView: View {
             }
         }
     }
-}
-
-struct NewCategoryField: Identifiable {
-    var id: String
-    var type: NewCategoryFieldType
-    let property: NewCategoryProperty
-    var placeholder: String
-    var value: String = ""
-    
-    init(type: NewCategoryFieldType, property: NewCategoryProperty, placeholder: String, value: String) {
-        self.id = UUID().uuidString
-        self.type = type
-        self.property = property
-        self.placeholder = placeholder
-        self.value = value
-    }
-    
-    func printed() -> String {
-        return value.isEmpty ? placeholder : value
-    }
-    
-    func foregroundColor() -> Color {
-        return value.isEmpty ? .gray.opacity(0.5) : .black
-    }
-}
-
-enum NewCategoryFieldType {
-    case textField
-    case dropdown
-}
-
-enum NewCategoryProperty {
-    case name
-    case group
 }
 
 #Preview {
