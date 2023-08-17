@@ -8,7 +8,7 @@
 import SwiftData
 
 // This data source will be using SwiftData as its data source
-struct SDCategoryDataSource: CategoryRepository {
+struct SDCategoryDataSource: LocalCategoryRepository {
     private let container: ModelContainer
     private let context: ModelContext
     
@@ -17,7 +17,7 @@ struct SDCategoryDataSource: CategoryRepository {
         self.context = ModelContext(container)
     }
     
-    func getCategories() async throws -> [ICategory] {
+    func getCategories() async throws -> [ILocalCategory] {
         let fetchDescriptor = FetchDescriptor<SDCategoryModel>(predicate: .true)
         var categories = try context.fetch(fetchDescriptor)
         
@@ -32,7 +32,7 @@ struct SDCategoryDataSource: CategoryRepository {
         return categories
     }
     
-    func getCategoryGroups() async throws -> [ICategoryGroup] {
+    func getCategoryGroups() async throws -> [ILocalCategoryGroup] {
         return [
             SDCategoryGroupModel(identifier: "bills", name: "Bills"),
             SDCategoryGroupModel(identifier: "leasure", name: "Leasure"),

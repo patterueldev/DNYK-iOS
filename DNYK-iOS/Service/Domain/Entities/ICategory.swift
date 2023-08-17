@@ -1,8 +1,8 @@
 //
-//  Category.swift
+//  ICategory.swift
 //  DNYK-iOS
 //
-//  Created by John Patrick Teruel on 8/12/23.
+//  Created by John Patrick Teruel on 8/17/23.
 //
 
 import Foundation
@@ -12,11 +12,3 @@ protocol ICategory {
     var name: String { get }
     var groupId: String { get }
 }
-
-struct CategoryObject: ICategory {
-    let identifier: String
-    let name: String
-    let groupId: String
-}
-
-let readyToAssign = CategoryObject(identifier: "ready-to-assign", name: "Ready to Assign", groupId: "inflow")

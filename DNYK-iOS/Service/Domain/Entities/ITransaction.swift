@@ -8,5 +8,5 @@
 import Foundation
 
 protocol ITransaction {
-    var category: ICategory { get }
+    var category: ILocalCategory { get }
 }

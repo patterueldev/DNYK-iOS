@@ -9,17 +9,18 @@ import Foundation
 import SwiftData
 
 @Model
-class SDCategoryModel: ICategory {
+class SDCategoryModel: ILocalCategory {
     @Attribute(.unique) var identifier: String
     var name: String
     var groupId: String
     
-    var remoteId: String?
+    var remoteIdentifier: String?
+    var syncDate: Date?
     
     init(name: String, groupId: String) {
         self.identifier = UUID().uuidString
         self.name = name
         self.groupId = groupId
-        self.remoteId = nil
+        self.remoteIdentifier = nil
     }
 }

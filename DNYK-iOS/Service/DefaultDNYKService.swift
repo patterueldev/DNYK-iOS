@@ -17,7 +17,8 @@ class DefaultDNYKService: DNYKService {
     private lazy var addTransaction = DefaultAddTransactionUseCase(repository: addTransactionDataSource)
     
     private lazy var getCategoriesDataSource = SDCategoryDataSource(container: modelContainer)
-    private lazy var getCategories = DefaultGetCategoriesUseCase(repository: getCategoriesDataSource)
+    private lazy var getCategories = DefaultGetCategoriesUseCase(localRepository: getCategoriesDataSource)
+    private lazy var getGroups = DefaultGetCategoryGroupsUseCase(localRepository: getCategoriesDataSource)
     
     private init() {
         do {
@@ -33,5 +34,9 @@ class DefaultDNYKService: DNYKService {
     
     func getCategories() async throws -> [IGroupedCategories] {
         try await getCategories.execute()
+    }
+    
+    func getGroups() async throws -> [ILocalCategoryGroup] {
+        try await getGroups.execute()
     }
 }

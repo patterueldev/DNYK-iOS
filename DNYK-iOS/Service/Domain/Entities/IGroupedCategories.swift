@@ -8,8 +8,8 @@
 import Foundation
 
 struct IGroupedCategories {
-    let group: ICategoryGroup
-    let categories: [ICategory]
+    let group: ILocalCategoryGroup
+    let categories: [ILocalCategory]
 }
 
 extension IGroupedCategories {

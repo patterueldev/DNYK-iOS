@@ -10,10 +10,10 @@ import XCTest
 
 class ICategoryTests: XCTestCase {
     
-    var category: ICategory!
+    var category: ILocalCategory!
     
     // Create an instance of a class that conforms to the ICategory protocol
-    class Category: ICategory {
+    class Category: ILocalCategory {
         let identifier: String = "123"
         let name: String = "Category 1"
         let groupId: String = "Group 1"

@@ -11,10 +11,11 @@ struct NewCategoryView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var fields: [NewCategoryField] = [
-        .init(type: .textField, placeholder: "Enter a Category Name...", value: ""),
-        .init(type: .dropdown, placeholder: "Choose Category Group...", value: ""),
+        .init(type: .textField, property: .name, placeholder: "Enter a Category Name...", value: ""),
+        .init(type: .dropdown, property: .group, placeholder: "Choose Category Group...", value: ""),
     ]
     
+    @State var groupPickerVisible: Bool = false
 //    @State var name: String = ""
 //    @State var description: String = ""
     
@@ -27,10 +28,19 @@ struct NewCategoryView: View {
                         .font(.system(size: 18))
                         .padding(.vertical, 8)
                 case .dropdown:
-                    Text(field.printed())
-                        .foregroundStyle(field.foregroundColor())
-                        .font(.system(size: 18))
-                        .padding(.vertical, 8)
+                    Button(action: {
+                        switch field.property {
+                        case .group:
+                            self.groupPickerVisible.toggle()
+                        default:
+                            break
+                        }
+                    }, label: {
+                        Text(field.printed())
+                            .foregroundStyle(field.foregroundColor())
+                            .font(.system(size: 18))
+                            .padding(.vertical, 8)
+                    })
                 }
             }
             .navigationBarTitle("New Category", displayMode: .inline)
@@ -54,12 +64,14 @@ struct NewCategoryView: View {
 struct NewCategoryField: Identifiable {
     var id: String
     var type: NewCategoryFieldType
+    let property: NewCategoryProperty
     var placeholder: String
     var value: String = ""
     
-    init(type: NewCategoryFieldType, placeholder: String, value: String) {
+    init(type: NewCategoryFieldType, property: NewCategoryProperty, placeholder: String, value: String) {
         self.id = UUID().uuidString
         self.type = type
+        self.property = property
         self.placeholder = placeholder
         self.value = value
     }
@@ -76,6 +88,11 @@ struct NewCategoryField: Identifiable {
 enum NewCategoryFieldType {
     case textField
     case dropdown
+}
+
+enum NewCategoryProperty {
+    case name
+    case group
 }
 
 #Preview {

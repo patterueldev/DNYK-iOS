@@ -85,10 +85,10 @@ class SelectCategoryViewModel: ObservableObject {
     
     struct CategoryWrapper: Identifiable {
         let id: String
-        let category: any ICategory
+        let category: any ILocalCategory
         var isSelected: Bool
         
-        init(category: ICategory, isSelected: Bool) {
+        init(category: ILocalCategory, isSelected: Bool) {
             self.id = category.identifier
             self.category = category
             self.isSelected = isSelected

@@ -7,22 +7,22 @@
 
 import Foundation
 
-protocol GetCategoriesUseCase {
+protocol IGetCategoriesUseCase {
     func execute() async throws -> [IGroupedCategories]
 }
 
-struct DefaultGetCategoriesUseCase: GetCategoriesUseCase {
-    private let repository: CategoryRepository
+struct DefaultGetCategoriesUseCase: IGetCategoriesUseCase {
+    private let localRepository: LocalCategoryRepository
     
-    init(repository: CategoryRepository) {
-        self.repository = repository
+    init(localRepository: LocalCategoryRepository) {
+        self.localRepository = localRepository
     }
     
     func execute() async throws -> [IGroupedCategories] {
-        let categories = try await [readyToAssign] + repository.getCategories()
-        let categoryGroups: [ICategoryGroup] = try await [inflow] + repository.getCategoryGroups()
+        let categories = try await [readyToAssign] + localRepository.getCategories()
+        let categoryGroups: [ILocalCategoryGroup] = try await [inflow] + localRepository.getCategoryGroups()
         
-        var groupedCategories: [String: [ICategory]] = [:]
+        var groupedCategories: [String: [ILocalCategory]] = [:]
         
         for category in categories {
             groupedCategories[category.groupId, default: []].append(category)

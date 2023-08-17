@@ -7,8 +7,10 @@
 
 import Foundation
 
-struct PreviewCategoryObject: ICategory {
+struct PreviewCategoryObject: ILocalCategory {
     var identifier: String
     var name: String
     var groupId: String
+    var remoteIdentifier: String? = nil
+    var syncDate: Date? = nil
 }

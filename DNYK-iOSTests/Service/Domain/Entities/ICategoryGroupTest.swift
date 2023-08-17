@@ -14,7 +14,7 @@ class ICategoryGroupTests: XCTestCase {
     var categoryGroup: CategoryGroup!
     
     // Create an instance of a class that conforms to the ICategoryGroup protocol
-    class CategoryGroup: ICategoryGroup {
+    class CategoryGroup: ILocalCategoryGroup {
         let identifier: String = "123"
         let name: String = "Group 1"
     }

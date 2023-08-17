@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SDCategoryGroupModel: ICategoryGroup {
+struct SDCategoryGroupModel: ILocalCategoryGroup {
     var identifier: String
     var name: String
 }

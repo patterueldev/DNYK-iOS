@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct PreviewCategoryDataSource: CategoryRepository {
-    func getCategories() async throws -> [ICategory] {
+struct PreviewCategoryDataSource: LocalCategoryRepository {
+    func getCategories() async throws -> [ILocalCategory] {
         let seconds: Double = 0.5
         let nanoseconds = UInt64(seconds * 1_000_000_000)
         try await Task.sleep(nanoseconds: nanoseconds)
@@ -24,7 +24,7 @@ struct PreviewCategoryDataSource: CategoryRepository {
         ]
     }
     
-    func getCategoryGroups() async throws -> [ICategoryGroup] {
+    func getCategoryGroups() async throws -> [ILocalCategoryGroup] {
         return [
             PreviewCategoryGroupObject(identifier: "bills", name: "Bills"),
             PreviewCategoryGroupObject(identifier: "leasure", name: "Leasure"),
