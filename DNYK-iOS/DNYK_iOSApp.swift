@@ -7,12 +7,13 @@
 
 import SwiftUI
 import DNYK_Core
+import DNYK_SwiftData
 
 @main
 struct DNYK_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingView(service: DefaultDNYKService.shared)
+            LandingView(service: DNYKSwiftData.service)
         }
     }
 }

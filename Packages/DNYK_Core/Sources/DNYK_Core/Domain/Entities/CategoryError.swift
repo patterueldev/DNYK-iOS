@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CategoryError: Error {
+public enum CategoryError: Error {
     case categoryAlreadyExists
     case categoryWithNameNotExist(name: String)
     

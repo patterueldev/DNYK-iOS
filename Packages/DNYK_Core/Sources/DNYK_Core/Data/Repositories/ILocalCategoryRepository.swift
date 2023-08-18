@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ILocalCategoryRepository {
+public protocol ILocalCategoryRepository {
     func getCategories() async throws -> [ILocalCategory]
     func getCategory(by name: String) async throws -> ILocalCategory
     func getCategoryGroups() async throws -> [ILocalCategoryGroup]

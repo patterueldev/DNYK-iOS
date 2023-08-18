@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import DNYK_Core
 
 // This data source will be using SwiftData as its data source
 actor SDCategoryDataSource: ModelActor, ILocalCategoryRepository {

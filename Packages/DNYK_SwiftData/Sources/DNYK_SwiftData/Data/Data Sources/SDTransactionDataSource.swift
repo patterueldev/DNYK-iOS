@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import DNYK_Core
 
 class SDTransactionDataSource: TransactionRepository {
     func addTransaction(_ transaction: ITransaction) async throws {

@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftData
+import DNYK_Core
 
 @Model
 class SDCategoryModel: ILocalCategory {

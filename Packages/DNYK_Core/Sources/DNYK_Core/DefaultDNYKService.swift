@@ -9,35 +9,28 @@ import Foundation
 import SwiftData
 
 public class DefaultDNYKService: DNYKService {
-    public static var shared = DefaultDNYKService()
     public static var preview: DefaultDNYKService = {
-        let localCategoryRepository = PreviewCategoryDataSource()
-        let service = DefaultDNYKService(localCategoryRepository: localCategoryRepository)
+        let service = DefaultDNYKService(
+            transactionRepository: PreviewTransactionDataSource(),
+            localCategoryRepository: PreviewCategoryDataSource()
+        )
         return service
     }()
     
-    private lazy var addTransactionDataSource = SDTransactionDataSource()
+    private let addTransactionDataSource: TransactionRepository
+    private let localCategoryRepository: ILocalCategoryRepository
+    
     private lazy var addTransaction = DefaultAddTransactionUseCase(repository: addTransactionDataSource)
     
-    private let localCategoryRepository: ILocalCategoryRepository
     private lazy var getCategories = DefaultGetCategoriesUseCase(localRepository: localCategoryRepository)
     private lazy var getGroups = DefaultGetCategoryGroupsUseCase(localRepository: localCategoryRepository)
     private lazy var createCategory = DefaultCreateCategoryUseCase(localRepository: localCategoryRepository)
     
-    private init() {
-        do {
-            let types: [any PersistentModel.Type] = [
-                SDCategoryModel.self,
-                SDCategoryGroupModel.self,
-            ]
-            let modelContainer = try ModelContainer(for: types)
-            localCategoryRepository = SDCategoryDataSource(container: modelContainer)
-        } catch {
-            fatalError("Failed to initialize model container")
-        }
-    }
-    
-    private init(localCategoryRepository: ILocalCategoryRepository) {
+    public init(
+        transactionRepository: TransactionRepository,
+        localCategoryRepository: ILocalCategoryRepository
+    ) {
+        self.addTransactionDataSource = transactionRepository
         self.localCategoryRepository = localCategoryRepository
     }
     
