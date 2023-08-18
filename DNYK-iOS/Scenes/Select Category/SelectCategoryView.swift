@@ -57,7 +57,7 @@ struct SelectCategoryView: View {
                             if categoryGroup.isOpened {
                                 ForEach(categoryGroup.categories) { category in
                                     Button(action: {
-//                                        viewModel.selectedCategories.append(category.category)
+                                        viewModel.toggleCategory(category, group: categoryGroup)
                                     }) {
                                         HStack {
                                             Text(category.category.name)

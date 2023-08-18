@@ -61,6 +61,24 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
         categoryGroups[index].isOpened.toggle()
     }
     
+    func toggleCategory(_ category: CategoryWrapper, group: GroupedCategoriesWrapper) {
+        guard let groupIndex = categoryGroups.firstIndex(where: { $0.id == group.id }) else {
+            return
+        }
+        guard let categoryIndex = categoryGroups[groupIndex].categories.firstIndex(where: { $0.id == category.id }) else {
+            return
+        }
+        // unselect all categories if multiple selection is disabled
+        if !isMultipleSelection {
+            categoryGroups.indices.forEach { groupIdx in
+                categoryGroups[groupIdx].categories.indices.forEach { categoryIdx in
+                    categoryGroups[categoryIdx].categories[categoryIdx].isSelected = false
+                }
+            }
+        }
+        categoryGroups[groupIndex].categories[categoryIndex].isSelected.toggle()
+    }
+    
     func dismissError(with identifier: String) {
         self.errorMessages.removeAll(where: { $0.identifier == identifier })
     }
@@ -70,7 +88,7 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
     struct GroupedCategoriesWrapper: Identifiable {
         let id: String
         let group: IGroupedCategories
-        let categories: [CategoryWrapper]
+        var categories: [CategoryWrapper]
         var isOpened: Bool
         
         init(group: IGroupedCategories, isOpened: Bool) {

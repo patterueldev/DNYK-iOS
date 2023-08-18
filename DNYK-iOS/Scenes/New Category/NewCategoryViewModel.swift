@@ -63,7 +63,7 @@ class NewCategoryViewModel: ObservableObject, CanLoad {
     
     func save(completion: @escaping (Bool) -> Void) {
         Task {
-            self.isLoading = true
+            await self.toggleLoading(true)
             print("Saving category...")
             var didSucceed = false
             do {
@@ -75,17 +75,17 @@ class NewCategoryViewModel: ObservableObject, CanLoad {
                     throw ValidationError.emptyCategoryGroupName
                 }
                 
-                let category = try await service.createCategory(name: name, group: groupName)
-                print("Saved: \(category.name)")
+                try await service.createCategory(name: name, group: groupName)
                 didSucceed = true
             } catch {
                 let identifier = UUID().uuidString
                 let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)
-                self.errorMessages.append(errorMessage)
-                print("Error while saving category: \(error)")
+                await MainActor.run {
+                    self.errorMessages.append(errorMessage)
+                }
             
             }
-            self.isLoading = false
+            await self.toggleLoading(false)
             let succeed = didSucceed
             await MainActor.run {
                 completion(succeed)
