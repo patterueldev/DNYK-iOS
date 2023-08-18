@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol ILocalCategory: ICategory {
+public protocol ILocalCategory: ICategory {
     var remoteIdentifier: String? { get }
     var syncDate: Date? { get }
 }
 
-extension ILocalCategory {
+public extension ILocalCategory {
     var isSynced: Bool {
         syncDate != nil
     }

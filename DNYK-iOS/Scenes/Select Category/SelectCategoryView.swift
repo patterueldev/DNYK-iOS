@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DNYK_Core
 
 struct SelectCategoryView: View {
     init(service: DNYKService) {

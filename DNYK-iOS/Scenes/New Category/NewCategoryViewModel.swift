@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DNYK_Core
 
 class NewCategoryViewModel: ObservableObject, CanLoad {
     let service: DNYKService

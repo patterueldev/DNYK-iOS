@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Color {
+public extension Color {
     static func fromHex(_ hex: String) -> Color {
         var hex = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
         

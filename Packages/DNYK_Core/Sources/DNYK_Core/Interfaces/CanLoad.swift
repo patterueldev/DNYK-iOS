@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol CanLoad: ObservableObject {
+public protocol CanLoad: ObservableObject {
     var isLoading: Bool { get set }
 }
 
-extension CanLoad {
+public extension CanLoad {
     func toggleLoading(_ isLoading: Bool? = nil) async {
         await MainActor.run {
             self.isLoading = isLoading ?? !self.isLoading

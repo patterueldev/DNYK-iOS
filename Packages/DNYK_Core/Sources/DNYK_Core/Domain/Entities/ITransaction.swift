@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol ITransaction {
+public protocol ITransaction {
     var category: ILocalCategory { get }
 }

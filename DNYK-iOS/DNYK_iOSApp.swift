@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import DNYK_Core
 
 @main
 struct DNYK_iOSApp: App {

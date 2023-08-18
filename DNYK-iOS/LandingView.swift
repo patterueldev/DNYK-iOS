@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SFSafeSymbols
+import DNYK_Core
 
 struct LandingView: View {
     let service: DNYKService

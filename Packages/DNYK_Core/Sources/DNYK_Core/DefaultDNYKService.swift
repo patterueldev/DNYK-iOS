@@ -8,9 +8,9 @@
 import Foundation
 import SwiftData
 
-class DefaultDNYKService: DNYKService {
-    static var shared = DefaultDNYKService()
-    static var preview: DefaultDNYKService = {
+public class DefaultDNYKService: DNYKService {
+    public static var shared = DefaultDNYKService()
+    public static var preview: DefaultDNYKService = {
         let localCategoryRepository = PreviewCategoryDataSource()
         let service = DefaultDNYKService(localCategoryRepository: localCategoryRepository)
         return service
@@ -42,19 +42,19 @@ class DefaultDNYKService: DNYKService {
     }
     
     
-    func addTransaction(_ transaction: ITransaction) async throws{
+    public func addTransaction(_ transaction: ITransaction) async throws{
         try await self.addTransaction.execute(transaction)
     }
     
-    func getCategories() async throws -> [IGroupedCategories] {
+    public func getCategories() async throws -> [IGroupedCategories] {
         try await getCategories.execute()
     }
     
-    func getCategoryGroups() async throws -> [ILocalCategoryGroup] {
+    public func getCategoryGroups() async throws -> [ILocalCategoryGroup] {
         try await getGroups.execute()
     }
     
-    func createCategory(name: String, group: String) async throws -> ICategory {
+    public func createCategory(name: String, group: String) async throws -> ICategory {
         try await createCategory.execute(name: name, group: group)
     }
 }

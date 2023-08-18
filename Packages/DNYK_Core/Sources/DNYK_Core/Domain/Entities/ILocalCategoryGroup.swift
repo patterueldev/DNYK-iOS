@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol ILocalCategoryGroup: ICategoryGroup {
+public protocol ILocalCategoryGroup: ICategoryGroup {
 }
 
-struct LocalCategoryGroupObject: ILocalCategoryGroup {
-    let identifier: String
-    let name: String
+public struct LocalCategoryGroupObject: ILocalCategoryGroup {
+    public let identifier: String
+    public let name: String
 }
 
 let inflow = LocalCategoryGroupObject(identifier: "inflow", name: "Inflow")

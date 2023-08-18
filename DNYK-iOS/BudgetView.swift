@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SFSafeSymbols
+import DNYK_Core
 
 struct BudgetView: View {
     let service: DNYKService
@@ -20,7 +21,7 @@ struct BudgetView: View {
         ZStack {
             VStack {
                 // Your main content goes here
-                Text("Hello, worl!")
+                Text(DNYKCore.text)
                 
                 Spacer() // Spacer to push content to the top
                 HStack {

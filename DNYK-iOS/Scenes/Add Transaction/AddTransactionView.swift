@@ -8,6 +8,7 @@
 import SwiftUI
 import SwiftDate
 import SFSafeSymbols
+import DNYK_Core
 
 typealias OptionsLoader = () async -> [String]
 
