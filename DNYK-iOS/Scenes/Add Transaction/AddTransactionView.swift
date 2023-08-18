@@ -117,11 +117,11 @@ struct AddTransactionView: View {
     }
     
     private func categoryField() -> some View {
-        NavigationLink(destination: SelectCategoryView(service: viewModel.service)) {
+        NavigationLink(destination: SelectCategoryView(service: viewModel.service, delegate: viewModel)) {
             self.dropdownField(
                 iconSymbol: .squareGrid2x2,
                 placeholder: viewModel.categoryPlaceholder,
-                value: viewModel.category,
+                value: viewModel.selectedCategory?.name,
                 displaysChevron: viewModel.requiredToSelectCategory)
         }
     }

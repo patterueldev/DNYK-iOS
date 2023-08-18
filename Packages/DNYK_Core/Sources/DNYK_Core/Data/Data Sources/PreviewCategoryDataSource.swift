@@ -9,7 +9,7 @@ import Foundation
 
 class PreviewCategoryDataSource: ILocalCategoryRepository {
     private var categories: [ILocalCategory] = [
-        PreviewCategoryObject(identifier: "1", name: "Bills", groupId: "bills"),
+        PreviewCategoryObject(identifier: "1", name: "Electricity", groupId: "bills"),
         PreviewCategoryObject(identifier: "2", name: "Car", groupId: "bills"),
         PreviewCategoryObject(identifier: "3", name: "Clothing", groupId: "bills"),
         PreviewCategoryObject(identifier: "7", name: "Mobile", groupId: "bills"),

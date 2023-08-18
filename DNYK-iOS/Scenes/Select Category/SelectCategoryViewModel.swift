@@ -8,6 +8,11 @@
 import SwiftUI
 import DNYK_Core
 
+protocol SelectCategoryViewDelegate: AnyObject {
+    func getSelectedCategories() -> [ILocalCategory]
+    func didSelectCategories(_ categories: [ILocalCategory])
+}
+
 class SelectCategoryViewModel: ObservableObject, CanLoad {
     let service: DNYKService
     
@@ -20,8 +25,14 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
     @Published var isMultipleSelection: Bool = false
     @Published var selectedCategories: [CategoryWrapper] = []
     
-    init(service: DNYKService) {
+    weak var delegate: SelectCategoryViewDelegate?
+    
+    init(service: DNYKService, delegate: SelectCategoryViewDelegate? = nil) {
         self.service = service
+        self.delegate = delegate
+        if let delegate = delegate {
+            self.selectedCategories = delegate.getSelectedCategories().map({ CategoryWrapper(category: $0) })
+        }
         fetchCategories()
     }
     
@@ -62,22 +73,18 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
         categoryGroups[index].isOpened.toggle()
     }
     
-    func toggleCategory(_ category: CategoryWrapper, group: GroupedCategoriesWrapper) {
-        guard let groupIndex = categoryGroups.firstIndex(where: { $0.id == group.id }) else {
-            return
-        }
-        guard let categoryIndex = categoryGroups[groupIndex].categories.firstIndex(where: { $0.id == category.id }) else {
-            return
-        }
-        // unselect all categories if multiple selection is disabled
+    func toggleCategory(_ category: CategoryWrapper) {
         if !isMultipleSelection {
-            categoryGroups.indices.forEach { groupIdx in
-                categoryGroups[groupIdx].categories.indices.forEach { categoryIdx in
-                    categoryGroups[categoryIdx].categories[categoryIdx].isSelected = false
-                }
+            selectedCategories.removeAll()
+            selectedCategories.append(category)
+            delegate?.didSelectCategories(selectedCategories.map({ $0.category }))
+        } else {
+            if let index = selectedCategories.firstIndex(where: { $0.id == category.id }) {
+                selectedCategories.remove(at: index)
+            } else {
+                selectedCategories.append(category)
             }
         }
-        categoryGroups[groupIndex].categories[categoryIndex].isSelected.toggle()
     }
     
     func dismissError(with identifier: String) {
@@ -96,7 +103,7 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
             self.id = group.identifier
             self.group = group
             self.categories = group.categories.map { category in
-                CategoryWrapper(category: category, isSelected: false)
+                CategoryWrapper(category: category)
             }
             self.isOpened = isOpened
         }
@@ -105,12 +112,10 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
     struct CategoryWrapper: Identifiable {
         let id: String
         let category: any ILocalCategory
-        var isSelected: Bool
         
-        init(category: ILocalCategory, isSelected: Bool) {
+        init(category: ILocalCategory) {
             self.id = category.identifier
             self.category = category
-            self.isSelected = isSelected
         }
     }
 }

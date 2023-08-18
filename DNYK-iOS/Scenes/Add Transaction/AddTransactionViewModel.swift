@@ -12,10 +12,10 @@ class AddTransactionViewModel: ObservableObject {
     let service: DNYKService
     // transaction type, either an Expense or Income
     @Published var transactionType: TransactionType = .expense
-    @Published var requiredToSelectCategory: Bool = false // this will base on the account or payee selected (?)
+    @Published var requiredToSelectCategory: Bool = true // this will depend on the account or payee selected (?)
     @Published var amount: String = "0.00"
     @Published var payee: String?
-    @Published var category: String?
+    @Published var selectedCategory: ILocalCategory?
     @Published var account: String?
     @Published var transactionDate: Date = Date()
     @Published var cleared: Bool = true
@@ -31,7 +31,7 @@ class AddTransactionViewModel: ObservableObject {
         if !requiredToSelectCategory {
             return "Category not Needed"
         }
-        let prefix = category == nil ? "Choose " : ""
+        let prefix = selectedCategory == nil ? "Choose " : ""
         return prefix + "Category"
     }
     var accountPlaceholder: String {
@@ -41,6 +41,15 @@ class AddTransactionViewModel: ObservableObject {
     
     init(service: DNYKService) {
         self.service = service
+    }
+}
+
+extension AddTransactionViewModel: SelectCategoryViewDelegate {
+    func getSelectedCategories() -> [ILocalCategory] {
+        [self.selectedCategory].compactMap({ $0 })
+    }
+    func didSelectCategories(_ categories: [ILocalCategory]) {
+        self.selectedCategory = categories.first
     }
 }
 

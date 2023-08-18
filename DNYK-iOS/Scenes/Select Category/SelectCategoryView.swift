@@ -9,10 +9,11 @@ import SwiftUI
 import DNYK_Core
 
 struct SelectCategoryView: View {
-    init(service: DNYKService) {
-        self.viewModel = SelectCategoryViewModel(service: service)
+    init(service: DNYKService, delegate: SelectCategoryViewDelegate? = nil) {
+        self.viewModel = SelectCategoryViewModel(service: service, delegate: delegate)
     }
     
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var viewModel: SelectCategoryViewModel
     
     var body: some View {
@@ -58,14 +59,15 @@ struct SelectCategoryView: View {
                             if categoryGroup.isOpened {
                                 ForEach(categoryGroup.categories) { category in
                                     Button(action: {
-                                        viewModel.toggleCategory(category, group: categoryGroup)
+                                        viewModel.toggleCategory(category)
+                                        self.presentationMode.wrappedValue.dismiss()
                                     }) {
                                         HStack {
                                             Text(category.category.name)
                                                 .foregroundColor(.black)
                                                 .padding(.vertical, 6)
                                             Spacer()
-                                            if category.isSelected {
+                                            if viewModel.selectedCategories.contains(where: { $0.id == category.id }) {
                                                 Image(systemSymbol: .checkmarkCircleFill)
                                                     .foregroundColor(.green)
                                             } else {
@@ -108,7 +110,7 @@ struct SelectCategoryView: View {
 #Preview {
     return ModalPreview {
         SelectCategoryView(service: DefaultDNYKService.preview)
-        .interactiveDismissDisabled()
+            .interactiveDismissDisabled()
     }
 }
 
