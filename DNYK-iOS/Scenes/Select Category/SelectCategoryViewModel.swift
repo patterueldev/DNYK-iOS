@@ -29,17 +29,22 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
             await self.toggleLoading(true)
             print("Fetching categories...")
             do {
-                self.categoryGroups = try await service.getCategories().map({
+                let groups = try await service.getCategories().map({
                     GroupedCategoriesWrapper(group: $0, isOpened: true)
                 })
+                await MainActor.run {
+                    self.categoryGroups = groups
+                }
                 print("Loaded: \(self.categoryGroups)")
             } catch {
                 let identifier = UUID().uuidString
                 let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)
-                self.errorMessages.append(errorMessage)
+                await MainActor.run {
+                    self.errorMessages.append(errorMessage)
+                }
+                
                 print("Error occured while fetching categories...")
                 print(error.localizedDescription)
-                
                 print(error)
             }
             await self.toggleLoading(false)

@@ -44,9 +44,13 @@ class NewCategoryViewModel: ObservableObject, CanLoad {
             await self.toggleLoading(true)
             print("Fetching category groups...")
             do {
-                self.categoryGroups = try await [.unselected(), .createNew()] + service.getCategoryGroups().map {
+                let groups: [CategoryGroupWrapper] = try await [.unselected(), .createNew()] + service.getCategoryGroups().map {
                     .init(group: $0)
                 }
+                await MainActor.run {
+                    self.categoryGroups = groups
+                }
+                
                 print("Loaded: \(self.categoryGroups)")
             } catch {
                 let identifier = UUID().uuidString
