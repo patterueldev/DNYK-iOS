@@ -98,6 +98,9 @@ struct SelectCategoryView: View {
                 }
             }
         }
+        .onAppear() {
+            viewModel.fetchCategories()
+        }
     }
 }
 

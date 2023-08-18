@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class NewCategoryViewModel: ObservableObject {
+class NewCategoryViewModel: ObservableObject, CanLoad {
     let service: DNYKService
     
     @Published var isLoading: Bool = false
@@ -41,7 +41,7 @@ class NewCategoryViewModel: ObservableObject {
     
     func fetchCategoryGroups() {
         Task {
-            self.isLoading = true
+            await self.toggleLoading(true)
             print("Fetching category groups...")
             do {
                 self.categoryGroups = try await [.unselected(), .createNew()] + service.getCategoryGroups().map {
@@ -53,7 +53,7 @@ class NewCategoryViewModel: ObservableObject {
                 let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)
                 self.errorMessages.append(errorMessage)
             }
-            self.isLoading = false
+            await self.toggleLoading(false)
         }
     }
     
@@ -72,7 +72,7 @@ class NewCategoryViewModel: ObservableObject {
                 }
                 
                 let category = try await service.createCategory(name: name, group: groupName)
-                print("Saved: \(category)")
+                print("Saved: \(category.name)")
                 didSucceed = true
             } catch {
                 let identifier = UUID().uuidString
@@ -82,7 +82,10 @@ class NewCategoryViewModel: ObservableObject {
             
             }
             self.isLoading = false
-            completion(didSucceed)
+            let succeed = didSucceed
+            await MainActor.run {
+                completion(succeed)
+            }
         }
     }
     

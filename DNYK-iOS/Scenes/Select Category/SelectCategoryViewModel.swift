@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-class SelectCategoryViewModel: ObservableObject {
+class SelectCategoryViewModel: ObservableObject, CanLoad {
     let service: DNYKService
     
     @Published var isLoading: Bool = false
@@ -26,7 +26,7 @@ class SelectCategoryViewModel: ObservableObject {
     
     func fetchCategories() {
         Task {
-            self.isLoading = true
+            await self.toggleLoading(true)
             print("Fetching categories...")
             do {
                 self.categoryGroups = try await service.getCategories().map({
@@ -42,7 +42,7 @@ class SelectCategoryViewModel: ObservableObject {
                 
                 print(error)
             }
-            self.isLoading = false
+            await self.toggleLoading(false)
         }
     }
     
