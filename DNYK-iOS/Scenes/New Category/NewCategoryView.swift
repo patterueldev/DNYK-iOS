@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct NewCategoryView: View {
+    init(service: DNYKService) {
+        self.viewModel = NewCategoryViewModel(service: service)
+    }
+
+    @ObservedObject var viewModel: NewCategoryViewModel
     @Environment(\.presentationMode) var presentationMode
-    
-    @ObservedObject var viewModel = NewCategoryViewModel()
     
     var body: some View {
         NavigationStack {
@@ -59,13 +62,17 @@ struct NewCategoryView: View {
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") {
-                        self.presentationMode.wrappedValue.dismiss()
+                        presentationMode.wrappedValue.dismiss()
                     }
                 }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Save") {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }.disabled(true)
+                        viewModel.save { success in
+                            if success {
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }
+                    }.disabled(!viewModel.isSaveButtonEnabled)
                 }
             }
         }
@@ -74,7 +81,7 @@ struct NewCategoryView: View {
 
 #Preview {
     return ModalPreview {
-        NewCategoryView()
-        .interactiveDismissDisabled()
+        SelectCategoryView(service: DefaultDNYKService.preview)
+//        NewCategoryView(service: DefaultDNYKService.preview)
     }
 }

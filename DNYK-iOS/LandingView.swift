@@ -9,10 +9,15 @@ import SwiftUI
 import SFSafeSymbols
 
 struct LandingView: View {
+    let service: DNYKService
+    init(service: DNYKService) {
+        self.service = service
+    }
+    
     var body: some View {
         TabView {
             // First Tab
-            BudgetView()
+            BudgetView(service: service)
                 .tabItem {
                     Image(systemSymbol: .dollarsignSquareFill)
                     Text("Budget")
@@ -31,5 +36,5 @@ struct LandingView: View {
 }
 
 #Preview {
-    LandingView()
+    LandingView(service: DefaultDNYKService.preview)
 }

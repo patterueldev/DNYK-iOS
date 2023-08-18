@@ -11,10 +11,7 @@ import SwiftUI
 struct DNYK_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingView()
+            LandingView(service: DefaultDNYKService.shared)
         }
     }
 }
-
-// Can be replaced with other implementations
-let defaultDNYKService = DefaultDNYKService.shared

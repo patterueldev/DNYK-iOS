@@ -24,7 +24,17 @@ class NewCategoryViewModel: ObservableObject {
         .init(property: .groupName, placeholder: "Enter a Category Group Name...")
     ]
     
-    init(service: DNYKService = defaultDNYKService) {
+    var isSaveButtonEnabled: Bool {
+        let condition = [
+            !isLoading,
+            !name.isEmptyAfterTrimming,
+            !selectedGroup.isUnselected,
+            selectedGroup.isCreateNew ? !groupName.isEmptyAfterTrimming : true
+        ]
+        return condition.allSatisfy { $0 }
+    }
+    
+    init(service: DNYKService) {
         self.service = service
         fetchCategoryGroups()
     }
@@ -44,6 +54,35 @@ class NewCategoryViewModel: ObservableObject {
                 self.errorMessages.append(errorMessage)
             }
             self.isLoading = false
+        }
+    }
+    
+    func save(completion: @escaping (Bool) -> Void) {
+        Task {
+            self.isLoading = true
+            print("Saving category...")
+            var didSucceed = false
+            do {
+                guard let name = self.name.nullIfEmpty else {
+                    throw ValidationError.emptyCategoryName
+                }
+                let rawGroupName = selectedGroup.isCreateNew ? self.groupName : selectedGroup.name
+                guard let groupName = rawGroupName.nullIfEmpty else {
+                    throw ValidationError.emptyCategoryGroupName
+                }
+                
+                let category = try await service.createCategory(name: name, group: groupName)
+                print("Saved: \(category)")
+                didSucceed = true
+            } catch {
+                let identifier = UUID().uuidString
+                let errorMessage = ErrorMessage(identifier: identifier, title: "Error", message: error.localizedDescription)
+                self.errorMessages.append(errorMessage)
+                print("Error while saving category: \(error)")
+            
+            }
+            self.isLoading = false
+            completion(didSucceed)
         }
     }
     
@@ -120,6 +159,20 @@ class NewCategoryViewModel: ObservableObject {
                 return group
             default:
                 return nil
+            }
+        }
+    }
+    
+    enum ValidationError: Error {
+        case emptyCategoryGroupName
+        case emptyCategoryName
+        
+        var localizedDescription: String {
+            switch self {
+            case .emptyCategoryGroupName:
+                return "Category Group Name is required."
+            case .emptyCategoryName:
+                return "Category Name is required."
             }
         }
     }

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		430461282A8ED21800CC12EA /* ICreateCategoryUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430461272A8ED21800CC12EA /* ICreateCategoryUseCase.swift */; };
+		4304612A2A8EDDE200CC12EA /* CategoryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430461292A8EDDE200CC12EA /* CategoryError.swift */; };
 		430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58A2A86FB69008DC2A7 /* SelectCategoryView.swift */; };
 		430BB58E2A86FC9F008DC2A7 /* ModalPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */; };
 		430BB5902A870A3F008DC2A7 /* SelectCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB58F2A870A3F008DC2A7 /* SelectCategoryViewModel.swift */; };
 		430BB5932A8731D6008DC2A7 /* ILocalCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5922A8731D6008DC2A7 /* ILocalCategory.swift */; };
 		430BB5952A873283008DC2A7 /* ITransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5942A873283008DC2A7 /* ITransaction.swift */; };
 		430BB5992A87343A008DC2A7 /* IGetCategoriesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5982A87343A008DC2A7 /* IGetCategoriesUseCase.swift */; };
-		430BB59F2A873AAC008DC2A7 /* LocalCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB59E2A873AAC008DC2A7 /* LocalCategoryRepository.swift */; };
+		430BB59F2A873AAC008DC2A7 /* ILocalCategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB59E2A873AAC008DC2A7 /* ILocalCategoryRepository.swift */; };
 		430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */; };
 		430BB5A62A873ECD008DC2A7 /* TransactionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */; };
 		430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */; };
@@ -24,6 +26,7 @@
 		431804072A8DA20E0012C64C /* PreviewCategoryDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431804062A8DA20E0012C64C /* PreviewCategoryDataSource.swift */; };
 		431804092A8DA2600012C64C /* PreviewDNYKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431804082A8DA2600012C64C /* PreviewDNYKService.swift */; };
 		4318040C2A8DBD680012C64C /* NewCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4318040B2A8DBD680012C64C /* NewCategoryView.swift */; };
+		432787C72A8EE946000DEBF9 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432787C62A8EE946000DEBF9 /* StringExtension.swift */; };
 		434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */; };
 		434B59E82A8478D900DD79D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59E72A8478D900DD79D2 /* Assets.xcassets */; };
 		434B59EB2A8478D900DD79D2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434B59EA2A8478D900DD79D2 /* Preview Assets.xcassets */; };
@@ -48,7 +51,7 @@
 		43AA9CCD2A8DF87E00A23FBF /* ICategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CCC2A8DF87E00A23FBF /* ICategoryGroup.swift */; };
 		43AA9CCF2A8DFB6100A23FBF /* IRemoteCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CCE2A8DFB6100A23FBF /* IRemoteCategory.swift */; };
 		43AA9CD12A8DFB7600A23FBF /* IRemoteCategoryGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD02A8DFB7600A23FBF /* IRemoteCategoryGroup.swift */; };
-		43AA9CD32A8E002400A23FBF /* GetCategoryGroupsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD22A8E002400A23FBF /* GetCategoryGroupsUseCase.swift */; };
+		43AA9CD32A8E002400A23FBF /* IGetCategoryGroupsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD22A8E002400A23FBF /* IGetCategoryGroupsUseCase.swift */; };
 		43AA9CD52A8E0AAC00A23FBF /* NewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
 		43B426172A8DC47E00C0FBB6 /* ICategoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */; };
@@ -72,13 +75,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		430461272A8ED21800CC12EA /* ICreateCategoryUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICreateCategoryUseCase.swift; sourceTree = "<group>"; };
+		430461292A8EDDE200CC12EA /* CategoryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryError.swift; sourceTree = "<group>"; };
 		430BB58A2A86FB69008DC2A7 /* SelectCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryView.swift; sourceTree = "<group>"; };
 		430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalPreview.swift; sourceTree = "<group>"; };
 		430BB58F2A870A3F008DC2A7 /* SelectCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCategoryViewModel.swift; sourceTree = "<group>"; };
 		430BB5922A8731D6008DC2A7 /* ILocalCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalCategory.swift; sourceTree = "<group>"; };
 		430BB5942A873283008DC2A7 /* ITransaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITransaction.swift; sourceTree = "<group>"; };
 		430BB5982A87343A008DC2A7 /* IGetCategoriesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetCategoriesUseCase.swift; sourceTree = "<group>"; };
-		430BB59E2A873AAC008DC2A7 /* LocalCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalCategoryRepository.swift; sourceTree = "<group>"; };
+		430BB59E2A873AAC008DC2A7 /* ILocalCategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILocalCategoryRepository.swift; sourceTree = "<group>"; };
 		430BB5A12A873AF6008DC2A7 /* SDCategoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDCategoryDataSource.swift; sourceTree = "<group>"; };
 		430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionRepository.swift; sourceTree = "<group>"; };
 		430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDTransactionDataSource.swift; sourceTree = "<group>"; };
@@ -89,6 +94,7 @@
 		431804062A8DA20E0012C64C /* PreviewCategoryDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCategoryDataSource.swift; sourceTree = "<group>"; };
 		431804082A8DA2600012C64C /* PreviewDNYKService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewDNYKService.swift; sourceTree = "<group>"; };
 		4318040B2A8DBD680012C64C /* NewCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryView.swift; sourceTree = "<group>"; };
+		432787C62A8EE946000DEBF9 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		434B59E02A8478D600DD79D2 /* DNYK-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DNYK-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSApp.swift; sourceTree = "<group>"; };
 		434B59E72A8478D900DD79D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -114,7 +120,7 @@
 		43AA9CCC2A8DF87E00A23FBF /* ICategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryGroup.swift; sourceTree = "<group>"; };
 		43AA9CCE2A8DFB6100A23FBF /* IRemoteCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteCategory.swift; sourceTree = "<group>"; };
 		43AA9CD02A8DFB7600A23FBF /* IRemoteCategoryGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IRemoteCategoryGroup.swift; sourceTree = "<group>"; };
-		43AA9CD22A8E002400A23FBF /* GetCategoryGroupsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCategoryGroupsUseCase.swift; sourceTree = "<group>"; };
+		43AA9CD22A8E002400A23FBF /* IGetCategoryGroupsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGetCategoryGroupsUseCase.swift; sourceTree = "<group>"; };
 		43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewModel.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
 		43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryTest.swift; sourceTree = "<group>"; };
@@ -178,7 +184,13 @@
 		430BB58C2A86FC8E008DC2A7 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				43899D0B2A85E53900E8B72A /* Extensions */,
+				430BB59B2A873844008DC2A7 /* Data */,
+				430BB59A2A8736D1008DC2A7 /* Domain */,
 				430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */,
+				434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */,
+				434B5A132A847B7800DD79D2 /* DefaultDNYKService.swift */,
+				431804082A8DA2600012C64C /* PreviewDNYKService.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -207,6 +219,7 @@
 				431804012A8DA11F0012C64C /* PreviewEntities */,
 				431803FC2A8D95310012C64C /* SwiftDataEntities */,
 				43AA9CCA2A8DF85900A23FBF /* ICategory.swift */,
+				430461292A8EDDE200CC12EA /* CategoryError.swift */,
 				43AA9CCC2A8DF87E00A23FBF /* ICategoryGroup.swift */,
 				430BB5922A8731D6008DC2A7 /* ILocalCategory.swift */,
 				439F48042A8C74390080EECD /* ILocalCategoryGroup.swift */,
@@ -221,7 +234,7 @@
 		430BB59D2A873A9F008DC2A7 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				430BB59E2A873AAC008DC2A7 /* LocalCategoryRepository.swift */,
+				430BB59E2A873AAC008DC2A7 /* ILocalCategoryRepository.swift */,
 				43AA9CC82A8DF1CD00A23FBF /* RemoteCategoryRepository.swift */,
 				430BB5A52A873ECD008DC2A7 /* TransactionRepository.swift */,
 			);
@@ -236,13 +249,6 @@
 				430BB5A72A873F5F008DC2A7 /* SDTransactionDataSource.swift */,
 			);
 			path = "Data Sources";
-			sourceTree = "<group>";
-		};
-		430BB5A32A873BAB008DC2A7 /* Application */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Application;
 			sourceTree = "<group>";
 		};
 		431803FC2A8D95310012C64C /* SwiftDataEntities */ = {
@@ -297,8 +303,6 @@
 			children = (
 				430BB58C2A86FC8E008DC2A7 /* Core */,
 				430BB5882A86FB20008DC2A7 /* Scenes */,
-				43899D0B2A85E53900E8B72A /* Extensions */,
-				434B5A0E2A847A6D00DD79D2 /* Service */,
 				434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */,
 				437581102A85820A00E59FB5 /* BudgetView.swift */,
 				434B5A192A84ADF700DD79D2 /* LandingView.swift */,
@@ -339,29 +343,18 @@
 			isa = PBXGroup;
 			children = (
 				430BB5982A87343A008DC2A7 /* IGetCategoriesUseCase.swift */,
-				43AA9CD22A8E002400A23FBF /* GetCategoryGroupsUseCase.swift */,
+				430461272A8ED21800CC12EA /* ICreateCategoryUseCase.swift */,
+				43AA9CD22A8E002400A23FBF /* IGetCategoryGroupsUseCase.swift */,
 				434B5A112A847B1700DD79D2 /* AddTransactionUseCase.swift */,
 			);
 			path = "Use Cases";
-			sourceTree = "<group>";
-		};
-		434B5A0E2A847A6D00DD79D2 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				430BB5A32A873BAB008DC2A7 /* Application */,
-				430BB59B2A873844008DC2A7 /* Data */,
-				430BB59A2A8736D1008DC2A7 /* Domain */,
-				434B5A0F2A847A7E00DD79D2 /* DNYKService.swift */,
-				434B5A132A847B7800DD79D2 /* DefaultDNYKService.swift */,
-				431804082A8DA2600012C64C /* PreviewDNYKService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		43899D0B2A85E53900E8B72A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				43899D0C2A85E54400E8B72A /* ColorExtension.swift */,
+				432787C62A8EE946000DEBF9 /* StringExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -535,12 +528,14 @@
 				434B5A142A847B7800DD79D2 /* DefaultDNYKService.swift in Sources */,
 				430BB5A22A873AF6008DC2A7 /* SDCategoryDataSource.swift in Sources */,
 				43AA9CCD2A8DF87E00A23FBF /* ICategoryGroup.swift in Sources */,
-				430BB59F2A873AAC008DC2A7 /* LocalCategoryRepository.swift in Sources */,
+				430BB59F2A873AAC008DC2A7 /* ILocalCategoryRepository.swift in Sources */,
 				434B5A102A847A7E00DD79D2 /* DNYKService.swift in Sources */,
 				439F48072A8C772A0080EECD /* IGroupedCategories.swift in Sources */,
 				430BB5A82A873F5F008DC2A7 /* SDTransactionDataSource.swift in Sources */,
+				430461282A8ED21800CC12EA /* ICreateCategoryUseCase.swift in Sources */,
 				434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */,
 				431804092A8DA2600012C64C /* PreviewDNYKService.swift in Sources */,
+				432787C72A8EE946000DEBF9 /* StringExtension.swift in Sources */,
 				4318040C2A8DBD680012C64C /* NewCategoryView.swift in Sources */,
 				430BB5992A87343A008DC2A7 /* IGetCategoriesUseCase.swift in Sources */,
 				43899D0D2A85E54400E8B72A /* ColorExtension.swift in Sources */,
@@ -560,8 +555,9 @@
 				43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */,
 				434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */,
 				434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */,
-				43AA9CD32A8E002400A23FBF /* GetCategoryGroupsUseCase.swift in Sources */,
+				43AA9CD32A8E002400A23FBF /* IGetCategoryGroupsUseCase.swift in Sources */,
 				431804032A8DA1310012C64C /* PreviewCategoryObject.swift in Sources */,
+				4304612A2A8EDDE200CC12EA /* CategoryError.swift in Sources */,
 				430BB5A62A873ECD008DC2A7 /* TransactionRepository.swift in Sources */,
 				437581112A85820A00E59FB5 /* BudgetView.swift in Sources */,
 				43AA9CD12A8DFB7600A23FBF /* IRemoteCategoryGroup.swift in Sources */,

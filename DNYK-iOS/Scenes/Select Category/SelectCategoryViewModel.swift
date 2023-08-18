@@ -19,7 +19,7 @@ class SelectCategoryViewModel: ObservableObject {
     @Published var isMultipleSelection: Bool = false
     @Published var selectedCategories: [CategoryWrapper] = []
     
-    init(service: DNYKService = defaultDNYKService) {
+    init(service: DNYKService) {
         self.service = service
         fetchCategories()
     }

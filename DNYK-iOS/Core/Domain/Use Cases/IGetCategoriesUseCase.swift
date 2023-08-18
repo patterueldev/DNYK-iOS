@@ -12,9 +12,9 @@ protocol IGetCategoriesUseCase {
 }
 
 struct DefaultGetCategoriesUseCase: IGetCategoriesUseCase {
-    private let localRepository: LocalCategoryRepository
+    private let localRepository: ILocalCategoryRepository
     
-    init(localRepository: LocalCategoryRepository) {
+    init(localRepository: ILocalCategoryRepository) {
         self.localRepository = localRepository
     }
     

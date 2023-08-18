@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct SelectCategoryView: View {
-    @ObservedObject var viewModel = SelectCategoryViewModel()
+    init(service: DNYKService) {
+        self.viewModel = SelectCategoryViewModel(service: service)
+    }
+    
+    @ObservedObject var viewModel: SelectCategoryViewModel
     
     var body: some View {
         NavigationStack {
@@ -22,7 +26,7 @@ struct SelectCategoryView: View {
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
                     Section {
-                        NavigationLink(destination: AddTransactionView()) {
+                        NavigationLink(destination: NewCategoryView(service: viewModel.service)) {
                             HStack {
                                 Image(systemSymbol: .plusCircleFill)
                                     .foregroundColor(.blue)
@@ -98,12 +102,8 @@ struct SelectCategoryView: View {
 }
 
 #Preview {
-    // in this preview, there must be a customized service to provide dummy data
-    let viewModel = SelectCategoryViewModel(
-        service: PreviewDNYKService.shared
-    )
     return ModalPreview {
-        SelectCategoryView(viewModel: viewModel)
+        SelectCategoryView(service: DefaultDNYKService.preview)
         .interactiveDismissDisabled()
     }
 }

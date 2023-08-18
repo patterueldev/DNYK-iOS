@@ -8,6 +8,7 @@
 import SwiftUI
 
 class AddTransactionViewModel: ObservableObject {
+    let service: DNYKService
     // transaction type, either an Expense or Income
     @Published var transactionType: TransactionType = .expense
     @Published var requiredToSelectCategory: Bool = false // this will base on the account or payee selected (?)
@@ -35,6 +36,10 @@ class AddTransactionViewModel: ObservableObject {
     var accountPlaceholder: String {
         let prefix = account == nil ? "Choose " : ""
         return prefix + "Account"
+    }
+    
+    init(service: DNYKService) {
+        self.service = service
     }
 }
 

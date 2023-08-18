@@ -12,8 +12,12 @@ import SFSafeSymbols
 typealias OptionsLoader = () async -> [String]
 
 struct AddTransactionView: View {
+    init(service: DNYKService) {
+        self.viewModel = AddTransactionViewModel(service: service)
+    }
+    
+    @ObservedObject var viewModel: AddTransactionViewModel
     @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var viewModel = AddTransactionViewModel()
     
     
     var body: some View {
@@ -112,7 +116,7 @@ struct AddTransactionView: View {
     }
     
     private func categoryField() -> some View {
-        NavigationLink(destination: SelectCategoryView()) {
+        NavigationLink(destination: SelectCategoryView(service: viewModel.service)) {
             self.dropdownField(
                 iconSymbol: .squareGrid2x2,
                 placeholder: viewModel.categoryPlaceholder,
@@ -225,7 +229,7 @@ struct AddTransactionView: View {
 
 #Preview {
     ModalPreview(content: {
-        AddTransactionView(viewModel: AddTransactionViewModel())
+        AddTransactionView(service: DefaultDNYKService.preview)
             .interactiveDismissDisabled()
     })
 }

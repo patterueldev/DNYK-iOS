@@ -21,6 +21,5 @@ class SDCategoryModel: ILocalCategory {
         self.identifier = UUID().uuidString
         self.name = name
         self.groupId = groupId
-        self.remoteIdentifier = nil
     }
 }

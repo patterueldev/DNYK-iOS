@@ -11,6 +11,5 @@ protocol DNYKService {
     func addTransaction(_ transaction: ITransaction) async throws
     func getCategories() async throws -> [IGroupedCategories]
     func getCategoryGroups() async throws -> [ILocalCategoryGroup]
-//    func createGroup(name: String) async throws -> CategoryGroupModel
-//    func createCategory(name: String, group: CategoryGroupModel) async throws -> ICategory
+    func createCategory(name: String, group: String) async throws -> ICategory
 }

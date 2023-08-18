@@ -9,8 +9,12 @@ import SwiftUI
 import SFSafeSymbols
 
 struct BudgetView: View {
+    let service: DNYKService
+    init(service: DNYKService) {
+        self.service = service
+    }
+    
     @State var showsAddTransaction = false
-    @ObservedObject var addTransactionViewModel = AddTransactionViewModel()
      
     var body: some View {
         ZStack {
@@ -32,12 +36,12 @@ struct BudgetView: View {
                 }
             }
         }.sheet(isPresented: $showsAddTransaction, content: {
-            AddTransactionView(viewModel: addTransactionViewModel)
+            AddTransactionView(service: service)
                 .interactiveDismissDisabled()
         })
     }
 }
 
 #Preview {
-    LandingView()
+    LandingView(service: DefaultDNYKService.preview)
 }
