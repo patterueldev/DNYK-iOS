@@ -9,7 +9,7 @@ import Foundation
 
 public protocol DNYKService {
     func addTransaction(_ transaction: ITransaction) async throws
-    func getCategories() async throws -> [IGroupedCategories]
+    func getCategories() async throws -> [LocalGroupedCategories]
     func getCategoryGroups() async throws -> [ILocalCategoryGroup]
     @discardableResult func createCategory(name: String, group: String) async throws -> ICategory
 }

@@ -7,7 +7,7 @@
 
 import XCTest
 
-@testable import DNYK_iOS
+@testable import DNYK_Core
 
 class ICategoryGroupTests: XCTestCase {
     

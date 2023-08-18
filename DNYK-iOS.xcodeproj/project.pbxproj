@@ -23,10 +23,8 @@
 		437581112A85820A00E59FB5 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581102A85820A00E59FB5 /* BudgetView.swift */; };
 		43AA9CC22A8DE7F800A23FBF /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC12A8DE7F800A23FBF /* SwiftDate */; };
 		43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */; };
-		43AA9CC72A8DEC4700A23FBF /* ICategoryGroupTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CC62A8DEC4700A23FBF /* ICategoryGroupTest.swift */; };
 		43AA9CD52A8E0AAC00A23FBF /* NewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
-		43B426172A8DC47E00C0FBB6 /* ICategoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */; };
 		43CC9AD32A90180000F0574F /* DNYK_SwiftData in Frameworks */ = {isa = PBXBuildFile; productRef = 43CC9AD22A90180000F0574F /* DNYK_SwiftData */; };
 /* End PBXBuildFile section */
 
@@ -64,10 +62,8 @@
 		434B5A192A84ADF700DD79D2 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
 		437581102A85820A00E59FB5 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
-		43AA9CC62A8DEC4700A23FBF /* ICategoryGroupTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryGroupTest.swift; sourceTree = "<group>"; };
 		43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewModel.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
-		43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICategoryTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,7 +185,6 @@
 		434B59F32A8478D900DD79D2 /* DNYK-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				43B426132A8DC39D00C0FBB6 /* Service */,
 				434B59F42A8478D900DD79D2 /* DNYK_iOSTests.swift */,
 			);
 			path = "DNYK-iOSTests";
@@ -202,31 +197,6 @@
 				434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */,
 			);
 			path = "DNYK-iOSUITests";
-			sourceTree = "<group>";
-		};
-		43B426132A8DC39D00C0FBB6 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				43B426142A8DC3A500C0FBB6 /* Domain */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		43B426142A8DC3A500C0FBB6 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				43B426152A8DC3AF00C0FBB6 /* Entities */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		43B426152A8DC3AF00C0FBB6 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				43B426162A8DC47E00C0FBB6 /* ICategoryTest.swift */,
-				43AA9CC62A8DEC4700A23FBF /* ICategoryGroupTest.swift */,
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		43CC9AD42A9020BF00F0574F /* Budget Dashboard */ = {
@@ -407,8 +377,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				434B59F52A8478D900DD79D2 /* DNYK_iOSTests.swift in Sources */,
-				43B426172A8DC47E00C0FBB6 /* ICategoryTest.swift in Sources */,
-				43AA9CC72A8DEC4700A23FBF /* ICategoryGroupTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

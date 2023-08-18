@@ -7,12 +7,12 @@
 
 import Foundation
 
-public struct IGroupedCategories {
+public struct LocalGroupedCategories {
     public let group: ILocalCategoryGroup
     public let categories: [ILocalCategory]
 }
 
-public extension IGroupedCategories {
+public extension LocalGroupedCategories {
     var identifier: String {
         return group.identifier
     }

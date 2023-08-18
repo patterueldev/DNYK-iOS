@@ -39,7 +39,7 @@ public class DefaultDNYKService: DNYKService {
         try await self.addTransaction.execute(transaction)
     }
     
-    public func getCategories() async throws -> [IGroupedCategories] {
+    public func getCategories() async throws -> [LocalGroupedCategories] {
         try await getCategories.execute()
     }
     

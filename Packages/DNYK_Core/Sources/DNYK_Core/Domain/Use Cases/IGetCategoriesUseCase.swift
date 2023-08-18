@@ -8,7 +8,7 @@
 import Foundation
 
 protocol IGetCategoriesUseCase {
-    func execute() async throws -> [IGroupedCategories]
+    func execute() async throws -> [LocalGroupedCategories]
 }
 
 struct DefaultGetCategoriesUseCase: IGetCategoriesUseCase {
@@ -18,7 +18,7 @@ struct DefaultGetCategoriesUseCase: IGetCategoriesUseCase {
         self.localRepository = localRepository
     }
     
-    func execute() async throws -> [IGroupedCategories] {
+    func execute() async throws -> [LocalGroupedCategories] {
         let categories = try await [readyToAssign] + localRepository.getCategories()
         let categoryGroups: [ILocalCategoryGroup] = try await [inflow] + localRepository.getCategoryGroups()
         
@@ -32,7 +32,7 @@ struct DefaultGetCategoriesUseCase: IGetCategoriesUseCase {
             guard let categoriesInGroup = groupedCategories[group.identifier] else {
                 return nil
             }
-            return IGroupedCategories(group: group, categories: categoriesInGroup)
+            return LocalGroupedCategories(group: group, categories: categoriesInGroup)
         }
     }
 

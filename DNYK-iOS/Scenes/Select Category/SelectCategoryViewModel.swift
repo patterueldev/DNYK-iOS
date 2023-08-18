@@ -95,11 +95,11 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
     
     struct GroupedCategoriesWrapper: Identifiable {
         let id: String
-        let group: IGroupedCategories
+        let group: LocalGroupedCategories
         var categories: [CategoryWrapper]
         var isOpened: Bool
         
-        init(group: IGroupedCategories, isOpened: Bool) {
+        init(group: LocalGroupedCategories, isOpened: Bool) {
             self.id = group.identifier
             self.group = group
             self.categories = group.categories.map { category in
