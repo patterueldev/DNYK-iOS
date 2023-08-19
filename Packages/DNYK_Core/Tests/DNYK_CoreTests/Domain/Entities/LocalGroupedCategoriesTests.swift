@@ -25,12 +25,31 @@ class LocalGroupedCategoriesTests: XCTestCase {
             ])
     }
     
-    func testInit() {
-        XCTAssertEqual(groupedCategories.group.identifier, "123")
-        XCTAssertEqual(groupedCategories.group.name, "Group 1")
+    func testIdentifier() {
+        XCTAssertEqual(groupedCategories.identifier, "123")
+    }
+    
+    func testName() {
+        XCTAssertEqual(groupedCategories.name, "Group 1")
+    }
+    
+    func testCategories() {
         XCTAssertEqual(groupedCategories.categories.count, 1)
         XCTAssertEqual(groupedCategories.categories.first?.identifier, "123")
         XCTAssertEqual(groupedCategories.categories.first?.name, "Category 1")
         XCTAssertEqual(groupedCategories.categories.first?.groupId, "123")
+    }
+    
+    func testGroup() {
+        XCTAssertEqual(groupedCategories.group.identifier, "123")
+        XCTAssertEqual(groupedCategories.group.name, "Group 1")
+    }
+    
+    func testIfGroupIdAndIdentifierAreEqual() {
+        XCTAssertEqual(groupedCategories.group.identifier, groupedCategories.identifier)
+    }
+    
+    func testIfNameAndGroupNameAreEqual() {
+        XCTAssertEqual(groupedCategories.name, groupedCategories.group.name)
     }
 }
