@@ -11,12 +11,16 @@ public enum CategoryError: Error {
     case categoryAlreadyExists
     case categoryWithNameNotExist(name: String)
     
+    private var strings : ICoreStrings {
+        return DNYKCore.coreStrings
+    }
+    
     var localizedDescription: String {
         switch self {
         case .categoryAlreadyExists:
-            return "Category already exists"
+            return strings.categoryAlreadyExists()
         case .categoryWithNameNotExist(let name):
-            return "Category with name \(name) does not exist"
+            return strings.categoryWithNameNotExist(name: name)
         }
     }
 }
