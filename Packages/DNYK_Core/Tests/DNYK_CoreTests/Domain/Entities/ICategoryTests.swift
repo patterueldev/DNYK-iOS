@@ -10,16 +10,13 @@ import XCTest
 
 class ICategoryTests: XCTestCase {
     
-    var category: ILocalCategory!
+    var category: ICategory!
     
     // Create an instance of a class that conforms to the ICategory protocol
-    class Category: ILocalCategory {
+    class Category: ICategory {
         let identifier: String = "123"
         let name: String = "Category 1"
         let groupId: String = "Group 1"
-        
-        let remoteIdentifier: String? = "1234"
-        let syncDate: Date? = Date()
     }
     
     override func setUp() {
@@ -44,18 +41,6 @@ class ICategoryTests: XCTestCase {
     func testGroupId() {
         // Test the groupId property
         XCTAssertEqual(category.groupId, "Group 1", "The groupId property should return the expected value")
-    }
-    
-    // Test the remoteIdentifier property
-    func testRemoteIdentifier() {
-        // Test the remoteIdentifier property
-        XCTAssertEqual(category.remoteIdentifier, "1234", "The remoteIdentifier property should return the expected value")
-    }
-    
-    // Test the syncDate property
-    func testSyncDate() {
-        // Test the syncDate property
-        XCTAssertNotNil(category.syncDate, "The syncDate property should not be nil")
     }
     
     // Add more test methods for other properties or behaviors of the ICategory protocol if needed

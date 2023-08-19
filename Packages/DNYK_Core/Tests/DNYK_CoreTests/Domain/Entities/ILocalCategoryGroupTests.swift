@@ -1,20 +1,20 @@
 //
-//  ICategoryGroupTest.swift
-//  DNYK-iOSTests
+//  File.swift
+//  
 //
-//  Created by John Patrick Teruel on 8/17/23.
+//  Created by John Patrick Teruel on 8/19/23.
 //
 
 import XCTest
 
 @testable import DNYK_Core
 
-class ICategoryGroupTests: XCTestCase {
+class ILocalCategoryGroupTests: XCTestCase {
     
     var categoryGroup: CategoryGroup!
     
     // Create an instance of a class that conforms to the ICategoryGroup protocol
-    class CategoryGroup: ILocalCategoryGroup {
+    class CategoryGroup: ICategoryGroup {
         let identifier: String = "123"
         let name: String = "Group 1"
     }

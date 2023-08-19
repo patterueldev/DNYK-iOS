@@ -24,6 +24,6 @@ struct LocalCategoryObject: ILocalCategory {
     let groupId: String
     let remoteIdentifier: String? = nil
     let syncDate: Date? = nil
+    
+    static let readyToAssign = LocalCategoryObject(identifier: "ready-to-assign", name: "Ready to Assign", groupId: "inflow")
 }
-
-let readyToAssign = LocalCategoryObject(identifier: "ready-to-assign", name: "Ready to Assign", groupId: "inflow")

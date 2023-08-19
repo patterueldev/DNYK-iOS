@@ -19,8 +19,8 @@ struct DefaultGetCategoriesUseCase: IGetCategoriesUseCase {
     }
     
     func execute() async throws -> [LocalGroupedCategories] {
-        let categories = try await [readyToAssign] + localRepository.getCategories()
-        let categoryGroups: [ILocalCategoryGroup] = try await [inflow] + localRepository.getCategoryGroups()
+        let categories = try await [LocalCategoryObject.readyToAssign] + localRepository.getCategories()
+        let categoryGroups: [ILocalCategoryGroup] = try await [LocalCategoryGroupObject.inflow] + localRepository.getCategoryGroups()
         
         var groupedCategories: [String: [ILocalCategory]] = [:]
         

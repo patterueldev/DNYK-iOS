@@ -10,5 +10,8 @@ import Foundation
 struct PreviewCategoryGroupObject: ILocalCategoryGroup {
     var identifier: String
     var name: String
+    
+    var remoteIdentifier: String? = nil
+    var syncDate: Date? = nil
 }
 
