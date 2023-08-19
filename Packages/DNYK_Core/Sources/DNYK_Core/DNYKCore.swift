@@ -2,7 +2,7 @@
 // https://docs.swift.org/swift-book
 
 public struct DNYKCore {
-    static var coreStrings: ICoreStrings = DefaultCoreStrings()
+    private(set) static var coreStrings: ICoreStrings = DefaultCoreStrings()
     
     public static func setCoreStrings(coreStrings: ICoreStrings) {
         self.coreStrings = coreStrings

@@ -7,15 +7,15 @@
 
 import Foundation
 
-public enum CategoryError: Error {
+public enum CategoryError: Error, LocalizedError {
     case categoryAlreadyExists
     case categoryWithNameNotExist(name: String)
     
-    private var strings : ICoreStrings {
+    var strings : ICoreStrings {
         return DNYKCore.coreStrings
     }
     
-    var localizedDescription: String {
+    public var errorDescription: String? {
         switch self {
         case .categoryAlreadyExists:
             return strings.categoryAlreadyExists()
