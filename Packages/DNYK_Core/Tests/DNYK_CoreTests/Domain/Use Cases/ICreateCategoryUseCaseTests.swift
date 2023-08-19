@@ -110,7 +110,7 @@ class DefaultCreateCategoryUseCaseTests: XCTestCase {
         useCase = DefaultCreateCategoryUseCase(localRepository: mockCategoryRepository)
     }
     
-    func testUseCase() async throws {
+    func testCreateCategoryUseCase() async throws {
         let category = try await useCase.execute(name: "Electricity", group: "Bills")
         XCTAssertEqual(category.identifier, "electricity")
         XCTAssertEqual(category.name, "Electricity")
