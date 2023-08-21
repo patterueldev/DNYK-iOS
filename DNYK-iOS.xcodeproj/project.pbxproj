@@ -185,6 +185,7 @@
 		434B59F32A8478D900DD79D2 /* DNYK-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				435E634D2A93468A00102312 /* Scenes */,
 				434B59F42A8478D900DD79D2 /* DNYK_iOSTests.swift */,
 			);
 			path = "DNYK-iOSTests";
@@ -197,6 +198,21 @@
 				434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */,
 			);
 			path = "DNYK-iOSUITests";
+			sourceTree = "<group>";
+		};
+		435E634D2A93468A00102312 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				435E634E2A93468A00102312 /* Add Transaction */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		435E634E2A93468A00102312 /* Add Transaction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Add Transaction";
 			sourceTree = "<group>";
 		};
 		43CC9AD42A9020BF00F0574F /* Budget Dashboard */ = {

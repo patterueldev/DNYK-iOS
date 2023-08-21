@@ -11,9 +11,15 @@ import DNYK_SwiftData
 
 @main
 struct DNYK_iOSApp: App {
+    private var service: DNYKService = {
+        let inMemory = CommandLine.arguments.contains("--in-memory")
+        return DNYKSwiftData.service(inMemory: inMemory)
+    }()
+    
+    
     var body: some Scene {
         WindowGroup {
-            LandingView(service: DNYKSwiftData.service())
+            LandingView(service: self.service)
         }
     }
 }

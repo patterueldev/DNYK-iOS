@@ -23,11 +23,13 @@ final class DNYK_iOSUITests: XCTestCase {
     }
 
     func testExample() throws {
-        // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        app.launchArguments = ["--in-memory"]
         app.launch()
-
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        app.buttons["Add"].tap()
+        app.buttons["Choose Category"].tap()
+        app.collectionViews.buttons["Ready to Assign"].tap()
+        XCTAssert(app.staticTexts["Ready to Assign"].exists)
     }
 
     func testLaunchPerformance() throws {

@@ -124,6 +124,7 @@ struct AddTransactionView: View {
                 value: viewModel.selectedCategory?.name,
                 displaysChevron: viewModel.requiredToSelectCategory)
         }
+        .accessibilityLabel("Choose Category")
     }
     
     private func accountField() -> some View {
