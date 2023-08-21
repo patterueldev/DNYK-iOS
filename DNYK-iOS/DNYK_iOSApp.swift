@@ -13,7 +13,7 @@ import DNYK_SwiftData
 struct DNYK_iOSApp: App {
     var body: some Scene {
         WindowGroup {
-            LandingView(service: DNYKSwiftData.service)
+            LandingView(service: DNYKSwiftData.service())
         }
     }
 }

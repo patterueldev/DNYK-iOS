@@ -21,7 +21,7 @@ struct BudgetView: View {
         ZStack {
             VStack {
                 // Your main content goes here
-                Text(DNYKCore.text)
+                Text("Welcome to DNYK!")
                 
                 Spacer() // Spacer to push content to the top
                 HStack {
