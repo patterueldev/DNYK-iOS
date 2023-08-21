@@ -24,7 +24,7 @@ class CategoryErrorTests: XCTestCase {
         super.setUp()
         
         let strings = MockStrings()
-        DNYKCore.setCoreStrings(coreStrings: strings)
+        DNYKCore.setCoreStrings(strings)
     }
     
     func testCategoryAlreadyExists() {

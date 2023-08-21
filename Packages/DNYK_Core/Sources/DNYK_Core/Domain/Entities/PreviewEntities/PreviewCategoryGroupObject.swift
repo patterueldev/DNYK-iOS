@@ -14,4 +14,3 @@ struct PreviewCategoryGroupObject: ILocalCategoryGroup {
     var remoteIdentifier: String? = nil
     var syncDate: Date? = nil
 }
-

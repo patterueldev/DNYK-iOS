@@ -4,7 +4,7 @@
 public struct DNYKCore {
     private(set) static var coreStrings: ICoreStrings = DefaultCoreStrings()
     
-    public static func setCoreStrings(coreStrings: ICoreStrings) {
+    public static func setCoreStrings(_ coreStrings: ICoreStrings) {
         self.coreStrings = coreStrings
     }
 }

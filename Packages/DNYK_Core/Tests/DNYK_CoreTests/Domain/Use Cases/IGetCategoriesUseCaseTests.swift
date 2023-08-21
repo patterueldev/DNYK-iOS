@@ -69,61 +69,10 @@ class DefaultGetCategoriesUseCaseTests: XCTestCase {
     var useCase: IGetCategoriesUseCase!
     var mockCategoryRepository: ILocalCategoryRepository!
     
-    struct MockCategory: ILocalCategory {
-        var identifier: String
-        var name: String
-        var groupId: String
-        var remoteIdentifier: String? = nil
-        var syncDate: Date? = nil
-    }
-    
-    struct MockCategoryGroup: ILocalCategoryGroup {
-        var identifier: String
-        var name: String
-        var remoteIdentifier: String? = nil
-        var syncDate: Date? = nil
-    }
-    
-    class MockCategoryRepository: ILocalCategoryRepository {
-        var categories: [ILocalCategory] = [
-            MockCategory(identifier: "internet", name: "Internet", groupId: "bills", remoteIdentifier: "1234", syncDate: Date()),
-            MockCategory(identifier: "electricity", name: "Electricity", groupId: "bills", remoteIdentifier: "1234", syncDate: Date()),
-            MockCategory(identifier: "water", name: "Water", groupId: "bills", remoteIdentifier: "1234", syncDate: Date()),
-        ]
-        
-        var groups: [ILocalCategoryGroup] = [
-            MockCategoryGroup(identifier: "bills", name: "Bills", remoteIdentifier: "1234", syncDate: Date())
-        ]
-        
-        func getCategories() async throws -> [ILocalCategory] {
-            return categories
-        }
-        
-        func getCategory(by name: String) async throws -> ILocalCategory {
-            let category = categories.first { $0.name == name }
-            guard let category = category else {
-                throw CategoryError.categoryWithNameNotExist(name: name)
-            }
-            return category
-        }
-        
-        func getCategoryGroups() async throws -> [DNYK_Core.ILocalCategoryGroup] {
-            return groups
-        }
-        
-        func getOrCreateCategoryGroup(name: String) async throws -> ILocalCategoryGroup {
-            throw NSError(domain: "Not implemented", code: 0, userInfo: nil)
-        }
-        
-        func createCategory(name: String, group: ILocalCategoryGroup) async throws -> DNYK_Core.ILocalCategory {
-            throw NSError(domain: "Not implemented", code: 0, userInfo: nil)
-        }
-    }
-    
     override func setUp() {
         super.setUp()
         
-        mockCategoryRepository = MockCategoryRepository()
+        mockCategoryRepository = MockLocalCategoryRepository()
         useCase = DefaultGetCategoriesUseCase(localRepository: mockCategoryRepository)
     }
     
