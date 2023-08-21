@@ -79,3 +79,29 @@ class MockTransactionRepository: TransactionRepository {
         
     }
 }
+
+class MockDNYKService: DNYKService {
+    let billsGroup = MockCategoryGroup(identifier: "bills", name: "Bills", remoteIdentifier: "1234", syncDate: Date())
+    
+    func addTransaction(_ transaction: DNYK_Core.ITransaction) async throws {
+        // TODO: Implement
+    }
+    
+    func getCategories() async throws -> [DNYK_Core.LocalGroupedCategories] {
+        let electricCategory = MockCategory(identifier: "electricity", name: "Electricity", groupId: "bills", remoteIdentifier: "1234", syncDate: Date())
+        let internetCategory = MockCategory(identifier: "internet", name: "Internet", groupId: "bills", remoteIdentifier: "1234", syncDate: Date())
+        return [
+            LocalGroupedCategories(group: billsGroup, categories: [electricCategory, internetCategory])
+        ]
+    }
+    
+    func getCategoryGroups() async throws -> [DNYK_Core.ILocalCategoryGroup] {
+        return [
+            billsGroup
+        ]
+    }
+    
+    func createCategory(name: String, group: String) async throws -> DNYK_Core.ICategory {
+        return MockCategory(identifier: name.lowercased(), name: name, groupId: group, remoteIdentifier: "1234", syncDate: Date())
+    }
+}
