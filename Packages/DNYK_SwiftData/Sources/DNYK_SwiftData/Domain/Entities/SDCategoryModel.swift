@@ -19,7 +19,7 @@ class SDCategoryModel: ILocalCategory {
     var syncDate: Date?
     
     init(name: String, groupId: String) {
-        self.identifier = UUID().uuidString
+        self.identifier = Utils.generateUUID(for: .category)
         self.name = name
         self.groupId = groupId
     }
