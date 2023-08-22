@@ -23,8 +23,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
             name: "DNYK_SwiftData",
-            dependencies: ["DNYK_Core"]
-        ),
+            dependencies: ["DNYK_Core"]),
         .testTarget(
             name: "DNYK_SwiftDataTests",
             dependencies: ["DNYK_SwiftData"]),

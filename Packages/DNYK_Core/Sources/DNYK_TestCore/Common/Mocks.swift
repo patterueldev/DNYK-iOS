@@ -17,14 +17,21 @@ struct MockCategory: ILocalCategory {
     var syncDate: Date? = nil
 }
 
-struct MockCategoryGroup: ILocalCategoryGroup {
-    var identifier: String
-    var name: String
-    var remoteIdentifier: String? = nil
-    var syncDate: Date? = nil
+public struct MockCategoryGroup: ILocalCategoryGroup {
+    public var identifier: String
+    public var name: String
+    public var remoteIdentifier: String? = nil
+    public var syncDate: Date? = nil
+    
+    public init(identifier: String, name: String, remoteIdentifier: String? = nil, syncDate: Date? = nil) {
+        self.identifier = identifier
+        self.name = name
+        self.remoteIdentifier = remoteIdentifier
+        self.syncDate = syncDate
+    }
 }
 
-class MockLocalCategoryRepository: ILocalCategoryRepository {
+public class MockLocalCategoryRepository: ILocalCategoryRepository {
     var categories: [ILocalCategory] = [
         MockCategory(identifier: "internet", name: "Internet", groupId: "bills", remoteIdentifier: "1234", syncDate: Date()),
         MockCategory(identifier: "electricity", name: "Electricity", groupId: "bills", remoteIdentifier: "1234", syncDate: Date()),
@@ -35,11 +42,13 @@ class MockLocalCategoryRepository: ILocalCategoryRepository {
         MockCategoryGroup(identifier: "bills", name: "Bills", remoteIdentifier: "1234", syncDate: Date())
     ]
     
-    func getCategories() async throws -> [ILocalCategory] {
+    public init() {}
+    
+    public func getCategories() async throws -> [ILocalCategory] {
         return categories
     }
     
-    func getCategory(by name: String) async throws -> ILocalCategory {
+    public func getCategory(by name: String) async throws -> ILocalCategory {
         let category = categories.first { $0.name == name }
         guard let category = category else {
             throw CategoryError.categoryWithNameNotExist(name: name)
@@ -47,11 +56,11 @@ class MockLocalCategoryRepository: ILocalCategoryRepository {
         return category
     }
     
-    func getCategoryGroups() async throws -> [DNYK_Core.ILocalCategoryGroup] {
+    public func getCategoryGroups() async throws -> [DNYK_Core.ILocalCategoryGroup] {
         return groups
     }
     
-    func getOrCreateCategoryGroup(name: String) async throws -> ILocalCategoryGroup {
+    public func getOrCreateCategoryGroup(name: String) async throws -> ILocalCategoryGroup {
         if let group = groups.first (where: { $0.name == name }) {
             return group
         } else {
@@ -61,7 +70,7 @@ class MockLocalCategoryRepository: ILocalCategoryRepository {
         }
     }
     
-    func createCategory(name: String, group: ILocalCategoryGroup) async throws -> DNYK_Core.ILocalCategory {
+    public func createCategory(name: String, group: ILocalCategoryGroup) async throws -> DNYK_Core.ILocalCategory {
         let category = MockCategory(identifier: name.lowercased(), name: name, groupId: group.identifier, remoteIdentifier: "1234", syncDate: Date())
         categories.append(category)
         return category
@@ -74,20 +83,24 @@ struct MockTransaction: ITransaction {
 
 
 
-class MockTransactionRepository: TransactionRepository {
-    func addTransaction(_ transaction: ITransaction) async throws {
+public class MockTransactionRepository: TransactionRepository {
+    public init() {}
+    
+    public func addTransaction(_ transaction: ITransaction) async throws {
         
     }
 }
 
-class MockDNYKService: DNYKService {
+public class MockDNYKService: DNYKService {
     let billsGroup = MockCategoryGroup(identifier: "bills", name: "Bills", remoteIdentifier: "1234", syncDate: Date())
     
-    func addTransaction(_ transaction: DNYK_Core.ITransaction) async throws {
+    public init() {}
+    
+    public func addTransaction(_ transaction: DNYK_Core.ITransaction) async throws {
         // TODO: Implement
     }
     
-    func getCategories() async throws -> [DNYK_Core.LocalGroupedCategories] {
+    public func getCategories() async throws -> [DNYK_Core.LocalGroupedCategories] {
         let electricCategory = MockCategory(identifier: "electricity", name: "Electricity", groupId: "bills", remoteIdentifier: "1234", syncDate: Date())
         let internetCategory = MockCategory(identifier: "internet", name: "Internet", groupId: "bills", remoteIdentifier: "1234", syncDate: Date())
         return [
@@ -95,13 +108,13 @@ class MockDNYKService: DNYKService {
         ]
     }
     
-    func getCategoryGroups() async throws -> [DNYK_Core.ILocalCategoryGroup] {
+    public func getCategoryGroups() async throws -> [DNYK_Core.ILocalCategoryGroup] {
         return [
             billsGroup
         ]
     }
     
-    func createCategory(name: String, group: String) async throws -> DNYK_Core.ICategory {
+    public func createCategory(name: String, group: String) async throws -> DNYK_Core.ICategory {
         return MockCategory(identifier: name.lowercased(), name: name, groupId: group, remoteIdentifier: "1234", syncDate: Date())
     }
 }

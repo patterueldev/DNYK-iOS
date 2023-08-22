@@ -20,6 +20,9 @@
 		434B5A1A2A84ADF700DD79D2 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A192A84ADF700DD79D2 /* LandingView.swift */; };
 		434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */; };
 		434CCE352A901038006E075B /* DNYK_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 434CCE342A901038006E075B /* DNYK_Core */; };
+		434E51FF2A94283B0092B0FF /* NewCategoryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E51FE2A94283B0092B0FF /* NewCategoryViewModelTests.swift */; };
+		434E52012A9431A30092B0FF /* DNYK_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 434E52002A9431A30092B0FF /* DNYK_Core */; };
+		434E52032A9431A30092B0FF /* DNYK_TestCore in Frameworks */ = {isa = PBXBuildFile; productRef = 434E52022A9431A30092B0FF /* DNYK_TestCore */; };
 		437581112A85820A00E59FB5 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581102A85820A00E59FB5 /* BudgetView.swift */; };
 		43AA9CC22A8DE7F800A23FBF /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC12A8DE7F800A23FBF /* SwiftDate */; };
 		43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */; };
@@ -61,6 +64,8 @@
 		434B5A002A8478D900DD79D2 /* DNYK_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYK_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		434B5A192A84ADF700DD79D2 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		434B5A1D2A84B6DF00DD79D2 /* AddTransactionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionView.swift; sourceTree = "<group>"; };
+		434E51FE2A94283B0092B0FF /* NewCategoryViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCategoryViewModelTests.swift; sourceTree = "<group>"; };
+		434E52042A9433530092B0FF /* DNYK-iOS.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DNYK-iOS.xctestplan"; sourceTree = "<group>"; };
 		437581102A85820A00E59FB5 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewModel.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434E52012A9431A30092B0FF /* DNYK_Core in Frameworks */,
 				434CCE352A901038006E075B /* DNYK_Core in Frameworks */,
 				43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */,
 				43CC9AD32A90180000F0574F /* DNYK_SwiftData in Frameworks */,
@@ -82,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434E52032A9431A30092B0FF /* DNYK_TestCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +152,7 @@
 		434B59D72A8478D600DD79D2 = {
 			isa = PBXGroup;
 			children = (
+				434E52042A9433530092B0FF /* DNYK-iOS.xctestplan */,
 				434B59E22A8478D600DD79D2 /* DNYK-iOS */,
 				434B59F32A8478D900DD79D2 /* DNYK-iOSTests */,
 				434B59FD2A8478D900DD79D2 /* DNYK-iOSUITests */,
@@ -185,7 +193,7 @@
 		434B59F32A8478D900DD79D2 /* DNYK-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				435E634D2A93468A00102312 /* Scenes */,
+				434E51DA2A94191F0092B0FF /* Scenes */,
 				434B59F42A8478D900DD79D2 /* DNYK_iOSTests.swift */,
 			);
 			path = "DNYK-iOSTests";
@@ -200,19 +208,20 @@
 			path = "DNYK-iOSUITests";
 			sourceTree = "<group>";
 		};
-		435E634D2A93468A00102312 /* Scenes */ = {
+		434E51DA2A94191F0092B0FF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				435E634E2A93468A00102312 /* Add Transaction */,
+				434E51FD2A94283B0092B0FF /* New Category */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		435E634E2A93468A00102312 /* Add Transaction */ = {
+		434E51FD2A94283B0092B0FF /* New Category */ = {
 			isa = PBXGroup;
 			children = (
+				434E51FE2A94283B0092B0FF /* NewCategoryViewModelTests.swift */,
 			);
-			path = "Add Transaction";
+			path = "New Category";
 			sourceTree = "<group>";
 		};
 		43CC9AD42A9020BF00F0574F /* Budget Dashboard */ = {
@@ -252,6 +261,7 @@
 				43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */,
 				434CCE342A901038006E075B /* DNYK_Core */,
 				43CC9AD22A90180000F0574F /* DNYK_SwiftData */,
+				434E52002A9431A30092B0FF /* DNYK_Core */,
 			);
 			productName = "DNYK-iOS";
 			productReference = 434B59E02A8478D600DD79D2 /* DNYK-iOS.app */;
@@ -272,6 +282,7 @@
 			);
 			name = "DNYK-iOSTests";
 			packageProductDependencies = (
+				434E52022A9431A30092B0FF /* DNYK_TestCore */,
 			);
 			productName = "DNYK-iOSTests";
 			productReference = 434B59F02A8478D900DD79D2 /* DNYK-iOSTests.xctest */;
@@ -393,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				434B59F52A8478D900DD79D2 /* DNYK_iOSTests.swift in Sources */,
+				434E51FF2A94283B0092B0FF /* NewCategoryViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -753,6 +765,14 @@
 		434CCE342A901038006E075B /* DNYK_Core */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DNYK_Core;
+		};
+		434E52002A9431A30092B0FF /* DNYK_Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DNYK_Core;
+		};
+		434E52022A9431A30092B0FF /* DNYK_TestCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DNYK_TestCore;
 		};
 		43AA9CC12A8DE7F800A23FBF /* SwiftDate */ = {
 			isa = XCSwiftPackageProductDependency;

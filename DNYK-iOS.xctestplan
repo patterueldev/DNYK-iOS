@@ -1,0 +1,42 @@
+{
+  "configurations" : [
+    {
+      "id" : "9A4E4A61-072B-4C3C-BA69-C7A14530FA95",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:DNYK-iOS.xcodeproj",
+      "identifier" : "434B59DF2A8478D600DD79D2",
+      "name" : "DNYK-iOS"
+    }
+  },
+  "testTargets" : [
+    {
+      "skippedTests" : [
+        "DNYK_iOSTests"
+      ],
+      "target" : {
+        "containerPath" : "container:DNYK-iOS.xcodeproj",
+        "identifier" : "434B59EF2A8478D900DD79D2",
+        "name" : "DNYK-iOSTests"
+      }
+    },
+    {
+      "skippedTests" : [
+        "DNYK_iOSUITests\/testLaunchPerformance()",
+        "DNYK_iOSUITestsLaunchTests"
+      ],
+      "target" : {
+        "containerPath" : "container:DNYK-iOS.xcodeproj",
+        "identifier" : "434B59F92A8478D900DD79D2",
+        "name" : "DNYK-iOSUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

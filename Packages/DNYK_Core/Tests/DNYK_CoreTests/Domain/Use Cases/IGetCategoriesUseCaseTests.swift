@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import DNYK_TestCore
 
 @testable import DNYK_Core
 
