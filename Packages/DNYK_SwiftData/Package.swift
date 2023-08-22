@@ -7,7 +7,7 @@ let package = Package(
     name: "DNYK_SwiftData",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v17),
+        .iOS("17.0"),
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.

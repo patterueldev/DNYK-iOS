@@ -11,7 +11,7 @@ class SDCategoryGroupModelTests: XCTestCase {
         super.setUp()
         
         do {
-            let modelContainer = try ModelContainer(for: [SDCategoryGroupModel.self])
+            let modelContainer = try ModelContainer(for: SDCategoryGroupModel.self)
             self.modelContainer = modelContainer
         } catch {
             fatalError("Failed to initialize model container")
@@ -19,7 +19,7 @@ class SDCategoryGroupModelTests: XCTestCase {
     }
     
     func testInit() {
-        let group = SDCategoryGroupModel(name: "Test")
+        let group = SDCategoryGroupModel.create(name: "Test")
         let identifier = Utils.getLatestUUID()
         
         XCTAssertNotNil(group)

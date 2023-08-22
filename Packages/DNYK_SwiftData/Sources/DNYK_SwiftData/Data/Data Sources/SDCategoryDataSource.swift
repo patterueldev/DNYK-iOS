@@ -11,15 +11,15 @@ import DNYK_Core
 
 // This data source will be using SwiftData as its data source
 actor SDCategoryDataSource: ModelActor, ILocalCategoryRepository {
-    nonisolated public let executor: any ModelExecutor
+    let modelContainer: ModelContainer
+    nonisolated public let modelExecutor: ModelExecutor
             
-    private let container: ModelContainer
     private let context: ModelContext
     
     init(container: ModelContainer) {
-        self.container = container
+        self.modelContainer = container
         self.context = ModelContext(container)
-        self.executor = DefaultModelExecutor(context: context)
+        self.modelExecutor = DefaultSerialModelExecutor(modelContext: context)
     }
     
     func getCategories() async throws -> [ILocalCategory] {
@@ -56,14 +56,14 @@ actor SDCategoryDataSource: ModelActor, ILocalCategoryRepository {
         if let group = group {
             return group
         }
-        let newGroup = SDCategoryGroupModel(name: name)
+        let newGroup = SDCategoryGroupModel.create(name: name)
         context.insert(newGroup)
         try context.save()
         return newGroup
     }
     
     func createCategory(name: String, group: ILocalCategoryGroup) async throws -> ILocalCategory {
-        let category = SDCategoryModel(name: name, groupId: group.identifier)
+        let category = SDCategoryModel.create(name: name, groupId: group.identifier)
         context.insert(category)
         try context.save()
         return category

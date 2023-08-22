@@ -17,8 +17,12 @@ class SDCategoryGroupModel: ILocalCategoryGroup {
     var remoteIdentifier: String?
     var syncDate: Date?
     
-    init(name: String) {
+    private init(name: String) {
         self.identifier = Utils.generateUUID(for: .categoryGroup)
         self.name = name
+    }
+    
+    static func create(name: String) -> SDCategoryGroupModel {
+        return SDCategoryGroupModel(name: name)
     }
 }

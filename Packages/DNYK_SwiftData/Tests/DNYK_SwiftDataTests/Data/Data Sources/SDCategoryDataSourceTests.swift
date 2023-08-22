@@ -13,7 +13,10 @@ class SDCategoryDataSourceTests: XCTestCase {
         super.setUp()
         
         do {
-            let modelContainer = try ModelContainer(for: [SDCategoryModel.self, SDCategoryGroupModel.self], ModelConfiguration(inMemory: true))
+            let modelContainer = try ModelContainer(
+                for: SDCategoryModel.self, SDCategoryGroupModel.self,
+                configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+            )
             let dataSource = SDCategoryDataSource(container: modelContainer)
             self.repository = dataSource
             self.container = modelContainer
@@ -26,11 +29,11 @@ class SDCategoryDataSourceTests: XCTestCase {
     func testGetCategories() async throws {
         // Arrange
         // -- insert group named "Bills"
-        let group = SDCategoryGroupModel(name: "Bills")
+        let group = SDCategoryGroupModel.create(name: "Bills")
         let latestGroupUUID = Utils.getLatestUUID()
         context.insert(group)
         // -- next, insert category named "Rent" with group id "Bills"
-        let category = SDCategoryModel(name: "Rent", groupId: group.identifier)
+        let category = SDCategoryModel.create(name: "Rent", groupId: group.identifier)
         let latestCategoryUUID = Utils.getLatestUUID()
         context.insert(category)
         try context.save()
@@ -48,11 +51,11 @@ class SDCategoryDataSourceTests: XCTestCase {
     func testGetCategoryByName() async throws {
         // Arrange
         // -- insert group named "Bills"
-        let group = SDCategoryGroupModel(name: "Bills")
+        let group = SDCategoryGroupModel.create(name: "Bills")
         let latestGroupUUID = Utils.getLatestUUID()
         context.insert(group)
         // -- next, insert category named "Rent" with group id "Bills"
-        let category = SDCategoryModel(name: "Rent", groupId: group.identifier)
+        let category = SDCategoryModel.create(name: "Rent", groupId: group.identifier)
         let latestCategoryUUID = Utils.getLatestUUID()
         context.insert(category)
         try context.save()
@@ -69,7 +72,7 @@ class SDCategoryDataSourceTests: XCTestCase {
     func testGetCategoryGroups() async throws {
         // Arrange
         // -- insert group named "Leasure"
-        let group = SDCategoryGroupModel(name: "Leasure")
+        let group = SDCategoryGroupModel.create(name: "Leasure")
         let latestGroupUUID = Utils.getLatestUUID()
         context.insert(group)
         try context.save()
@@ -97,7 +100,7 @@ class SDCategoryDataSourceTests: XCTestCase {
     func testCreateCategory() async throws {
         // Arrange
         // -- insert group named "Bills"
-        let group = SDCategoryGroupModel(name: "Bills")
+        let group = SDCategoryGroupModel.create(name: "Bills")
         let latestGroupUUID = Utils.getLatestUUID()
         context.insert(group)
         try context.save()
