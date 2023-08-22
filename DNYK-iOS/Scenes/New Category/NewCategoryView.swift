@@ -9,6 +9,8 @@ import SwiftUI
 import DNYK_Core
 
 struct NewCategoryView: View {
+    typealias Identifiers = Constants.AccessibilityIdentifiers
+    
     init(service: DNYKService) {
         self.viewModel = NewCategoryViewModel(service: service)
     }
@@ -24,6 +26,7 @@ struct NewCategoryView: View {
                     TextField(field.placeholder, text: $viewModel.name)
                         .font(.system(size: 18))
                         .padding(.vertical, 8)
+                        .accessibilityIdentifier(Identifiers.newCategoryViewModelNameTextField)
                 case .group:
                     Picker(field.placeholder, selection: $viewModel.selectedGroup, content: {
                         ForEach(viewModel.categoryGroups) { group in

@@ -99,4 +99,50 @@ class NewCategoryViewModelTests: XCTestCase {
         // Then
         XCTAssertFalse(isEnabled)
     }
+    
+    func testFetchCategoryGroups() throws {
+        // Given
+        let expectation = expectation(description: "fetchCategoryGroups")
+        
+        // When
+        viewModel.fetchCategoryGroups()
+        
+        // Then
+        // assert after `isLoading` is set to false
+        // use timer to wait for the async task to finish
+        // retry for up to 10 times, every 1 second
+        var retryCount = 0
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            if !self.viewModel.isLoading {
+                XCTAssertEqual(self.viewModel.categoryGroups.count, 3)
+                expectation.fulfill()
+                timer.invalidate()
+            } else if retryCount >= 10 {
+                expectation.fulfill()
+                timer.invalidate()
+            }
+            retryCount += 1
+        }
+        
+        waitForExpectations(timeout: 2)
+    }
+    
+    func testSaveWithCompletion() {
+        // Given
+        let expectation = expectation(description: "saveWithCompletion")
+        viewModel.name = "Test"
+        let group = MockCategoryGroup(identifier: "1", name: "Test")
+        viewModel.selectedGroup = .init(group: group)
+        viewModel.groupName = "Test"
+        
+        // When
+        viewModel.save { didSucceed in
+            XCTAssertTrue(didSucceed)
+            expectation.fulfill()
+        }
+        
+        // Then
+        waitForExpectations(timeout: 2)
+    }
+    
 }

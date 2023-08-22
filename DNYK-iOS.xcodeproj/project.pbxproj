@@ -28,6 +28,8 @@
 		43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */; };
 		43AA9CD52A8E0AAC00A23FBF /* NewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
+		43B882942A9452D6005445E9 /* NewCategoryViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B882932A9452D6005445E9 /* NewCategoryViewTests.swift */; };
+		43B882962A945B55005445E9 /* DNYKiOSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B882952A945B55005445E9 /* DNYKiOSConstants.swift */; };
 		43CC9AD32A90180000F0574F /* DNYK_SwiftData in Frameworks */ = {isa = PBXBuildFile; productRef = 43CC9AD22A90180000F0574F /* DNYK_SwiftData */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +71,8 @@
 		437581102A85820A00E59FB5 /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
 		43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewModel.swift; sourceTree = "<group>"; };
 		43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTransactionViewModel.swift; sourceTree = "<group>"; };
+		43B882932A9452D6005445E9 /* NewCategoryViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCategoryViewTests.swift; sourceTree = "<group>"; };
+		43B882952A945B55005445E9 /* DNYKiOSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DNYKiOSConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,12 +136,13 @@
 			path = "Select Category";
 			sourceTree = "<group>";
 		};
-		430BB58C2A86FC8E008DC2A7 /* Core */ = {
+		430BB58C2A86FC8E008DC2A7 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				430BB58D2A86FC9F008DC2A7 /* ModalPreview.swift */,
+				43B882952A945B55005445E9 /* DNYKiOSConstants.swift */,
 			);
-			path = Core;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		4318040A2A8DBD340012C64C /* New Category */ = {
@@ -173,7 +178,7 @@
 		434B59E22A8478D600DD79D2 /* DNYK-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				430BB58C2A86FC8E008DC2A7 /* Core */,
+				430BB58C2A86FC8E008DC2A7 /* Common */,
 				430BB5882A86FB20008DC2A7 /* Scenes */,
 				434B59E32A8478D600DD79D2 /* DNYK_iOSApp.swift */,
 				434B59E72A8478D900DD79D2 /* Assets.xcassets */,
@@ -220,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				434E51FE2A94283B0092B0FF /* NewCategoryViewModelTests.swift */,
+				43B882932A9452D6005445E9 /* NewCategoryViewTests.swift */,
 			);
 			path = "New Category";
 			sourceTree = "<group>";
@@ -391,6 +397,7 @@
 				430BB58B2A86FB69008DC2A7 /* SelectCategoryView.swift in Sources */,
 				430BB58E2A86FC9F008DC2A7 /* ModalPreview.swift in Sources */,
 				43AA9CD52A8E0AAC00A23FBF /* NewCategoryViewModel.swift in Sources */,
+				43B882962A945B55005445E9 /* DNYKiOSConstants.swift in Sources */,
 				43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */,
 				434B59E42A8478D600DD79D2 /* DNYK_iOSApp.swift in Sources */,
 				434B5A1E2A84B6DF00DD79D2 /* AddTransactionView.swift in Sources */,
@@ -405,6 +412,7 @@
 			files = (
 				434B59F52A8478D900DD79D2 /* DNYK_iOSTests.swift in Sources */,
 				434E51FF2A94283B0092B0FF /* NewCategoryViewModelTests.swift in Sources */,
+				43B882942A9452D6005445E9 /* NewCategoryViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
