@@ -83,7 +83,7 @@ struct MockTransaction: ITransaction {
 
 
 
-public class MockTransactionRepository: TransactionRepository {
+public class MockTransactionRepository: ITransactionRepository {
     public init() {}
     
     public func addTransaction(_ transaction: ITransaction) async throws {

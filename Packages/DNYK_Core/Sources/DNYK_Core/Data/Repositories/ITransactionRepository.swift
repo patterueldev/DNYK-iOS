@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol TransactionRepository {
+public protocol ITransactionRepository {
     func addTransaction(_ transaction: ITransaction) async throws
 }
 

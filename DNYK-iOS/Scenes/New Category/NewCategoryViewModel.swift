@@ -8,7 +8,7 @@
 import SwiftUI
 import DNYK_Core
 
-protocol INewCategoryViewModel: ObservableObject, CanLoad {
+protocol INewCategoryViewModel: ObservableObject, ICanLoad {
     // MARK: - Properties
     var name: String { get set }
     var selectedGroup: NewCategoryViewModel.CategoryGroupWrapper { get set }

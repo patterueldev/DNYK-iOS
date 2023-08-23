@@ -7,14 +7,14 @@
 
 import Foundation
 
-protocol AddTransactionUseCase {
+protocol IAddTransactionUseCase {
     func execute(_ parameters: ITransaction) async throws
 }
 
 struct DefaultAddTransactionUseCase {
-    private let repository: TransactionRepository
+    private let repository: ITransactionRepository
     
-    init(repository: TransactionRepository) {
+    init(repository: ITransactionRepository) {
         self.repository = repository
     }
     

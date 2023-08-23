@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PreviewTransactionDataSource: TransactionRepository {
+struct PreviewTransactionDataSource: ITransactionRepository {
     func addTransaction(_ transaction: ITransaction) async throws {
         
     }

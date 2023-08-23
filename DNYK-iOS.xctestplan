@@ -28,7 +28,6 @@
     },
     {
       "skippedTests" : [
-        "DNYK_iOSUITests",
         "DNYK_iOSUITests\/testLaunchPerformance()",
         "DNYK_iOSUITestsLaunchTests"
       ],

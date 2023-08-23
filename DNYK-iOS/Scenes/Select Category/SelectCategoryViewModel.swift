@@ -13,7 +13,7 @@ protocol SelectCategoryViewDelegate: AnyObject {
     func didSelectCategories(_ categories: [ILocalCategory])
 }
 
-class SelectCategoryViewModel: ObservableObject, CanLoad {
+class SelectCategoryViewModel: ObservableObject, ICanLoad {
     let service: IDNYKService
     
     @Published var isLoading: Bool = false

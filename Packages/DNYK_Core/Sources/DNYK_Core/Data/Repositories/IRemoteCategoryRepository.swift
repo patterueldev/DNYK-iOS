@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol RemoteCategoryRepository {
+protocol IRemoteCategoryRepository {
     func getCategories() async throws -> [IRemoteCategory]
     func getCategoryGroups() async throws -> [IRemoteCategoryGroup]
 }

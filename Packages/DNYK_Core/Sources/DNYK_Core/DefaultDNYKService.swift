@@ -17,7 +17,7 @@ public class DefaultDNYKService: IDNYKService {
         return service
     }()
     
-    private let addTransactionDataSource: TransactionRepository
+    private let addTransactionDataSource: ITransactionRepository
     private let localCategoryRepository: ILocalCategoryRepository
     
     private lazy var addTransaction = DefaultAddTransactionUseCase(repository: addTransactionDataSource)
@@ -27,7 +27,7 @@ public class DefaultDNYKService: IDNYKService {
     private lazy var createCategory = DefaultCreateCategoryUseCase(localRepository: localCategoryRepository)
     
     public init(
-        transactionRepository: TransactionRepository,
+        transactionRepository: ITransactionRepository,
         localCategoryRepository: ILocalCategoryRepository
     ) {
         self.addTransactionDataSource = transactionRepository

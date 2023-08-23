@@ -4,7 +4,7 @@ import DNYK_TestCore
 @testable import DNYK_Core
 
 class DefaultDNYKServiceTests: XCTestCase {
-    var transactionRepository: TransactionRepository!
+    var transactionRepository: ITransactionRepository!
     var categoryRepository: ILocalCategoryRepository!
     
     var service: DefaultDNYKService!

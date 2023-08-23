@@ -3,9 +3,9 @@ import XCTest
 @testable import DNYK_Core
 
 class CanLoadTests: XCTestCase {
-    var canLoad: (any CanLoad)!
+    var canLoad: (any ICanLoad)!
     
-    class MockCanLoad: CanLoad {
+    class MockCanLoad: ICanLoad {
         var isLoading: Bool = false
     }
     
