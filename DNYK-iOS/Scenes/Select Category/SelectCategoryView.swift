@@ -28,7 +28,7 @@ struct SelectCategoryView: View {
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
                     Section {
-                        NavigationLink(destination: NewCategoryView(service: viewModel.service)) {
+                        NavigationLink(destination: DNYKViewBuilder.newCategoryView(with: viewModel.service)) {
                             HStack {
                                 Image(systemSymbol: .plusCircleFill)
                                     .foregroundColor(.blue)

@@ -8,7 +8,24 @@
 import SwiftUI
 import DNYK_Core
 
-class NewCategoryViewModel: ObservableObject, CanLoad {
+protocol INewCategoryViewModel: ObservableObject, CanLoad {
+    // MARK: - Properties
+    var name: String { get set }
+    var selectedGroup: NewCategoryViewModel.CategoryGroupWrapper { get set }
+    var groupName: String { get set }
+    
+    // MARK: - Selections
+    var fields: [NewCategoryField] { get set }
+    var categoryGroups: [NewCategoryViewModel.CategoryGroupWrapper] { get set }
+    
+    // MARK: - State
+    var isSaveButtonEnabled: Bool { get }
+    
+    // MARK: - Methods
+    func save(completion: @escaping (Bool) -> Void)
+}
+
+class NewCategoryViewModel: INewCategoryViewModel {
     let service: DNYKService
     
     @Published var isLoading: Bool = false

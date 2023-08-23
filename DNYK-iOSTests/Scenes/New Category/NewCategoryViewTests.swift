@@ -17,14 +17,14 @@ class NewCategoryViewTests: XCTestCase {
     
     var service: DNYKService!
     var viewModel: NewCategoryViewModel!
-    var view: NewCategoryView!
+    var view: NewCategoryView<NewCategoryViewModel>!
     
     override func setUpWithError() throws {
         let transactionRepository = MockTransactionRepository()
         let localCategoryRepository = MockLocalCategoryRepository()
         
         service = DefaultDNYKService(transactionRepository: transactionRepository, localCategoryRepository: localCategoryRepository)
-        view = NewCategoryView(service: service)
+        view = DNYKViewBuilder.newCategoryView(with: service)
         viewModel = view.viewModel
     }
     
