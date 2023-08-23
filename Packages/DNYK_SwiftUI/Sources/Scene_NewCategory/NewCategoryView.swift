@@ -7,6 +7,8 @@
 
 import SwiftUI
 import DNYK_Core
+import DNYK_SwiftUI
+import SFSafeSymbols
 
 struct NewCategoryView<ViewModel: INewCategoryViewModel>: View {
     typealias Identifiers = Constants.AccessibilityIdentifiers
@@ -18,7 +20,7 @@ struct NewCategoryView<ViewModel: INewCategoryViewModel>: View {
     @ObservedObject var viewModel: ViewModel
     @Environment(\.presentationMode) var presentationMode
     
-    var body: some View {
+    public var body: some View {
         NavigationStack {
             buildFields()
         }
@@ -119,7 +121,7 @@ struct NewCategoryView<ViewModel: INewCategoryViewModel>: View {
 }
 
 #Preview {
-    return ModalPreview {
-        DNYKViewBuilder.newCategoryView(with: DefaultDNYKService.preview)
+    ModalPreview {
+        NewCategoryScene.view(with: DefaultDNYKService.preview)
     }
 }

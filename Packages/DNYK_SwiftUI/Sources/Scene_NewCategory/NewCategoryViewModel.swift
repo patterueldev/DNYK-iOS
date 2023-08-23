@@ -220,3 +220,9 @@ enum NewCategoryProperty: Int {
     case group
     case groupName
 }
+
+struct ErrorMessage {
+    let identifier: String
+    let title: String
+    let message: String
+}

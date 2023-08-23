@@ -7,11 +7,15 @@
 
 import SwiftUI
 
-struct ModalPreview <SomeView: View> : View {
+public struct ModalPreview <SomeView: View> : View {
     @State var showsModalView = true
     var content: () -> SomeView
     
-    var body: some View {
+    public init(@ViewBuilder content: @escaping () -> SomeView) {
+        self.content = content
+    }
+    
+    public var body: some View {
         Text("Preview")
             .sheet(isPresented: $showsModalView, content: content)
     }
