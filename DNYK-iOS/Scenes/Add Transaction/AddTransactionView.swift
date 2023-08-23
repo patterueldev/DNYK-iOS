@@ -13,7 +13,7 @@ import DNYK_Core
 typealias OptionsLoader = () async -> [String]
 
 struct AddTransactionView: View {
-    init(service: DNYKService) {
+    init(service: IDNYKService) {
         self.viewModel = AddTransactionViewModel(service: service)
     }
     

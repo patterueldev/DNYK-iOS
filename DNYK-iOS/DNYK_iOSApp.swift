@@ -11,7 +11,7 @@ import DNYK_SwiftData
 
 @main
 struct DNYK_iOSApp: App {
-    private var service: DNYKService = {
+    private var service: IDNYKService = {
         let inMemory = CommandLine.arguments.contains("--in-memory")
         return DNYKSwiftData.service(inMemory: inMemory)
     }()

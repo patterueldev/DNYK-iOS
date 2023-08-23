@@ -6,7 +6,7 @@ import DNYK_TestCore
 
 class NewCategoryViewModelTests: XCTestCase {
     var viewModel: NewCategoryViewModel!
-    var service: DNYKService!
+    var service: IDNYKService!
     
     override func setUpWithError() throws {
         service = MockDNYKService()

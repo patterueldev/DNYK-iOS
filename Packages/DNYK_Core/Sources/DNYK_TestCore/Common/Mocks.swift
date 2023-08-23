@@ -91,7 +91,7 @@ public class MockTransactionRepository: TransactionRepository {
     }
 }
 
-public class MockDNYKService: DNYKService {
+public class MockDNYKService: IDNYKService {
     let billsGroup = MockCategoryGroup(identifier: "bills", name: "Bills", remoteIdentifier: "1234", syncDate: Date())
     
     public init() {}

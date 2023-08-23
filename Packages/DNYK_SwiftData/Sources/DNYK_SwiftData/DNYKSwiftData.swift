@@ -4,7 +4,7 @@ import DNYK_Core
 import SwiftData
 
 public struct DNYKSwiftData {
-    public static func service(inMemory: Bool = false) -> DNYKService {
+    public static func service(inMemory: Bool = false) -> IDNYKService {
         do {
             let configuration = ModelConfiguration(
                 isStoredInMemoryOnly: inMemory

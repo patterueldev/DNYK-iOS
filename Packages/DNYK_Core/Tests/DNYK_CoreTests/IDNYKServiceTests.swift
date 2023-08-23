@@ -3,8 +3,8 @@ import DNYK_TestCore
 
 @testable import DNYK_Core
 
-class DNYKServiceTests: XCTestCase {
-    var service: DNYKService!
+class IDNYKServiceTests: XCTestCase {
+    var service: IDNYKService!
     
     override func setUp() {
         super.setUp()

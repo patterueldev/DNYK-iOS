@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol DNYKService {
+public protocol IDNYKService {
     func addTransaction(_ transaction: ITransaction) async throws
     func getCategories() async throws -> [LocalGroupedCategories]
     func getCategoryGroups() async throws -> [ILocalCategoryGroup]

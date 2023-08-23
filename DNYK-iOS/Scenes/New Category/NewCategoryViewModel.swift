@@ -26,7 +26,7 @@ protocol INewCategoryViewModel: ObservableObject, CanLoad {
 }
 
 class NewCategoryViewModel: INewCategoryViewModel {
-    let service: DNYKService
+    let service: IDNYKService
     
     @Published var isLoading: Bool = false
     @Published var errorMessages: [ErrorMessage] = []
@@ -52,7 +52,7 @@ class NewCategoryViewModel: INewCategoryViewModel {
         return condition.allSatisfy { $0 }
     }
     
-    init(service: DNYKService) {
+    init(service: IDNYKService) {
         self.service = service
         fetchCategoryGroups()
     }

@@ -10,8 +10,8 @@ import SFSafeSymbols
 import DNYK_Core
 
 struct LandingView: View {
-    let service: DNYKService
-    init(service: DNYKService) {
+    let service: IDNYKService
+    init(service: IDNYKService) {
         self.service = service
     }
     

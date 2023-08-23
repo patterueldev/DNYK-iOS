@@ -8,7 +8,7 @@
 import DNYK_Core
 
 struct DNYKViewBuilder {
-    static func newCategoryView(with service: DNYKService) -> NewCategoryView<NewCategoryViewModel> {
+    static func newCategoryView(with service: IDNYKService) -> NewCategoryView<NewCategoryViewModel> {
         NewCategoryView(viewModel: .init(service: service))
     }
 }

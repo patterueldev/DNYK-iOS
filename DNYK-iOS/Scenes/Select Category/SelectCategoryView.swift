@@ -9,7 +9,7 @@ import SwiftUI
 import DNYK_Core
 
 struct SelectCategoryView: View {
-    init(service: DNYKService, delegate: SelectCategoryViewDelegate? = nil) {
+    init(service: IDNYKService, delegate: SelectCategoryViewDelegate? = nil) {
         self.viewModel = SelectCategoryViewModel(service: service, delegate: delegate)
     }
     

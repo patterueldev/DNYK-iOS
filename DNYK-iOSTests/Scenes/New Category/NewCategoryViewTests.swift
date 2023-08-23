@@ -15,7 +15,7 @@ import ViewInspector
 class NewCategoryViewTests: XCTestCase {
     // test the NewCategoryView swiftui
     
-    var service: DNYKService!
+    var service: IDNYKService!
     var viewModel: NewCategoryViewModel!
     var view: NewCategoryView<NewCategoryViewModel>!
     

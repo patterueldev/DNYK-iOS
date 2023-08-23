@@ -14,7 +14,7 @@ protocol SelectCategoryViewDelegate: AnyObject {
 }
 
 class SelectCategoryViewModel: ObservableObject, CanLoad {
-    let service: DNYKService
+    let service: IDNYKService
     
     @Published var isLoading: Bool = false
     @Published var errorMessages: [ErrorMessage] = []
@@ -27,7 +27,7 @@ class SelectCategoryViewModel: ObservableObject, CanLoad {
     
     weak var delegate: SelectCategoryViewDelegate?
     
-    init(service: DNYKService, delegate: SelectCategoryViewDelegate? = nil) {
+    init(service: IDNYKService, delegate: SelectCategoryViewDelegate? = nil) {
         self.service = service
         self.delegate = delegate
         if let delegate = delegate {

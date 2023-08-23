@@ -8,7 +8,7 @@
 import Foundation
 import SwiftData
 
-public class DefaultDNYKService: DNYKService {
+public class DefaultDNYKService: IDNYKService {
     public static var preview: DefaultDNYKService = {
         let service = DefaultDNYKService(
             transactionRepository: PreviewTransactionDataSource(),

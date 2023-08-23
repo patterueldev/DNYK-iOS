@@ -9,7 +9,7 @@ import SwiftUI
 import DNYK_Core
 
 class AddTransactionViewModel: ObservableObject {
-    let service: DNYKService
+    let service: IDNYKService
     // transaction type, either an Expense or Income
     @Published var transactionType: TransactionType = .expense
     @Published var requiredToSelectCategory: Bool = true // this will depend on the account or payee selected (?)
@@ -39,7 +39,7 @@ class AddTransactionViewModel: ObservableObject {
         return prefix + "Account"
     }
     
-    init(service: DNYKService) {
+    init(service: IDNYKService) {
         self.service = service
     }
 }
