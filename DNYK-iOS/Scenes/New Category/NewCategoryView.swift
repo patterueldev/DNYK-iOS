@@ -59,7 +59,7 @@ struct NewCategoryView: View {
                         TextField(field.placeholder, text: $viewModel.groupName)
                             .font(.system(size: 18))
                             .padding(.vertical, 8)
-                            .accessibilityIdentifier(Identifiers.nameCategoryViewNewGroupTextField)
+                            .accessibilityIdentifier(Identifiers.newCategoryViewNewGroupTextField)
                     }
                 }
             }
@@ -78,7 +78,9 @@ struct NewCategoryView: View {
                                 presentationMode.wrappedValue.dismiss()
                             }
                         }
-                    }.disabled(!viewModel.isSaveButtonEnabled)
+                    }
+                    .disabled(!viewModel.isSaveButtonEnabled)    
+                    .accessibilityIdentifier(Identifiers.newCategoryViewSaveButton)
                 }
             }
         }

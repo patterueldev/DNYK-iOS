@@ -15,11 +15,16 @@ import ViewInspector
 class NewCategoryViewTests: XCTestCase {
     // test the NewCategoryView swiftui
     
+    var service: DNYKService!
     var viewModel: NewCategoryViewModel!
     var view: NewCategoryView!
     
     override func setUpWithError() throws {
-        view = NewCategoryView(service: MockDNYKService())
+        let transactionRepository = MockTransactionRepository()
+        let localCategoryRepository = MockLocalCategoryRepository()
+        
+        service = DefaultDNYKService(transactionRepository: transactionRepository, localCategoryRepository: localCategoryRepository)
+        view = NewCategoryView(service: service)
         viewModel = view.viewModel
     }
     
@@ -89,7 +94,7 @@ class NewCategoryViewTests: XCTestCase {
         viewModel.groupName = "Leasure"
         
         // When
-        let groupField = try view.inspect().find(viewWithAccessibilityIdentifier: Constants.AccessibilityIdentifiers.nameCategoryViewNewGroupTextField).textField()
+        let groupField = try view.inspect().find(viewWithAccessibilityIdentifier: Constants.AccessibilityIdentifiers.newCategoryViewNewGroupTextField).textField()
         
         // Then
         try XCTAssertEqual(groupField.input(), "Leasure")
@@ -102,5 +107,43 @@ class NewCategoryViewTests: XCTestCase {
         
         // Then
         XCTAssertEqual(newGroupName, "Emergency")
+    }
+    
+    func testSaveCategory() async throws {
+        // Given
+        let billsGroup = MockCategoryGroup(identifier: "bills", name: "Bills")
+        viewModel.name = "Mobile"
+        viewModel.selectedGroup = .init(group: billsGroup)
+        var groupedCategories = try await service.getCategories()
+        
+        // When
+        let saveButton = try view.inspect().find(viewWithAccessibilityIdentifier: Constants.AccessibilityIdentifiers.newCategoryViewSaveButton).button()
+        try saveButton.tap() // wait and check if dismissed
+        // delay for about 0.5 seconds and fulfill the expectation
+        let expectation = self.expectation(description: "dismissed")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            expectation.fulfill()
+        }
+        await fulfillment(of: [expectation])
+        
+        // Then
+        
+        // assert previous grouped category
+        XCTAssertEqual(groupedCategories.count, 2)
+        XCTAssertEqual(groupedCategories.last?.name, "Bills")
+        XCTAssertEqual(groupedCategories.last?.group.identifier, billsGroup.identifier)
+        XCTAssertEqual(groupedCategories.last?.group.name, billsGroup.name)
+        XCTAssertEqual(groupedCategories.last?.categories.count, 3)
+        XCTAssertEqual(groupedCategories.last?.categories.last?.name, "Water")
+        
+        groupedCategories = try await service.getCategories()
+        
+        // assert updated grouped category
+        XCTAssertEqual(groupedCategories.count, 2)
+        XCTAssertEqual(groupedCategories.last?.name, "Bills")
+        XCTAssertEqual(groupedCategories.last?.group.identifier, billsGroup.identifier)
+        XCTAssertEqual(groupedCategories.last?.group.name, billsGroup.name)
+        XCTAssertEqual(groupedCategories.last?.categories.count, 4)
+        XCTAssertEqual(groupedCategories.last?.categories.last?.name, "Mobile")
     }
 }

@@ -13,7 +13,7 @@ struct DNYKiOSConstants {
     struct AccessibilityIdentifiers {
         static let newCategoryViewNameTextField = "newCategoryViewNameTextField"
         static let newCategoryViewGroupField = "newCategoryViewGroupField"
-        static let nameCategoryViewNewGroupTextField = "nameCategoryViewNewGroupTextField"
+        static let newCategoryViewNewGroupTextField = "newCategoryViewNewGroupTextField"
+        static let newCategoryViewSaveButton = "newCategoryViewSaveButton"
     }
-    
 }
