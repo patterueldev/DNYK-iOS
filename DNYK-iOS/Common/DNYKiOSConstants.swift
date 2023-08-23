@@ -11,7 +11,9 @@ typealias Constants = DNYKiOSConstants
 
 struct DNYKiOSConstants {
     struct AccessibilityIdentifiers {
-        static let newCategoryViewModelNameTextField = "newCategoryViewModelNameTextField"
+        static let newCategoryViewNameTextField = "newCategoryViewNameTextField"
+        static let newCategoryViewGroupField = "newCategoryViewGroupField"
+        static let nameCategoryViewNewGroupTextField = "nameCategoryViewNewGroupTextField"
     }
     
 }

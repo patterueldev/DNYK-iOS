@@ -8,10 +8,11 @@
 import XCTest
 import DNYK_Core
 import DNYK_TestCore
+import ViewInspector
 
 @testable import DNYK_iOS
 
-class NewCategoryViewTests: XCTest {
+class NewCategoryViewTests: XCTestCase {
     // test the NewCategoryView swiftui
     
     var viewModel: NewCategoryViewModel!
@@ -44,5 +45,62 @@ class NewCategoryViewTests: XCTest {
         XCTAssertTrue(isEnabled)
     }
     
+    func testCategoryNameViewModelTwoWay() throws {
+        // first, test changing the view model property if the text field is changed
+        // Given
+        viewModel.name = "Test"
+        
+        // When
+//        find using accessibility identifier
+        let identifier = Constants.AccessibilityIdentifiers.newCategoryViewNameTextField
+        let nameField = try view.inspect().find(viewWithAccessibilityIdentifier: identifier).textField()
+        
+        // Then
+        try XCTAssertEqual(nameField.input(), "Test")
+        
+        // then test changing the text field if the view model property is changed
+        // Given
+        try nameField.setInput("Test 2")
+        
+        // When
+        let newName = viewModel.name
+        
+        // Then
+        XCTAssertEqual(newName, "Test 2")
+    }
     
+    func testCategoryGroupField() throws {
+        // Given
+        let group = MockCategoryGroup(identifier: "1", name: "Bills")
+        viewModel.selectedGroup = .init(group: group)
+        
+        // When
+        let groupField = try view.inspect().find(viewWithAccessibilityIdentifier: Constants.AccessibilityIdentifiers.newCategoryViewGroupField).picker()
+        
+        
+        // Then
+        let selected = try groupField.selectedValue(NewCategoryViewModel.CategoryGroupWrapper.self)
+        XCTAssertEqual(selected.name, "Bills")
+    }
+    
+    func testCategoryNewGroupFieldTwoWay() throws {
+        // Given
+        viewModel.selectedGroup = .createNew()
+        viewModel.groupName = "Leasure"
+        
+        // When
+        let groupField = try view.inspect().find(viewWithAccessibilityIdentifier: Constants.AccessibilityIdentifiers.nameCategoryViewNewGroupTextField).textField()
+        
+        // Then
+        try XCTAssertEqual(groupField.input(), "Leasure")
+        
+        // Given
+        try groupField.setInput("Emergency")
+        
+        // When
+        let newGroupName = viewModel.groupName
+        
+        // Then
+        XCTAssertEqual(newGroupName, "Emergency")
+    }
 }

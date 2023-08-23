@@ -26,7 +26,7 @@ struct NewCategoryView: View {
                     TextField(field.placeholder, text: $viewModel.name)
                         .font(.system(size: 18))
                         .padding(.vertical, 8)
-                        .accessibilityIdentifier(Identifiers.newCategoryViewModelNameTextField)
+                        .accessibilityIdentifier(Identifiers.newCategoryViewNameTextField)
                 case .group:
                     Picker(field.placeholder, selection: $viewModel.selectedGroup, content: {
                         ForEach(viewModel.categoryGroups) { group in
@@ -34,6 +34,7 @@ struct NewCategoryView: View {
                                 .tag(group)
                         }
                     })
+                    .accessibilityIdentifier(Identifiers.newCategoryViewGroupField)
                     .frame(maxWidth: .infinity)
                     .padding(.vertical, 2)
                     .foregroundStyle(Color.white, Color.white, Color.white)
@@ -58,6 +59,7 @@ struct NewCategoryView: View {
                         TextField(field.placeholder, text: $viewModel.groupName)
                             .font(.system(size: 18))
                             .padding(.vertical, 8)
+                            .accessibilityIdentifier(Identifiers.nameCategoryViewNewGroupTextField)
                     }
                 }
             }

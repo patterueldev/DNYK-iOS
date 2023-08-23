@@ -18,14 +18,20 @@ let package = Package(
             name: "DNYK_TestCore",
             targets: ["DNYK_TestCore"]),
     ],
+    dependencies: [
+        .package(url: "https://github.com/malcommac/SwiftDate.git", .upToNextMajor(from: "7.0.0")),
+        .package(url: "https://github.com/SFSafeSymbols/SFSafeSymbols.git", .upToNextMajor(from: "4.1.1")),
+        .package(url: "https://github.com/nalexn/ViewInspector", .upToNextMajor(from: "0.9.0"))
+    ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "DNYK_Core"),
+            name: "DNYK_Core",
+            dependencies: ["SwiftDate", "SFSafeSymbols"]),
         .target(
             name: "DNYK_TestCore",
-            dependencies: ["DNYK_Core"]),
+            dependencies: ["DNYK_Core", "ViewInspector"]),
         .testTarget(
             name: "DNYK_CoreTests",
             dependencies: ["DNYK_TestCore"]),

@@ -24,8 +24,6 @@
 		434E52012A9431A30092B0FF /* DNYK_Core in Frameworks */ = {isa = PBXBuildFile; productRef = 434E52002A9431A30092B0FF /* DNYK_Core */; };
 		434E52032A9431A30092B0FF /* DNYK_TestCore in Frameworks */ = {isa = PBXBuildFile; productRef = 434E52022A9431A30092B0FF /* DNYK_TestCore */; };
 		437581112A85820A00E59FB5 /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437581102A85820A00E59FB5 /* BudgetView.swift */; };
-		43AA9CC22A8DE7F800A23FBF /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC12A8DE7F800A23FBF /* SwiftDate */; };
-		43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */ = {isa = PBXBuildFile; productRef = 43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */; };
 		43AA9CD52A8E0AAC00A23FBF /* NewCategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AA9CD42A8E0AAC00A23FBF /* NewCategoryViewModel.swift */; };
 		43AEF02A2A859C4A0010EFB3 /* AddTransactionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43AEF0292A859C4A0010EFB3 /* AddTransactionViewModel.swift */; };
 		43B882942A9452D6005445E9 /* NewCategoryViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B882932A9452D6005445E9 /* NewCategoryViewTests.swift */; };
@@ -82,9 +80,7 @@
 			files = (
 				434E52012A9431A30092B0FF /* DNYK_Core in Frameworks */,
 				434CCE352A901038006E075B /* DNYK_Core in Frameworks */,
-				43AA9CC52A8DE81900A23FBF /* SFSafeSymbols in Frameworks */,
 				43CC9AD32A90180000F0574F /* DNYK_SwiftData in Frameworks */,
-				43AA9CC22A8DE7F800A23FBF /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,8 +259,6 @@
 			);
 			name = "DNYK-iOS";
 			packageProductDependencies = (
-				43AA9CC12A8DE7F800A23FBF /* SwiftDate */,
-				43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */,
 				434CCE342A901038006E075B /* DNYK_Core */,
 				43CC9AD22A90180000F0574F /* DNYK_SwiftData */,
 				434E52002A9431A30092B0FF /* DNYK_Core */,
@@ -345,8 +339,6 @@
 			);
 			mainGroup = 434B59D72A8478D600DD79D2;
 			packageReferences = (
-				43AA9CC02A8DE7F800A23FBF /* XCRemoteSwiftPackageReference "SwiftDate" */,
-				43AA9CC32A8DE81900A23FBF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */,
 				434CCE332A901038006E075B /* XCLocalSwiftPackageReference "Packages/DNYK_Core" */,
 				43CC9AD12A90180000F0574F /* XCLocalSwiftPackageReference "Packages/DNYK_SwiftData" */,
 			);
@@ -750,25 +742,6 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		43AA9CC02A8DE7F800A23FBF /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/malcommac/SwiftDate";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
-		43AA9CC32A8DE81900A23FBF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SFSafeSymbols/SFSafeSymbols";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.1.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
 		434CCE342A901038006E075B /* DNYK_Core */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -781,16 +754,6 @@
 		434E52022A9431A30092B0FF /* DNYK_TestCore */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DNYK_TestCore;
-		};
-		43AA9CC12A8DE7F800A23FBF /* SwiftDate */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 43AA9CC02A8DE7F800A23FBF /* XCRemoteSwiftPackageReference "SwiftDate" */;
-			productName = SwiftDate;
-		};
-		43AA9CC42A8DE81900A23FBF /* SFSafeSymbols */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 43AA9CC32A8DE81900A23FBF /* XCRemoteSwiftPackageReference "SFSafeSymbols" */;
-			productName = SFSafeSymbols;
 		};
 		43CC9AD22A90180000F0574F /* DNYK_SwiftData */ = {
 			isa = XCSwiftPackageProductDependency;
